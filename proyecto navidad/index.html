@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Genos:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+    <title>Mutants</title>
+</head>
+<body>    
+        <input type="checkbox" id="porton">
+        <label for="porton">
+            <div id="puertaIzq" class="puerta cerradas">
+                <h1 id="tituloEnterIz"> ENTER</h1>
+            </div>                
+            <div id="puertaDcha" class="puerta cerradas">
+                <h1 id="tituloEnterDcha"> CEREBRO</h1>
+            </div>
+        </label>    
+    <header>
+        <h1>MUTANT SAGA</h1>
+        <h3>Historia de los equipos de mutantes en el universo Marvel</h3>
+    </header>
+    <main>
+        <div id="intro">
+            <p>Una aplicación web para practicar el uso de PHP, MYSQL, CSS y Javascript. También hay animaciones 
+                que actuan sobre cartas de Marvel Snap. Cuando el usuario hace click en los botones, se crean tablas 
+                y se introducen y eliminan registros en una base de datos. Textos de la Wikipedia.
+                Pulsa el botón rojo para conectar a la base de datos.
+            </p>
+            <div id="accionar">
+                <h4>CEREBRO ON</h4>
+                <div id="cajaBoton">
+                    <button id="cerebroOn" type="button"></button>
+                </div>
+            </div>
+        </div>
+        <section id="one">
+            <h2>Los nuevos X-Men</h2>
+            <img src="./img/01 new xmen.png" alt="NewXmen">
+            <p>La serie original, The X-Men (luego publicada bajo el nombre de Uncanny X-Men)
+                 apareció en septiembre de 1963, como una analogía de la tensión racial que se
+                  vivía en los Estados Unidos en la época, siendo los líderes de la raza mutante,
+                   Magneto, y el Profesor Xavier (haciendo alusión a los líderes afroamericanos
+                    Martin Luther King y el ya mencionado Malcolm X).<br>
+                    Los primeros números de X-Men presentaron al equipo original, compuesto por
+                     Cíclope, Marvel Girl/Chica Maravillosa, Bestia, Ángel y Hombre de Hielo.<br>
+                     En el número 1 de Giant-Size X-Men (1975), el escritor Len Wein
+                      y el artista Dave Cockrum introdujeron un nuevo equipo que protagonizó
+                       un reavivamiento de los X-Men, a partir del número 94. En Giant-Size X-Men # 1,
+                        el Profesor X recluta a un nuevo equipo formado por varios extranjeros para salvar
+                         a los X-Men. Con el número 94, la revista fue revivida.</p>
+            <button id="Xmen" type="button">Crea a los nuevos X-Men</button>
+              
+        </section>
+        <section id="two">
+            <h2>La muerte de Thunderbird</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 095023.png" alt="Thunderbird">
+            <p>Un nativo americano apache y un humano mutante, John Proudstar (Thunderbird) posee una capacidad
+                 atlética sobrehumana. 
+                  Nació en una tribu apache en una reserva en Campo Verde, Arizona.                   
+                   Proudstar fue reclutado por el Cuerpo de Marines de los Estados Unidos durante la Guerra de Vietnam
+                    y obtuvo el rango de cabo.<br>  
+                   Luego fue reclutado por el profesor Charles Xavier para unirse a su tercer grupo de X-Men.
+                    La segunda misión del nuevo equipo los llevó a Valhalla Base, Colorado,
+                     para combatir al Conde Nefaria y los Ani-Men. Cuando Nefaria intentó escapar en un avión,
+                      Proudstar saltó a bordo. Sin tener en cuenta las órdenes del Profesor X de saltar a la seguridad,
+                       Thunderbird lo golpeó con sus puños. El avión explotó, matando a Proudstar. </p>
+            <button id="Thunderbird" type="button">Mata a Thunderbird</button>
+        </section>
+        <section id="three">
+            <h2>Enter: the Phoenix!</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 095204.png" alt="Enter the Phoenix">
+            <p>Jean Grey debutó bajo el nombre clave Marvel Girl en The X-Men #1 (septiembre de 1963),
+                 (Stan Lee / Jack Kirby).<br> 
+                   Inicialmente poseyendo la habilidad de telequinesis, al personaje se le concedió más tarde el poder
+                    de la telepatía. Jean fue la quinta y última integrante
+                      en unirse al equipo original de X-Men y su primer integrante femenino. Jean y los X-Men fueron enviados por
+                       el Profesor-X a una misión en una base espacial, donde se enfrentaron a Erik el Rojo.<br> Erik el Rojo perseguía
+                           a la princesa  Lilandra. Los X-Men la salvan, pero al volver a la Tierra, su nave es dañada
+                            y pierde el blindaje. Jean se ofrece a pilotar la nave creyendo que su telequinesis la protegerá contra
+                             la radiación cósmica, pero no fue así. Los gritos mentales de agonía de Jean son escuchados por la poderosa
+                              entidad cósmica conocida como la Fuerza Fénix. Cuando la nave se precipitó a las aguas de la Bahía de Jamaica,
+                               Jean emergió pronunciando las palabras "Ya no soy la persona que conocísteis, X-Men, soy pasión y fuego encarnado
+                                ahora y siempre. Soy Fénix".</p>
+            <button id="EnterPhoenix" type="button">Crea a Phoenix</button>    
+        </section>
+        <section id="four">
+            <h2>Marvel Girl</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 100420.png" alt="Marvel Girl">
+            <p>Jean Grey debutó bajo el nombre clave Marvel Girl en The X-Men #1 (septiembre de 1963),
+                 creado por el escritor Stan Lee y el artista y coguionista Jack Kirby.<br>
+                  La única miembro femenina del equipo original, Marvel Girl, fue una parte habitual del equipo
+                   hasta la publicación de la serie.<br> Inicialmente poseyendo la habilidad de telequinesis,
+                    al personaje se le concedió más tarde el poder de la telepatía. Cuando Jean tenía dieciséis años,
+                     el Profesor Xavier la invitó a unirse a los X-Men, el equipo de jóvenes mutantes. 
+                     Jean fue la quinta y última integrante en unirse al equipo original de X-Men
+                      (Cyclops, Iceman, Angel, Beast, Marvel Girl).</p>
+            <button id="MarvelGirl" type="button">Vuelve Marvel Girl</button>          
+        </section>
+        <section id="five">
+            <h2>¡Phoenix debe morir!</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 100706.png" alt="">
+            <p> Después de un encuentro con el Club Fuego Infernal y manipulación por parte de Mente Maestra
+                 y Emma Frost, Phoenix se convirtió en la Reina Negra del Club.
+                  Se liberó del control de Mente Maestra, pero se transformó en "Dark Phoenix".<br>
+                   Luchó contra los X-Men y huyó a las estrellas, devorando la energía del sistema estelar D'Bari
+                    para satisfacer su "hambre". Aniquiló a los cinco mil millones de habitantes de
+                     su cuarto planeta y destruyó un cercano observatorio Shi'Ar, regresando después a la Tierra.
+                      Allí, fue derrotada en combate psiónico por el Profesor Charles Xavier y recuperó el control.
+                       El grupo fue transportado a continuación al espacio por los Shi'Ar y sometido a un juicio por combate.
+                        La victoria parecía segura para la Guardia Imperial Shi'Ar, cuando Fénix resurgió como Fénix Oscura
+                         Arrepentida, se suicidó en la Luna de la Tierra ante los ojos de un horrorizado Cíclope.
+                        La Fuerza Fénix regresó entonces a su estado de ser de energía pura.</p>
+            <button id="phoenixMustDie" type="button">Mata a Phoenix</button>                    
+        </section>
+        <section id="six">
+            <h2>El retorno de Jean Grey</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 100900.png" alt="Marvel Girl is back">
+            <p>Muchos meses después de la muerte de Fénix, los Vengadores encontraron un capullo con Jean en su interior
+                 bajo la bahía de Jamaica y lo llevaron a los Cuatro Fantásticos para su estudio y Jean se liberó.<br>
+                  Al principio, fue incapaz de recordar su encuentro con la Fuerza Fénix,
+                   pero con la ayuda de los Vengadores y los Cuatro Fantásticos recordó lo sucedido.<br> Como resultado
+                    de sus angustiosas experiencias, Jean había perdido sus poderes telepáticos, pero la fuerza de sus poderes
+                     telequinéticos había aumentado considerablemente. Jean no informó a su familia de su regreso porque
+                      no sabía cómo dar la noticia.<br> Jean se sintió muy perturbada al enterarse de la actual ola de sentimiento
+                       antimutante que había surgido en su ausencia. También le sorprendió que los X-Men estuvieran trabajando
+                        junto a Magneto, el mayor enemigo de los X-Men en el pasado. Jean decidió que los X-Men originales
+                         debían hacer algo, ya que creía que el nuevo equipo se había desviado del sueño del profesor Xavier.</p>
+            <button id="jeanIsBack" type="button">Devuelve a Marvel Girl</button>             
+        </section>
+        <section id="seven">
+            <h2>X-Factor</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 101223.png" alt="">
+            <p>En un intento más por tener control sobre la creciente abundancia de mutantes en el mundo,
+                 el gobierno de los Estados Unidos, decidió financiar el proyecto X-Factor: Un equipo de mutantes
+                  que trabajara directamente para el gobierno como agentes especiales, una especie de policía mutante.
+                   Para esto, el gobierno, con el apoyo de Cameron Hodge, decidió reclutar a los cinco X-Men originales.<br>
+                   Este equipo se mantuvo distante de los nuevos X-men, en gran parte debido a que en ese momento
+                    los X-Men se habían aliado con el supervillano Magneto.<br>
+                    X-Factor combatió a los Merodeadores durante la «Masacre Mutante» de los Morlocks.
+                    Como consecuencia de este combate, Ángel perdió sus alas originales, y posteriormente cayó bajo
+                     la influencia de Apocalipsis, quien lo convirtió en "Arcángel", el líder de sus Jinetes. 
+                     Mientras estuvo ausente, Arcángel fue reemplazado en el equipo por el morlock Calibán.</p>
+            <button id="Xfactor" type="button">Crea a X-Factor</button>         
+        </section>
+        <section id="eight">
+            <h2>Shadowcat</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 101432.png" alt="">
+            <p>Katherine Anne «Kitty» Pryde es una superheroína mutante del universo Marvel, miembro de los X-Men.
+                 Fue creada por el guionista Chris Claremont e ilustrada por John Byrne. Apareció por primera vez
+                  en Uncanny X-Men vol. 1 #129 (enero de 1980).<br>
+                  Pryde posee una habilidad de «fase» que le permite a ella, así como a los objetos o personas
+                   con las que está en contacto, volverse intangible. Este poder también interrumpe cualquier
+                    campo eléctrico por el que atraviesa, y le permite simular levitación.<br>
+                    Es la persona más joven en unirse a los X-Men, e inicialmente fue mostrada como una
+                     "hermana adolescente" para muchos miembros mayores de los X-Men, ocupando el papel
+                      de figura de contraste literario para los personajes más establecidos.
+                       Durante este tiempo, ocasionalmente usó los pseudónimos Sprite y Ariel,
+                        pasando por muchos cambios de vestuario hasta que se conforma con su característico
+                         traje negro y dorado. Durante la miniserie Kitty Pryde y Wolverine, se cambia el nombre a Shadowcat </p>
+            <button id="Kitty" type="button">Añade a Shadowcat</button>             
+        </section>
+        <section id="nine">
+            <h2>The New Mutants</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 101602.png" alt="">
+            <p>Los Nuevos Mutantes fueron creados por Chris Claremont y Bob McLeod,
+                  apareciendo por primera vez en Marvel Graphic Novel # 4 (1982).
+                  El Profesor Charles Xavier tenía la idea de volver a habilitar su Escuela Xavier para jóvenes
+                   superdotados con una nueva generación de estudiantes, pues los X-Men ya eran adultos.
+                    Cuando los X-Men se perdieron en el espacio combatiendo la amenaza de los alienígenas Brood,
+                     Xavier decidió reclutar a un nuevo grupo de jóvenes alumnos. Sus primeras reclutas fueron
+                      la joven vietnamita Xi'an Coy Mahn, alias Karma, que fue recomendada por Reed Richards
+                       de los Cuatro Fantásticos, y Rahne Sinclair, alias Wolfsbane,
+                        hija adoptiva de la Dra. Moira MacTaggert. Xavier y estas dos jóvenes,
+                         partieron a rescatar a la joven Danielle Moonstar, una india cheyenne, que había sido
+                          secuestrada por Donald Pierce, el Alfil Blanco del Club Fuego Infernal.
+                           Xavier derrotó a Pierce con ayuda de las jóvenes, y de paso rescataron a dos jóvenes
+                            prisioneros de Pierce: Sam Guthrie, alias Bala de Cañón, y Roberto DaCosta,
+                              alias Sunspot.</p>
+            <button id="newMutants" type="button">Crea a los Nuevos Mutantes</button>                  
+        </section>
+        <section id="ten">
+            <h2>Excalibur</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 101721.png" alt="">
+            <p>Excalibur se forma tras dar por muertos a los X-Men, debido a los acontecimientos durante la saga
+                 "la Caída de los Mutantes".<br>
+                   Esto provocó que tres de sus integrantes cayeran en una profunda depresión y decidieron emigrar
+                     hacia Inglaterra<br>
+                   Nightcrawler, el mutante alemán, el más experimentado del grupo debido a su tiempo
+                    con los X-Men, Kitty Pryde, la integrante más joven de los X-Men y Lockheed, un simpático dragón alienígena.<br>
+                    Una vez que llegaron a Inglaterra, unieron fuerzas con otros tres personajes para formar Excalibur.
+                    Fénix II (Rachel Summers), hija de Jean Grey y Scott Summers en otra línea temporal, con los poderes de Phoenix.<br>
+                    Capitán Britania (Brian Braddock), el campeón enmascarado de Inglaterra.<br>
+                    Y finalmente Meggan, un hada mística pareja del Capitán Britania.<br>
+                     Su base de operaciones está ubicada en la Isla Muir (Escocia).</p>
+            <button id="Excalibur" type="button">Crea a Excalibur</button>        
+        </section>
+        <section id="eleven">
+            <h2>Magneto</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 102140.png" alt="Magneto">
+            <p>Magneto, un poderoso mutante con la habilidad de generar y controlar campos magnéticos,
+                 ha sido el enemigo más eminente que hayan tenido los X-Men desde su creación.
+                 Posteriormente los guionistas han dado cuerpo al personaje y su origen,
+                  revelando que es un superviviente del holocausto nazi, cuyas acciones se encaminan
+                   a la protección de la raza mutante y evitar que sufra un destino similar.<br>
+                   A pesar de no tener miramientos sobre hundir un submarino ruso que lo atacó y provocar
+                    un volcán en la ciudad de Varykino como venganza, sí da tiempo a una evacuación masiva
+                     antes de que la lava arrase la ciudad. Asimismo, se ve impactado cuando derriba en duelo
+                      a la X-Men adolescente Kitty Pryde. Cargado de remordimientos, al haber casi matado
+                       a una mutante tan joven, Magneto pone fin a sus intentos de dominación global
+                        y se replantea el rumbo que su vida ha tomado. </p>
+            <button id="magneto" type="button">Magneto se une a los X-Men</button>            
+        </section>
+        <section id="twelve">
+            <h2>NO MORE MUTANTS!!</h2>
+            <img src="./img/Captura de pantalla 2024-05-12 102341.png" alt="noMoreMutants">
+            <p>Después de perder el control de sus habilidades de desorden de la realidad,
+                 la Bruja Escarlata mató involuntariamente a varios héroes, incluyendo Vision, Hawkeye y Ant-Man.
+                 Un equipo combinado de héroes se dirigió a Genosha para hablar con ella,
+                  pero el mundo se volvió blanco y se despertó en una realidad idealista donde los mutantes eran la especie
+                   dominante y nadie recordaba la realidad previa, sólo Wolverine.<br> Logan buscó a sus antiguos compañeros de equipo,
+                    tanto X-Men como Avengers, en un intento por restaurar sus recuerdos y devolver el mundo a su estado anterior.
+                Fue Quicksilver, hermano de Wanda y ambos hijos de Magneto, el que provocó a su hermana para cambiar la realidad.
+                Cuando Magneto se dio cuenta de lo que estaba pasando, se volvió contra su hijo. A su vez, Wanda culpó a su padre
+                 y a su obsesión por el dominio mutante por arruinar sus vidas. Entonces, Wanda usó sus poderes y pronunció tres palabras:
+                  NO MÁS MUTANTES.<br> El mundo aparentemente volvió a su estado original, hasta que los mutantes de todo el planeta
+                   comenzaron a perder sus poderes. La población mutante bajó de cientos de miles a una pequeña fracción.</p>
+            <button id="noMoreMutants" type="button">NO MORE MUTANTS</button>       
+        </section>
+        <section id="thirteen">
+            <h2>Brotherhood of Evil Mutants</h2>
+            <img src="./img/X-Men-4.jpeg" alt="BOEM">
+            <p>La Brotherhood of Evil Mutants original fue fundada por el extremista y terrorista mutante Magneto,
+                 el "Amo del Magnetismo", en parte como una respuesta a los X-Men de su némesis, el Profesor X.
+                   El equipo original lo conformaron el propio Magneto, su lacayo el Sapo,
+                     el ilusionista Mastermind y los propios hijos de Magneto (situación que ellos no sabían en ese momento):
+                      Quicksilver/Mercurio y la Bruja Escarlata.<br>
+                      Tiempo después, la Brotherhood renacería, con una nueva líder.
+                       La nueva organizadora fue Mystique, quien inspirada en los ideales de Magneto, reformó al grupo.                         
+                           Los integrantes de este nuevo equipo fueron Blob, el piroquinético Pyro, Avalancha y la mutante vidente Destiny,
+                            pareja sentimental de Mystique.<br>
+                             Esta Brotherhood debutó cuando intentaron asesinar al senador Robert Kelly.
+                             De haberlo logrado, hubieran provocado el mundo apocalíptico de "Días del Futuro Pasado",
+                              pero esto fue evitado por la joven X-Men Kitty Pryde (con ayuda de su contrapartida del futuro). </p>
+            <button id="BOEM" type="button">Crear a la BOEM</button>                  
+        </section>
+        <section id="fourteen">
+            <h2>TEAMS</h2>
+            <p></p>
+        </section>
+    </main>
+    <footer>
+        © 2024 Manuel Alba
+    </footer>
+    <?php
+
+$mysqli = new mysqli("localhost", "root", "", "malba");
+if ($mysqli->connect_error) {
+    die("Error en la conexión: " . $mysqli->connect_error);
+}
+echo "Conexión exitosa";
+
+/*Clase con los detalles de la conexión a la BD y
+métodos para activarla. */
+class CerebroOn {
+    public $conexion;
+    public $mutantName;
+    public $mainPower;
+    public $powerLevel;
+    private static $infoDisplayed = false;
+    private static $infoDisplayedBD = false;    
+
+    function __construct($bdName) {
+
+        $this->conexion= mysqli_connect("localhost", "root", "");
+
+        if ($this->conexion) {
+            if (!self::$infoDisplayed) { // Verifica si los mensajes ya se han mostrado antes                
+                mysqli_get_host_info($this->conexion);                
+                mysqli_get_server_info($this->conexion);                
+                self::$infoDisplayed = true; // Marca que los mensajes han sido mostrados
+            }
+            
+        } else {
+            echo "Conexión errónea a CEREBRO<br>";
+            echo mysqli_connect_errno() . ":<br>";
+            echo mysqli_connect_error() . "<br>";
+        }
+
+        $ok= mysqli_select_db($this->conexion, $bdName);
+
+        if ($ok) {
+            if (!self::$infoDisplayedBD) {
+                
+                self::$infoDisplayedBD = true;
+            }            
+        } else {
+            echo "Error de selección de BD<br>";
+        }
+    }    
+
+    /*Función para conectarte a la bd al comienzo, vaciarla y desconectarte
+    de nuevo antes de empezar otra sesión. Botón para entrar a Cerebro.*/
+    public function vaciarBaseDeDatos($host, $usuario, $contraseña, $nombreBaseDeDatos) {
+        $host="localhost";
+        $usuario= "root";
+        $contraseña= "";
+        $nombreBaseDeDatos= "malba";
+        // Conexión al servidor MySQL
+        $conexion = new mysqli($host, $usuario, $contraseña, $nombreBaseDeDatos);
+    
+        // Verificar si la conexión fue exitosa
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
+        }
+    
+        // Desactivar claves foráneas
+        $conexion->query("SET FOREIGN_KEY_CHECKS = 0;");
+    
+        // Obtener todas las tablas de la base de datos
+        $consulta = $conexion->query("SELECT table_name FROM information_schema.tables WHERE table_schema = '$nombreBaseDeDatos'");
+    
+        // Construir el comando para eliminar las tablas
+        $tablas = [];
+        while ($fila = $consulta->fetch_assoc()) {
+            $tablas[] = "`" . $fila['table_name'] . "`";
+        }
+    
+        if (!empty($tablas)) {
+            $query = "DROP TABLE " . implode(", ", $tablas) . ";";
+            $conexion->query($query);
+        } 
+    
+        // Reactivar claves foráneas
+        $conexion->query("SET FOREIGN_KEY_CHECKS = 1;");
+    
+        // Cerrar conexión
+        $conexion->close();
+
+    }
+
+    /*Método para disparar con JS cuando se haga
+    click en un botón después de entrar a Cerebro.*/
+    public function conectarCerebro() {
+        $professorX= new CerebroOn("malba");
+        return $professorX;
+    }
+
+}
+class uncanny_x_men extends CerebroOn {     
+    /*Método crear registros en la tabla uncanny_x_men. */
+    public function joinXmen($mutantName, $mainPower, $powerLevel) {
+        $join_x_men= "INSERT INTO uncanny_x_men(mutantName, mainPower, powerLevel) VALUES (?, ?, ?)"; 
+        $sql1= mysqli_prepare($this->conexion, $join_x_men);
+        mysqli_stmt_bind_param($sql1, 'sss', $mutantName, $mainPower, $powerLevel);
+        mysqli_stmt_execute($sql1);
+        
+    } 
+
+    /*Método para eliminar registros de la tabla uncanny_x_men.*/
+    public function xManDead ($mutantName) {
+        $xManDead= "DELETE FROM uncanny_x_men WHERE mutantName = ?";
+        $sql4= mysqli_prepare($this->conexion, $xManDead);
+        mysqli_stmt_bind_param($sql4, 's', $mutantName);
+        mysqli_stmt_execute($sql4);
+        
+    }
+
+    /*Método que se activa con el botón de la 2ª section.*/
+    public function matarThunderbird($thunderbird) {
+        $thunderbird->xManDead("thunderbird");
+    }
+
+    /*Método para el botón de la 3ª section.*/
+    public function enterPhoenix($marvel_girl) {
+        $marvel_girl= new uncanny_x_men("malba");
+        $marvel_girl->joinXmen("marvel_girl", "telepathy, telekinesis", "BETA");
+        $marvel_girl->xManDead("marvel_girl");
+        
+        $phoenix= new uncanny_x_men("malba");
+        $phoenix->joinXmen("phoenix", "cosmic pyrokinesis, matter manipulation, resurrection, teleportation, immortality", "OMEGA");
+        
+    }
+
+    /*Método para el botón de la 4ª section.*/
+    public function mataPhoenixCreaMGirl($phoenix, $marvel_girl) {
+        $phoenix->xManDead("phoenix");        
+        $marvel_girl->joinXmen("marvel_girl", "telepathy and telekinesis", "ALPHA");
+    }
+
+    /*Método para el botón de la 5ª section.*/
+    public function mataMGirl($marvel_girl) {
+        $marvel_girl->xManDead("marvel_girl");
+    }
+
+    /*Método para el botón de la 6ª section.*/
+    public function creaMGirl($marvel_girl) {
+        $marvel_girl->joinXmen("marvel_girl", "telepathy and telekinesis", "ALPHA");
+    }
+
+    /*Método para el botón de la 8ª section.*/
+    public function creaShadowcat($shadowcat) {
+        $shadowcat= new uncanny_x_men("malba");
+        $shadowcat->joinXmen("shadowcat", "phase through solid matter", "BETA");
+    }
+
+    /*Método para el botón de la 11ª section.*/
+    public function creaMagnetoX() {
+        $magneto= new uncanny_x_men("malba");
+        $magneto->joinXmen("magneto", "magnetism", "OMEGA");
+    }
+
+    /*Con este método añadimos a su tabla a los nuevos X-Men al hacer click en el botón de la 1ª section.
+    Dentro de ella, llamamos al primer método de esta subclase.*/
+    public function crearXmen($wolverine, $nightcrawler, $storm, $colossus, $thunderbird, $banshee, $sunfire) {
+        $wolverine= new uncanny_x_men("malba");
+        $wolverine-> joinXmen("wolverine", "healing factor", "BETA");
+        
+        $nightcrawler= new uncanny_x_men("malba");
+        $nightcrawler-> joinXmen("nightcrawler", "teleporting", "GAMMA");
+        
+        $storm= new uncanny_x_men("malba");
+        $storm-> joinXmen("storm", "weather control", "OMEGA");
+        
+        $colossus= new uncanny_x_men("malba");
+        $colossus-> joinXmen("colossus", "armored skin", "ALPHA");
+        
+        $thunderbird= new uncanny_x_men("malba");
+        $thunderbird-> joinXmen("thunderbird", "strength and agility", "BETA");
+        
+        $banshee= new uncanny_x_men("malba");
+        $banshee-> joinXmen("banshee", "sonic scream", "ALPHA");
+        
+        $sunfire= new uncanny_x_men("malba");
+        $sunfire-> joinXmen("sunfire", "solar energy manipulation", "OMEGA");
+
+        $cyclops= new uncanny_x_men("malba");
+        $cyclops->joinXmen("cyclops", "optic beams", "ALPHA");        
+        }
+
+        /*Método para imprimir la tabla uncanny_x_men.*/
+    public function getXmenMembers () {
+
+        $showXmen= "SELECT * FROM uncanny_x_men WHERE mutantName <> ?";
+        $valor1= "x";        
+        $sql5 = mysqli_prepare($this->conexion, $showXmen);
+        mysqli_stmt_bind_param($sql5, 's', $valor1 );
+        mysqli_stmt_bind_result($sql5, $mutantName, $mainPower, $powerLevel);        
+        mysqli_stmt_execute($sql5);
+        mysqli_stmt_store_result($sql5);       
+        mysqli_stmt_num_rows($sql5);        
+        
+
+        $registros = "";
+        while (mysqli_stmt_fetch($sql5)) {
+            $registros .= "-MUTANT NAME: " . $mutantName .  "&nbsp&nbsp-MAIN POWER: " . $mainPower . "&nbsp&nbsp-POWER LEVEL: " . $powerLevel . "<br>";
+            }
+                  
+          echo $registros . "<br>";
+    }
+}
+
+class x_factor extends CerebroOn {
+    /*Método para registrar en la tabla x_factor.*/ 
+    public function joinXfactor($mutantName, $mainPower, $powerLevel) {
+
+        $join_x_men= "INSERT INTO x_factor(mutantName, mainPower, powerLevel) VALUES (?, ?, ?)"; 
+        $sql1= mysqli_prepare($this->conexion, $join_x_men);
+        mysqli_stmt_bind_param($sql1, 'sss', $mutantName, $mainPower, $powerLevel);
+        mysqli_stmt_execute($sql1);
+
+    }    
+
+    /*Método para eliminar registros de la tabla x_factor.*/
+    public function xFactorDead ($mutantName) {
+        $xManDead= "DELETE FROM x_factor WHERE mutantName = ?";
+        $sql4= mysqli_prepare($this->conexion, $xManDead);
+        mysqli_stmt_bind_param($sql4, 's', $mutantName);
+        mysqli_stmt_execute($sql4);
+        
+        
+
+    }
+    /*Método para el botón de la 7ª section.*/
+    public function crearXfactor($cyclops, $marvel_girl, $angel, $iceman, $beast) {        
+        $cyclops->xManDead("cyclops");
+        $cyclops= new x_factor("malba");
+        $cyclops->joinXfactor("cyclops", "optic beams", "ALPHA");
+        
+        $marvel_girl->xManDead("marvel_girl");
+        $marvel_girl= new x_factor("malba");
+        $marvel_girl->joinXfactor("marvel_girl", "telepathy and telekinesis", "ALPHA");        
+        
+        $angel= new x_factor("malba");
+        $angel->joinXfactor("angel", "flight", "GAMMA");        
+        
+        $iceman= new x_factor("malba");
+        $iceman->joinXfactor("iceman", "create ice", "OMEGA");        
+        
+        $beast= new x_factor("malba");
+        $beast->joinXfactor("beast", "agility", "BETA");
+        
+    }
+
+    /*Método para imprimir la tabla x_factor.*/
+    public function getXfactorMembers () {
+
+        $showXfactor= "SELECT * FROM x_factor WHERE mutantName <> ?";
+        $valor1= "x";        
+        $sql5 = mysqli_prepare($this->conexion, $showXfactor);
+        mysqli_stmt_bind_param($sql5, 's', $valor1 );
+        mysqli_stmt_bind_result($sql5, $mutantName, $mainPower, $powerLevel);        
+        mysqli_stmt_execute($sql5);
+        mysqli_stmt_store_result($sql5);       
+        mysqli_stmt_num_rows($sql5);        
+        
+
+        $registros = "";
+        while (mysqli_stmt_fetch($sql5)) {
+            $registros .= "-MUTANT NAME: " . $mutantName .  "&nbsp&nbsp-MAIN POWER: " . $mainPower . "&nbsp&nbsp-POWER LEVEL: " . $powerLevel . "<br>";
+            }
+                  
+          echo $registros . "<br>";
+    }
+}
+
+class excalibur extends CerebroOn {
+     
+    public function joinExcalibur($mutantName, $mainPower, $powerLevel) {
+
+        $join_excalibur= "INSERT INTO excalibur(mutantName, mainPower, powerLevel) VALUES (?, ?, ?)"; 
+        $sql1= mysqli_prepare($this->conexion, $join_excalibur);
+        mysqli_stmt_bind_param($sql1, 'sss', $mutantName, $mainPower, $powerLevel);
+        mysqli_stmt_execute($sql1);
+     
+    }    
+
+    public function excaliburDead ($mutantName) {
+        $excaliburDead= "DELETE FROM excalibur WHERE mutantName = ?";
+        $sql4= mysqli_prepare($this->conexion, $excaliburDead);
+        mysqli_stmt_bind_param($sql4, 's', $mutantName);
+        mysqli_stmt_execute($sql4);      
+
+    }
+
+    public function getExcaliburMembers () {
+
+        $showExcalibur= "SELECT * FROM excalibur WHERE mutantName <> ?";
+        $valor1= "x";        
+        $sql5 = mysqli_prepare($this->conexion, $showExcalibur);
+        mysqli_stmt_bind_param($sql5, 's', $valor1 );
+        mysqli_stmt_bind_result($sql5, $mutantName, $mainPower, $powerLevel);        
+        mysqli_stmt_execute($sql5);
+        mysqli_stmt_store_result($sql5);       
+        mysqli_stmt_num_rows($sql5);        
+        
+
+        $registros = "";
+        while (mysqli_stmt_fetch($sql5)) {
+            $registros .= "-MUTANT NAME: " . $mutantName .  "&nbsp&nbsp-MAIN POWER: " . $mainPower . "&nbsp&nbsp-POWER LEVEL: " . $powerLevel . "<br>";
+            }
+                  
+          echo $registros . "<br>";
+    }
+    /*Método para el botón de la 10ª section.*/
+    public function creaExcalibur($nightcrawler, $shadowcat) {
+        $nightcrawler->xManDead("nightcrawler");
+        $nightcrawler= new excalibur("malba");
+        $nightcrawler->joinExcalibur("nightcrawler", "teleporting", "GAMMA");
+        echo "<br>";
+        $shadowcat->xManDead("shadowcat");
+        $shadowcat= new excalibur("malba");
+        $shadowcat->joinExcalibur("shadowcat", "phase through solid matter", "BETA");
+        echo "<br><br>";
+        $captain_britain= new excalibur("malba");
+        $captain_britain->joinExcalibur("captain_britain", "strength", "ALPHA");
+    }
+}
+
+class new_mutants extends CerebroOn {
+     
+    public function joinNewMutants($mutantName, $mainPower, $powerLevel) {
+
+        $join_new_mutants= "INSERT INTO new_mutants(mutantName, mainPower, powerLevel) VALUES (?, ?, ?)"; 
+        $sql1= mysqli_prepare($this->conexion, $join_new_mutants);
+        mysqli_stmt_bind_param($sql1, 'sss', $mutantName, $mainPower, $powerLevel);
+        mysqli_stmt_execute($sql1);
+
+    }    
+
+    public function newMutantDead ($mutantName) {
+        $newMutantDead= "DELETE FROM new_mutants WHERE mutantName = ?";
+        $sql4= mysqli_prepare($this->conexion, $newMutantDead);
+        mysqli_stmt_bind_param($sql4, 's', $mutantName);
+        mysqli_stmt_execute($sql4);        
+      
+    }
+
+    /*Método para el botón de la 9ª section.*/
+    public function creaNewMutants() {
+        $cannonball= new new_mutants("malba");
+        $cannonball->joinNewMutants("cannonball", "kinetic energy projection", "ALPHA");
+
+        $sunspot= new new_mutants("malba");
+        $sunspot->joinNewMutants("sunspot", "absorbs and channel solar power", "ALPHA");
+
+        $magik= new new_mutants("malba");
+        $magik->joinNewMutants("magik", "magic and teleport", "OMEGA");
+
+        $cypher= new new_mutants("malba");
+        $cypher->joinNewMutants("cypher", "translates any language", "GAMMA");
+
+        $mirage= new new_mutants("malba");
+        $mirage->joinNewMutants("mirage", "illusions", "GAMMA");
+
+        $wolfsbane= new new_mutants("malba");
+        $wolfsbane->joinNewMutants("wolfsbane", "transform into wolf", "BETA");
+
+        $karma= new new_mutants("malba");
+        $karma->joinNewMutants("karma", "possession of minds", "ALPHA");
+    }
+
+    public function getNewMutantMembers () {
+
+        $showNewMutants= "SELECT * FROM new_mutants WHERE mutantName <> ?";
+        $valor1= "x";        
+        $sql5 = mysqli_prepare($this->conexion, $showNewMutants);
+        mysqli_stmt_bind_param($sql5, 's', $valor1 );
+        mysqli_stmt_bind_result($sql5, $mutantName, $mainPower, $powerLevel);        
+        mysqli_stmt_execute($sql5);
+        mysqli_stmt_store_result($sql5);       
+        mysqli_stmt_num_rows($sql5);        
+
+        $registros = "";
+        while (mysqli_stmt_fetch($sql5)) {
+            $registros .= "-MUTANT NAME: " . $mutantName .  "&nbsp&nbsp-MAIN POWER: " . $mainPower . "&nbsp&nbsp-POWER LEVEL: " . $powerLevel . "<br>";
+            }
+                  
+          echo $registros . "<br>";
+    }
+}
+
+class brotherhood_of_evil_mutants extends CerebroOn {
+     
+    public function joinBOEM($mutantName, $mainPower, $powerLevel) {
+
+        $join_boem= "INSERT INTO brotherhood_of_evil_mutants(mutantName, mainPower, powerLevel) VALUES (?, ?, ?)"; 
+        $sql1= mysqli_prepare($this->conexion, $join_boem);
+        mysqli_stmt_bind_param($sql1, 'sss', $mutantName, $mainPower, $powerLevel);
+        mysqli_stmt_execute($sql1);
+     
+    }    
+
+    public function BOEMDead ($mutantName) {
+        $boemDead= "DELETE FROM brotherhood_of_evil_mutants WHERE mutantName = ?";
+        $sql4= mysqli_prepare($this->conexion, $boemDead);
+        mysqli_stmt_bind_param($sql4, 's', $mutantName);
+        mysqli_stmt_execute($sql4);     
+
+    }
+
+    public function noMoreMutants($levelValor) {
+        $noMoreMutants1= "DELETE FROM brotherhood_of_evil_mutants WHERE powerLevel = ?";
+        $sqlA= mysqli_prepare($this->conexion, $noMoreMutants1);        
+        mysqli_stmt_bind_param($sqlA, 's', $levelValor);
+        $ejecutar1= mysqli_stmt_execute($sqlA);
+        $howManyBOEM= mysqli_stmt_affected_rows($sqlA);
+
+        $noMoreMutants2= "DELETE FROM uncanny_x_men WHERE powerLevel = ?";
+        $sqlB= mysqli_prepare($this->conexion, $noMoreMutants2);        
+        mysqli_stmt_bind_param($sqlB, 's', $levelValor);
+        $ejecutar2= mysqli_stmt_execute($sqlB);
+        $howManyXmen= mysqli_stmt_affected_rows($sqlB);
+
+        $noMoreMutants3= "DELETE FROM x_factor WHERE powerLevel = ?";
+        $sqlC= mysqli_prepare($this->conexion, $noMoreMutants3);        
+        mysqli_stmt_bind_param($sqlC, 's', $levelValor);
+        $ejecutar3= mysqli_stmt_execute($sqlC);
+        $howManyXfactor= mysqli_stmt_affected_rows($sqlC);
+
+        $noMoreMutants4= "DELETE FROM excalibur WHERE powerLevel = ?";
+        $sqlD= mysqli_prepare($this->conexion, $noMoreMutants4);        
+        mysqli_stmt_bind_param($sqlD, 's', $levelValor);
+        $ejecutar4= mysqli_stmt_execute($sqlD);
+        $howManyExcalibur= mysqli_stmt_affected_rows($sqlD);
+
+        $noMoreMutants5= "DELETE FROM new_mutants WHERE powerLevel = ?";
+        $sqlE= mysqli_prepare($this->conexion, $noMoreMutants5);        
+        mysqli_stmt_bind_param($sqlE, 's', $levelValor);
+        $ejecutar5= mysqli_stmt_execute($sqlE);
+        $howManyNewMutants= mysqli_stmt_affected_rows($sqlE);
+
+        $totalNoMutants= $howManyBOEM + $howManyXmen + $howManyXfactor + $howManyExcalibur + $howManyNewMutants;
+        
+        if ($totalNoMutants > 0) {
+            echo "$totalNoMutants mutantes han perdido sus poderes<br>";
+        } else {
+            echo "Ningún mutante ha perdido sus poderes<br>";
+        }
+
+    }
+    /*Método para el botón de la 12ª section.*/
+    public function wandaGrita() {
+        $scarlet_witch= new brotherhood_of_evil_mutants("malba");
+        $scarlet_witch->noMoreMutants("GAMMA");
+    }
+
+    /*Método para el botón de la 13ª section.*/
+    public function creaBOEM($scarlet_witch) {
+        $scarlet_witch->BOEMDead("scarlet witch");
+
+        $mystique= new brotherhood_of_evil_mutants("malba");
+        $mystique->joinBOEM("mystique", "shapeshifting", "BETA");
+
+        $rogue= new brotherhood_of_evil_mutants("malba");
+        $rogue->joinBOEM("rogue", "absorbs life force", "GAMMA");
+
+        $pyro= new brotherhood_of_evil_mutants("malba");
+        $pyro->joinBOEM("pyro", "control flames", "BETA");
+
+        $avalanche= new brotherhood_of_evil_mutants("malba");
+        $avalanche->joinBOEM("avalanche", "create seismic waves", "ALPHA");
+
+        $blob= new brotherhood_of_evil_mutants("malba");
+        $blob->joinBOEM("blob", "mass increasing", "GAMMA");
+
+        $destiny= new brotherhood_of_evil_mutants("malba");
+        $destiny->joinBOEM("destiny", "psionic precognition", "ALPHA");
+
+    }
+    public function getBOEMMembers () {
+
+        $showboem= "SELECT * FROM brotherhood_of_evil_mutants WHERE mutantName <> ?";
+        $valor1= "x";        
+        $sql5 = mysqli_prepare($this->conexion, $showboem);
+        mysqli_stmt_bind_param($sql5, 's', $valor1 );
+        mysqli_stmt_bind_result($sql5, $mutantName, $mainPower, $powerLevel);        
+        mysqli_stmt_execute($sql5);
+        mysqli_stmt_store_result($sql5);       
+        mysqli_stmt_num_rows($sql5);        
+        
+
+        $registros = "";
+        while (mysqli_stmt_fetch($sql5)) {
+            $registros .= "-MUTANT NAME: " . $mutantName .  "&nbsp&nbsp-MAIN POWER: " . $mainPower . "&nbsp&nbsp-POWER LEVEL: " . $powerLevel . "<br>";
+            }
+                  
+          echo $registros . "<br>";
+    }
+
+
+}
+
+class CerebroOff {
+    public $conexion;
+    function __destruct() {
+                
+        if ($this->conexion) {
+            
+            $ok= mysqli_close($this->conexion);
+            if (!$ok) {
+                echo "Error en la desconexión<br>";
+            } 
+        }
+    }
+
+    public function apagarCerebro() {
+        $DrMoiraMacTaggert= new CerebroOff();
+        return $DrMoiraMacTaggert;
+    }
+}
+
+/***************************************************************************** */
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $input = json_decode(file_get_contents('php://input'), true);
+
+    if (isset($input['action'])) {
+        try {
+            switch ($input['action']) {
+                case 'activarCerebro':
+                    vaciarBaseDeDatos();
+                    conectarCerebro();
+                    echo json_encode(['success' => true]);
+                    break;
+
+                case 'crearXmen':
+                    crearXmen(); // Llama a la función crearXmen
+                    echo json_encode(['success' => true]);
+                    break;
+
+                default:
+                    echo json_encode(['success' => false, 'error' => 'Acción no reconocida']);
+            }
+        } catch (Exception $e) {
+            echo json_encode(['success' => false, 'error' => $e->getMessage()]);
+        }
+        exit;
+    }
+}
+
+function vaciarBaseDeDatos() {
+    // Implementación de la función
+    echo "Base de datos vaciada";
+}
+
+function conectarCerebro() {
+    // Implementación de la función
+    echo "Cerebro conectado";
+}
+
+function crearXmen() {
+    // Lógica para crear X-Men
+    // Por ejemplo, conectar a la base de datos e insertar registros
+    echo "X-Men creados";
+}
+
+
+
+
+
+//ejercicio 18
+$wolverine->getXmenMembers();
+
+$cyclops= new x_factor("malba");
+$cyclops->getXfactorMembers();
+
+
+$captain_britain->getExcaliburMembers();
+
+$cannonball->getNewMutantMembers();
+
+$mystique->getBOEMMembers();
+
+
+/*Función para desconectar de la bd.*/
+function apagarCerebro() {
+    $DrMoiraMacTaggert= new CerebroOff();
+    return $DrMoiraMacTaggert;
+}
+?>    
+</body>
+</html>
