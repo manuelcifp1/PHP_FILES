@@ -15,10 +15,17 @@ $impuestos = 0;
 
 if ($salarioBruto > 60000) {
     $impuestos = $salarioBruto * 0.3;    
-    echo "Impuestos: $impuestos <br>";
-    echo "Salario neto: " . $salarioBruto - $impuestos . "<br>";
+    echo "Impuestos: $impuestos €<br>";
+    echo "Salario neto: " . $salarioBruto - $impuestos . "€<br>";
 } elseif ($salarioBruto <= 60000 && $salarioBruto >= 40001) {
     $impuestos = $salarioBruto * 0.2;    
-    echo "Impuestos: $impuestos <br>";
-    echo "Salario neto: " . $salarioBruto - $impuestos . "<br>";
-} elseif
+    echo "Impuestos: $impuestos €<br>";
+    echo "Salario neto: " . $salarioBruto - $impuestos . "€<br>";
+} elseif ($salarioBruto <= 40000 && $salarioBruto >= 20001) {
+    $impuestos = $salarioBruto * 0.1;    
+    echo "Impuestos: $impuestos €<br>";
+    echo "Salario neto: " . $salarioBruto - $impuestos . "€<br>";
+} else {
+    echo "Impuestos: 0€";
+    echo "Salario neto: " . $salarioBruto . "€<br>";
+}
