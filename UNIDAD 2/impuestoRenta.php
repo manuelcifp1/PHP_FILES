@@ -9,7 +9,7 @@ Las reglas de impuestos son las siguientes:
 ● Si el salario es mayor a 60000€, paga un 30% de impuesto.
 El programa debe calcular la cantidad a pagar en impuestos y el salario después de impuestos (Neto).*/
 
-$salarioBruto = 48700;
+$salarioBruto = 40001;
 $salarioNeto = 0;
 $impuestos = 0;
 
@@ -26,6 +26,6 @@ if ($salarioBruto > 60000) {
     echo "Impuestos: $impuestos €<br>";
     echo "Salario neto: " . $salarioBruto - $impuestos . "€<br>";
 } else {
-    echo "Impuestos: 0€";
+    echo "Impuestos: 0€<br>";
     echo "Salario neto: " . $salarioBruto . "€<br>";
 }
