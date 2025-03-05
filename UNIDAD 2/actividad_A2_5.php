@@ -3,9 +3,9 @@
     Si la edad de la persona es mayor o igual a 18, debe mostrar el mensaje "Puedes votar".*/
 echo "Ejercicio 1<br>";    
 $edad = 20;    
-if ($edad >= 18) {
-    echo "Puedes votar<br>";
-}
+$votante = ($edad >= 18) ? "Puede votar" : "";
+echo $votante;
+echo "<br>";
 /*2.Crea un script en PHP que verifique si un número es positivo o negativo.
     Si el número es positivo, debe mostrar el mensaje "El número es positivo".
     De lo contrario, debe mostrar "El número es negativo".*/
