@@ -108,6 +108,8 @@ print_r($productos);
 echo "<br>";
 echo "<br>";
 $productos["Camiseta"] = 25;
-print_r($productos);
+foreach($productos as $producto => $precio) {
+    echo "El producto " . $producto . " vale " . $precio . "<br>";
+}
 echo "<br>";
 echo "<br>";
