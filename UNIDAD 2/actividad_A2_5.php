@@ -39,15 +39,16 @@ if ($nota >= 90) {
     Si el usuario tiene más de 35 años, recomienda una película clásica.*/
 echo "Ejercicio 4<br>";
 $edadUsuario = 23;
-if ($edadUsuario > 35) {
+if ($edadUsuario >35) {
     echo "Te recomiendo una película clásica.<br>";
-} elseif ($edadUsuario <= 35 && $edadUsuario >= 18) {
+} elseif ($edadUsuario >= 18) {
     echo "Te recomiendo una película de acción o ciencia ficción.<br>";
-} elseif ($edadUsuario <= 17 && $edadUsuario >= 13) {
+} elseif ($edadUsuario >= 13) {
     echo "Te recomiendo una película para adolescentes.<br>";
 } else {
     echo "Te recomiendo una película para niños.<br>";
 }
+
 /*5.Escribe un programa que clasifique la temperatura de acuerdo con las siguientes reglas:
     Si la temperatura es menor que 0 grados, muestra "Congelante".
     Si la temperatura está entre 0 y 10 grados, muestra "Frío".
@@ -59,11 +60,11 @@ echo "Ejercicio 5<br>";
 $temperatura = -1;
 if ($temperatura > 30) {
     echo "Caluroso<br>";
-} elseif ($temperatura <= 30 && $temperatura >= 21) {
+} elseif ($temperatura >= 21) {
     echo "Cálido<br>";
-} elseif ($temperatura <= 20 && $temperatura >= 11) {
+} elseif ($temperatura >= 11) {
     echo "Templado<br>";
-} elseif ($temperatura <= 10 && $temperatura >= 0) {
+} elseif ($temperatura >= 0) {
     echo "Frío<br>";
 } else {
     echo "Congelante. Precaución: temperaturas bajo cero<br>";
@@ -87,11 +88,14 @@ if ($operador == "+") {
     echo $numUno - $numDos . "<br>";
 } elseif ($operador == "*") {
     echo $numUno * $numDos . "<br>";
-} elseif ($operador == "/" && $numDos != 0) {
-    echo $numUno / $numDos . "<br>";
-} elseif ($operador == "/" && $numDos == 0) {
-    echo "No se puede dividir por 0<br>";
-} elseif ($operador != "+" && $operador != "-" && $operador != "*" && $operador != "/") {
+} elseif ($operador == "/") {
+    if($numDos != 0){
+        echo $numUno / $numDos . "<br>";
+    }else{
+        echo "Error";
+    }
+}
+else{
     echo "Operador inválido<br>";
 }
 /*7.Desarrolla un sistema de evaluación de desempeño para empleados que siga las siguientes reglas:
