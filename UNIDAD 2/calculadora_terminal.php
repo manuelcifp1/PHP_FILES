@@ -35,11 +35,11 @@ do {
         case "1"://=============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $opcion = trim(strtolower($numeroA));
+        $numeroA = trim(strtolower($numeroA));
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $opcion = trim(strtolower($numeroB));
+        $numeroB = trim(strtolower($numeroB));
 
         $resultado = $numeroA + $numeroB;
         echo "El resultado es $resultado. Empezamos otra vez.\n";
@@ -48,11 +48,11 @@ do {
         case "2"://=============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $opcion = trim(strtolower($numeroA));
+        $numeroA = trim(strtolower($numeroA));
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $opcion = trim(strtolower($numeroB));
+        $numeroB = trim(strtolower($numeroB));
 
         $resultado = $numeroA - $numeroB;
         echo "El resultado es $resultado. Empezamos otra vez.\n";
@@ -61,11 +61,11 @@ do {
         case "3"://==============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $opcion = trim(strtolower($numeroA));
+        $numeroA = trim(strtolower($numeroA));
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $opcion = trim(strtolower($numeroB));
+        $numeroB= trim(strtolower($numeroB));
         
         $resultado = $numeroA * $numeroB;
         echo "El resultado es $resultado. Empezamos otra vez.\n";
@@ -74,11 +74,11 @@ do {
         case "4"://===============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $opcion = trim(strtolower($numeroA));
+        $numeroA = trim(strtolower($numeroA));
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $opcion = trim(strtolower($numeroB));
+        $numeroB = trim(strtolower($numeroB));
         
         if ($numeroB == 0) {
             echo "No se puede dividir por 0.\n";            
