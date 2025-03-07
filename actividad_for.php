@@ -1,5 +1,5 @@
 <?php
-
+/*Dame los números impares entre dos números dados.*/
 $numA = 3;
 $numB = 24;
 $impares = array();
