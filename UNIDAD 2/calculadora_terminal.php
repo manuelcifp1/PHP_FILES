@@ -35,11 +35,11 @@ do {
         case "1"://=============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $numeroA = trim(strtolower($numeroA));
+        $numeroA = trim($numeroA);
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $numeroB = trim(strtolower($numeroB));
+        $numeroB = trim($numeroB);
 
         $resultado = $numeroA + $numeroB;
         echo "El resultado es $resultado. Empezamos otra vez.\n";
@@ -48,11 +48,11 @@ do {
         case "2"://=============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $numeroA = trim(strtolower($numeroA));
+        $numeroA = trim($numeroA);
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $numeroB = trim(strtolower($numeroB));
+        $numeroB = trim($numeroB);
 
         $resultado = $numeroA - $numeroB;
         echo "El resultado es $resultado. Empezamos otra vez.\n";
@@ -61,11 +61,11 @@ do {
         case "3"://==============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $numeroA = trim(strtolower($numeroA));
+        $numeroA = trim($numeroA);
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $numeroB= trim(strtolower($numeroB));
+        $numeroB = trim($numeroB);
         
         $resultado = $numeroA * $numeroB;
         echo "El resultado es $resultado. Empezamos otra vez.\n";
@@ -74,11 +74,11 @@ do {
         case "4"://===============================================
         echo "Dame el primer número.\n";
         fscanf(STDIN, '%d', $numeroA);         
-        $numeroA = trim(strtolower($numeroA));
+        $numeroA = trim($numeroA);
     
         echo "Dame el segundo número.\n";
         fscanf(STDIN, '%d', $numeroB);         
-        $numeroB = trim(strtolower($numeroB));
+        $numeroB = trim($numeroB);
         
         if ($numeroB == 0) {
             echo "No se puede dividir por 0.\n";            
