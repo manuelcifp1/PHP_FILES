@@ -1,11 +1,12 @@
 <?php
-    /*Uso de switch:
+    /*A) Uso de switch:
+        
     Escribe un programa en PHP que simule un menú de selección de opciones para un cajero automático. 
     Las opciones deben ser las siguientes:
-        Consultar saldo.
-        Realizar depósito.
-        Retirar dinero.
-        Salir.
+        1.- Consultar saldo.
+        2.- Realizar depósito.
+        3.- Retirar dinero.
+        4.- Salir.
     El programa debe recibir la opción seleccionada por el usuario y
     utilizar una sentencia switch para realizar las operaciones correspondientes.
         Notas:
@@ -16,41 +17,52 @@
         Puedes ingresar las opciones mediante un formulario.
         Como aún nos faltan herramientas nos vamos a remitir a una única instrucción por ejecución del programa. 
         Terminando el programa independientemente de la opción seleccionada.*/
+
+if (!defined('STDIN')) {
+    define('STDIN', fopen('php://stdin', 'r'));
+}        
         
 $saldo = 1000; //Ponemos 1000 de saldo para empezar con algo de liquidez
-$mensaje = ""; //Y esto para un mensaje informativo de la situación del saldo
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $opcion = $_POST['opcion'];
+do {
 
-    switch ($opcion) {
-        case 'consultar':
-            $mensaje = "Tu saldo actual es: €" . $saldo;
-            break;
+    echo "Elige una opción:\n
+          1.- Consultar saldo.\n
+          2.- Realizar depósito.\n
+          3.- Retirar dinero.\n
+          4.- Salir.\n";
 
-        case 'depositar':
-            $cantidad = $_POST['cantidad'];
-            $saldo += $cantidad;
-            $mensaje = "Has depositado €" . $cantidad . ". Tu nuevo saldo es: €" . $saldo;
-            break;
+    fscanf(STDIN, '%s', $opcion);
+    $opcion = trim($opcion);
+    
+    switch($opcion) {
 
-        case 'retirar':
-            $cantidad = $_POST['cantidad'];
-            if ($cantidad > $saldo) {
-                $mensaje = "Error: No puedes retirar más dinero del disponible. Tu saldo actual es: €" . $saldo;
-            } else {
-                $saldo -= $cantidad;
-                $mensaje = "Has retirado €" . $cantidad . ". Tu nuevo saldo es: €" . $saldo;
-            }
-            break;
+        case "1":/*===================================== */
+        echo "Su saldo actual es de $saldo €\n";
+        break;/*======================================== */
 
-        case 'salir':
-            break;
-
+        case "2":/*===================================== */
+        echo "Introduzca la cantidad a ingresar.\n";
+        fscanf(STDIN, '%d', $ingreso);
+        $ingreso = trim($ingreso);
+        $saldo += $ingreso;
+        break;/*============================================ */
+        
+        case "3":/*========================================== */
+        echo "Introduzca la cantidad a retirar.\n";
+        fscanf(STDIN, '%d', $retirada);
+        $retirada = trim($retirada);
+        if ($retirada > $saldo) {
+            echo "Saldo insuficiente.\n";            
+        } else {
+            $saldo -= $retirada;
+        }
+        break;/*================================================= */
+        
         default:
-            $mensaje = "Opción no válida.";
-            break;
+        break;
     }
-}
+
+} while($opcion != "4");
 
 
     
