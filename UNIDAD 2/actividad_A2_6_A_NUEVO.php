@@ -1,34 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cajero Automático</title>
-</head>
-<body>
-    <h1>Cajero Automático</h1>
-
-    <form method="POST" action="">
-        <label for="opcion">Selecciona una opción:</label><br>
-        <input type="radio" id="consultar" name="opcion" value="consultar">
-        <label for="consultar">Consultar saldo</label><br>
-
-        <input type="radio" id="depositar" name="opcion" value="depositar">
-        <label for="depositar">Realizar depósito</label><br>
-        
-        <input type="radio" id="retirar" name="opcion" value="retirar">
-        <label for="retirar">Retirar dinero</label><br>
-
-        <input type="radio" id="salir" name="opcion" value="salir">
-        <label for="salir">Salir</label><br><br>
-
-        <label for="cantidad">Cantidad (solo para depósito o retiro):</label>
-        <input type="number" name="cantidad" placeholder="Ingresa una cantidad"><br><br>
-
-        <input type="submit" value="Enviar">
-    </form>
-
-    <?php
+<?php
     /*Uso de switch:
     Escribe un programa en PHP que simule un menú de selección de opciones para un cajero automático. 
     Las opciones deben ser las siguientes:
@@ -81,10 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             break;
     }
 }
-?>
-    <p><?php echo $mensaje; ?></p>
-</body>
-</html>
+
 
     
     
