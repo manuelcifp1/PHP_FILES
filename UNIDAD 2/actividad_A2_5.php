@@ -109,11 +109,11 @@ echo "Ejercicio 7<br>";
 $puntaje = 70.6;
 if ($puntaje >= 90) {
     echo "Excelente<br>";
-} elseif ($puntaje <= 89 && $puntaje >= 80) {
+} elseif ($puntaje >= 80) {
     echo "Muy bueno<br>";
-} elseif ($puntaje <= 79 && $puntaje >= 70) {
+} elseif ($puntaje >= 70) {
     echo "Bueno<br>";
-} elseif ($puntaje <= 69 && $puntaje >= 60) {
+} elseif ($puntaje >= 60) {
     echo "Regular<br>";
 } elseif ($puntaje < 60) {
     echo "Insuficiente. Necesita mejorar su rendimiento<br>";
