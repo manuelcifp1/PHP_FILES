@@ -20,7 +20,23 @@ Supongamos que tienes un array que almacena una lista de números enteros. Neces
 
 /*2. Comprobar si una cadena es un palíndromo: Crear una función que verifique si una cadena es un palíndromo
  (se lee igual de izquierda a derecha que de derecha a izquierda, ignorando espacios, mayúsculas y acentos).*/
+function comprobarPalindromo(string $cadena): string {
+    //Quitamos espacios y cambiamos a minúsculas
+    $cadena = trim(string: strtolower(string: $cadena));
+    //Eliminamos acentos
+    $acentos = ["á"=>"a", "é"=>"e","í"=>"i", "ó"=>"o", "ú"=>"u"];
+    $sinAcentos = strtr($cadena, $acentos);
+    //Invertimos la cadena
+    $invertida = strrev($sinAcentos);
+    //Comprobamos si la inversión es igual a la cadena original
+    if ($invertida == $cadena) {
+        echo "La cadena es palíndromo<br>";
+    } else {
+        echo "La cadena no es palíndromo<br>";
+    }    
+};
 
+comprobarPalindromo("lámina");
 
 
 /*3. Reemplazar una palabra en una cadena: Crear una función que reciba una cadena, una palabra a buscar y una palabra de reemplazo,
