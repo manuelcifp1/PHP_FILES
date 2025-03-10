@@ -1,4 +1,5 @@
 <?php
+//Enésimo número de la lista de Fibonacci
 function fibonacci($n) {
     // Casos base: 
     // Si n es 0, devuelve 0 (primer elemento de la secuencia).
