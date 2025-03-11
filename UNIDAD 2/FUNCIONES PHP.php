@@ -2,7 +2,7 @@
 
 print_r($array);//Imprime array
 
-$array[] = 10;//Agrega el 10 al final del array
+$array[] = 10;//AGREGA el 10 AL FINAL del array
 
 array_push($array, 3,7);//AGREGA los values AL FINAL del array (Se usa para agregar VARIOS valores)
 
