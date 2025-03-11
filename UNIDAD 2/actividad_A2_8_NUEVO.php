@@ -24,7 +24,7 @@ $precios_productos = [35, 75, 120, 45, 300, 500, 60, 80, 150, 499];
  $precios_productos = [35, 75, 120, 45, 300, 500, 60, 80, 150, 499];
  $stock = 1;
 
- for ($i = 1; $i < count($precios_productos); $i++) {
+ for ($i = 1; $i <= count($precios_productos); $i++) {
     if ($precios_productos[$i] < 50) {
         continue;
     } elseif ($precios_productos[$i] >= 500) {
