@@ -22,7 +22,7 @@ echo "El 10º número de Fibonacci es: <br><br>" . fibonacci(10);
 echo "Factorial de un número (la multiplicación de todos los anteriores)<br><br>";
 
 function factorial($n) {
-    if ($n <= 1) {
+    if ($n == 1) {
         return 1; // Caso base: 1! y 0! se consideran 1.
     }
     return $n * factorial($n - 1); // Paso recursivo.
