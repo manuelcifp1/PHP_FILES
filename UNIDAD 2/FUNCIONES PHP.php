@@ -44,3 +44,24 @@ substr($string, 1, 2);//Extrae a partir del elemento 1 no inclusive dos elemento
 
 strpos($string, "algo");//Devuelve un número, posición del elemento en la cadena.
 
+getdate();//Devuelve un array con la fecha actual descompuesta en muchos parámetros
+
+date_add($date, $intervalo);//===============================================================================
+// Crear un objeto DateTime para una fecha específica
+$date = new DateTime('2025-03-10');
+
+// Mostrar la fecha original
+echo "Fecha original: " . $date->format('Y-m-d') . "\n";
+
+// Crear un intervalo de 10 días
+$intervalo = new DateInterval('P10D');
+
+// Añadir el intervalo a la fecha
+date_add($date, $intervalo);
+
+// Mostrar la fecha modificada
+echo "Fecha modificada: " . $date->format('Y-m-d') . "\n";
+//================================================================================
+strtotime($fecha . " +$numeroDias days");//Mucho más sencilla para añadir días a una fecha.
+
+date("Y-m-d H:i:s<br>");//Le das unos parámetros y te da la fecha y hora actuales.
