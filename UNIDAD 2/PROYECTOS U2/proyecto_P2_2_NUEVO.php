@@ -26,13 +26,13 @@ modificado. */
 function actualizarInventario (array &$productos, string $nombre, int $cantidad, int $precio): array {
     foreach($productos as &$producto) {
         //Si el nombre del nuevo producto es igual a alguno de los que ya existe, aumentamos el número de unidades.
-        if ($producto["nombre"] === $nombre) {
+        if ($producto["nombre"] == $nombre) {
             $producto["cantidad"] += $cantidad;
-            break;
+            
         } else {
             //En caso contrario, añadimos el nuevo producto al inventario
             $productos[] = ["nombre"=>$nombre, "cantidad"=>$cantidad, "precio"=>$precio];
-            break;
+            
         }        
     }
     //Devuelve el array modificado.
