@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>SPAM</title>
 </head>
 <body>
     <form action="#" method="get">
@@ -24,17 +24,17 @@
 
     <?php
 
-    if(isset($_REQUEST['nombre']) && isset($_REQUEST['telefono']) && isset($_REQUEST['email']) && isset($_REQUEST['mensaje'])) {
-        $nombre = $_GET['nombre'];
-        $telefono = $_GET['telefono'];
-        $email = $_GET['email'];
-        $mensaje = $_GET['mensaje'];
+        if(isset($_REQUEST['nombre']) && isset($_REQUEST['telefono']) && isset($_REQUEST['email']) && isset($_REQUEST['mensaje'])) {
+            $nombre = htmlspecialchars($_REQUEST['nombre']);
+            $telefono = htmlspecialchars($_REQUEST['telefono']);
+            $email = htmlspecialchars($_REQUEST['email']);
+            $mensaje = htmlspecialchars($_REQUEST['mensaje']);
 
-        echo "<p>Hola $nombre!<br>
-                Te voy a enviar spam a $email y te llamaré por la madrugada al $telefono.<br>
-                $mensaje <br>
-                Enviado desde un iPhone.<br></p>";
-    }
+            echo "<p>Hola $nombre!<br>
+                    Te voy a enviar spam a $email y te llamaré por la madrugada al $telefono.<br>
+                    $mensaje <br>
+                    Enviado desde un iPhone.<br></p>";
+        }
 
     ?>
     
