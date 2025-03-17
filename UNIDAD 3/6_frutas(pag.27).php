@@ -18,14 +18,26 @@ en la página.-->
         <button type="submit">ENVIAR</button>
     </form>
     <?php
-
+    $cuantas = 0;//Esto evita errores de variables no definidas.
     if(!empty($_GET['cuantas'])) {
-        $cuantas = htmlspecialchars($_GET['cuantas'], ENT_QUOTES, 'UTF-8');
-
-        
+        $cuantas = (int) $_GET['cuantas'];
     }
-
-    ?>
+    ?>    
+    <form action="#" method="get">
+        <?php
+        for($i = 1; $i <= $cuantas; $i++) :?>
+        <label for="frutas">Introduce fruta</label>
+        <input type="text" name="frutas[]" value="fruta<?php $i; ?>">
+        <?php endfor; ?>
+        <button type="submit">ENVIAR</button>
+    </form>
+    <?php
+    if(!empty($_GET['frutas'])) {
+        foreach($_GET['frutas'] as $fruta) {
+            echo "$fruta<br>";
+        } 
+    }
+    ?>    
     
 </body>
 </html>
