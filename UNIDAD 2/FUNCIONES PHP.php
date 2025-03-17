@@ -87,9 +87,9 @@ date("Y-m-d H:i:s<br>");//Le das unos parámetros y te da la fecha y hora actual
 
 //RegEx
 "/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü'´]+$/";//Nombre.
-"/^[1-9]?[0-9]$/";//Edad.
+"/^[1-9]?[0-9]$/";//Edad de 0-99.
+"/^(1[89]|[2-9]\d)$/";//Edad de 18-99.
 "/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/";//Email.
 '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+\[\]{};\'":\\|,.<>?\/-])[A-Za-z\d!@#$%^&*()_+\[\]{};\'":\\|,.<>?\/-]{8,}$/';//Contraseña de 8 caracteres, al menos 1: mayúsculas, minúsculas, números y carácter especiales.
-
 
 preg_match("/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü'´]+$/", $string);//Compara. 1 sí, 0 no, false error.

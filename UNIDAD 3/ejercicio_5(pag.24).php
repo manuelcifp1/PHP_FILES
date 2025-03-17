@@ -24,6 +24,7 @@
         }    
     ?>
     <form action="#" method="get">
+        
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" <?php if(!empty($_GET['nombre'])):;?> value="<?php echo htmlspecialchars($_GET['nombre'], ENT_QUOTES, 'UTF-8')  ?> <?php endif ?>" required>
         <?php
@@ -69,9 +70,9 @@
             if($validarNombre && $validarEmail && $validarEdad && $validarContrasenia) {
                 $exito = "<p>Todos los campos se han rellenado correctamente.</p>";
                 echo $exito;
-            }        
-
+            }
         ?>
+
     </form>  
     
 </body>
