@@ -6,6 +6,13 @@
     <title>VALIDACIÓN FORMULARIOS</title>
 </head>
 <body>
+<!--Desarrolla un formulario para registrar a un usuario con los siguientes campos:
+● Nombre: Solo puede contener letras (mayúsculas o minúsculas) y espacios.
+● Correo electrónico: Debe ser un correo válido.
+● Edad: Debe ser un número entre 18 y 99.
+● Contraseña: Debe tener al menos 6 caracteres.
+● Si algún campo no es válido, debe mostrar un mensaje de error específico debajo del campo correspondiente.
+ Si todos los campos son correctos, debe mostrar un mensaje de éxito. Los errores se deben registrar y mostrar.-->
 <?php
         $errores = [];
         $exito = "";
@@ -24,7 +31,7 @@
         }    
     ?>
     <form action="#" method="get">
-        
+
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" <?php if(!empty($_GET['nombre'])):;?> value="<?php echo htmlspecialchars($_GET['nombre'], ENT_QUOTES, 'UTF-8')  ?> <?php endif ?>" required>
         <?php

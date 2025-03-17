@@ -6,6 +6,13 @@
     <title>SPAM</title>
 </head>
 <body>
+<!--
+Realiza un formulario con los siguientes datos: nombre, teléfono, email y mensaje.
+● Cuando se pulse en enviar debe mostrar la siguiente plantilla:
+                “Hola nombre!
+                Te voy a enviar spam a correo y te llamaré por la madrugada al telefono.
+                mensaje
+                Enviado desde un iPhone”-->
     <form action="#" method="get">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" <?php if(!empty($_REQUEST['nombre'])):?> value="<?php echo $_REQUEST['nombre'];?>" <?php endif;?> required>

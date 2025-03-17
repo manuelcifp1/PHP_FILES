@@ -6,6 +6,11 @@
     <title>SACA AL PERRO JODER</title>
 </head>
 <body>
+<!--
+● Escribe en un textarea una lista de nombres.
+● Cuando pulses un botón debes mostrar un nombre aleatorio. (Será el
+encargado de sacar al perro)
+● Muestra con la siguiente plantilla: $nombre saca al perro.-->
     <form action="#" method="get">
         <textarea name="nombres" id="nombres" value="nombres"></textarea>
         <button type="submit">ENVIAR</button>

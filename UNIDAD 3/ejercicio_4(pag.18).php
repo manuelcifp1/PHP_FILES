@@ -6,6 +6,19 @@
     <title>Document</title>
 </head>
 <body>
+<!--● Muestra la siguiente adivinanza:
+“Esta cosa se devora a todas las cosas;
+Pájaros, bestias, árboles, flores;
+Carcome el hierro, muerde el acero;
+Muele duras piedras y las reduce a harina;
+Mata al rey, arruina la ciudad,
+Y derriba a la montaña.”
+● En un input, pide la respuesta.
+● Añade un botón de submit.
+● Si se pulsa el botón debes comprobar si ha acertado. La respuesta es: Tiempo.
+● Si acierta felicítale.
+● Si pierde, muestra la respuesta y cómetelo.-->
+
     <h2>ADIVINANZA:</h2>
     <h3>“Esta cosa se devora a todas las cosas;<br>
         Pájaros, bestias, árboles, flores;<br>

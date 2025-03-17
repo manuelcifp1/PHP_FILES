@@ -6,6 +6,19 @@
     <title>COMENTARIO</title>
 </head>
 <body>
+<!--
+Crea una página web en PHP que contenga un formulario con los siguientes campos:
+● Nombre (input tipo texto)
+● Email (input tipo email)
+● Comentario (input tipo textarea)
+Cuando el usuario envíe el formulario, se debe procesar la información en la misma página y mostrar un
+mensaje con los datos enviados. Para ello, deberás usar la función isset() para verificar si el formulario ha
+sido enviado, y el array superglobal $_REQUEST para obtener los valores de los campos del formulario.
+● El formulario debe aparecer siempre en la página.
+● Si los datos fueron enviados correctamente, debajo del formulario debe aparecer un mensaje que diga:
+"Gracias, [Nombre]. Hemos recibido tu comentario."
+● Asegúrate de que los datos enviados se mantengan en los campos del formulario después del envío.-->
+
     <form action="#" method="get">
         <label for="nombre">Nombre: </label>
         <input type="text" name="nombre" id="nombre" <?php if(!empty($_GET['nombre'])):?> value="<?php echo htmlspecialchars($_GET['nombre'], ENT_QUOTES, 'UTF-8');?>" <?php endif;?> required>
