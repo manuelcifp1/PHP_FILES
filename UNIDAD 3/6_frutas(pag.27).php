@@ -26,8 +26,8 @@ en la página.-->
     <form action="#" method="get">
         <?php
         for($i = 1; $i <= $cuantas; $i++) :?>
-        <label for="frutas">Introduce fruta</label>
-        <input type="text" name="frutas[]" value="fruta<?php $i; ?>">
+        <label for="frutas">Introduce fruta <?= $i ?></label>
+        <input type="text" name="frutas[]" value="fruta <?= $i?>" id="fruta <?= $i?>">        
         <?php endfor; ?>
         <button type="submit">ENVIAR</button>
     </form>
