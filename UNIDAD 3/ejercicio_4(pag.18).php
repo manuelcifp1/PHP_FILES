@@ -23,7 +23,7 @@
         <?php
             if(!empty($_GET['respuesta'])) {
                 $respuesta = htmlspecialchars($_GET['respuesta']);
-                $respuesta = trim($respuesta);
+                $respuesta = trim(strtolower($respuesta));
                 $respuesta = strtolower($respuesta);
 
                 if ($respuesta == "tiempo") {

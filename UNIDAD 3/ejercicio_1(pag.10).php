@@ -24,6 +24,7 @@
     <?php
         if(!empty ($_GET['nombre']) && !empty($_GET['email'])  && !empty($_GET['apellido']) && !empty($_GET['comentario'])) {
             $nombre = $_GET['nombre'];
+            $nombre = trim(strtolower($nombre));
             echo "<p>Gracias, $nombre. Hemos recibido tu comentario</p>";
         }           
     ?>

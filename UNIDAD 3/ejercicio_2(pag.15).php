@@ -26,6 +26,7 @@
 
         if(!empty($_REQUEST['nombre']) && !empty($_REQUEST['telefono']) && !empty($_REQUEST['email']) && !empty($_REQUEST['mensaje'])) {
             $nombre = htmlspecialchars($_REQUEST['nombre']);
+            $nombre = trim(strtolower($nombre));
             $telefono = htmlspecialchars($_REQUEST['telefono']);
             $email = htmlspecialchars($_REQUEST['email']);
             $mensaje = htmlspecialchars($_REQUEST['mensaje']);
