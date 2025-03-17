@@ -18,10 +18,10 @@ en la página.-->
         <button type="submit">ENVIAR</button>
     </form>
     <?php
-    $cuantas = 0;//Esto evita errores de variables no definidas.
-    if(!empty($_GET['cuantas'])) {
-        $cuantas = (int) $_GET['cuantas'];
-    }
+        $cuantas = 0;//Esto evita errores de variables no definidas.
+        if(!empty($_GET['cuantas'])) {
+            $cuantas = (int) $_GET['cuantas'];
+        }
     ?>    
     <form action="#" method="get">
         <?php
@@ -32,12 +32,11 @@ en la página.-->
         <button type="submit">ENVIAR</button>
     </form>
     <?php
-    if(!empty($_GET['frutas'])) {
-        foreach($_GET['frutas'] as $fruta) {
-            echo "$fruta<br>";
-        } 
-    }
+        if(!empty($_GET['frutas'])) {
+            foreach($_GET['frutas'] as $fruta) {
+                echo "$fruta<br>";
+            } 
+        }
     ?>    
-    
 </body>
 </html>
