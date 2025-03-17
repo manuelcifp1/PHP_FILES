@@ -11,7 +11,7 @@
         <input type="text" name="nombre" id="nombre" <?php if(!empty($_GET['nombre'])):?> value="<?php echo htmlspecialchars($_GET['nombre'], ENT_QUOTES, 'UTF-8');?>" <?php endif;?> required>
 
         <label for="email">Email: </label>
-        <input type="email" name="email" id="email" <?php if(!empty($_GET['email'])):?> value="<?php echo htmlspecialchars($_GET['email'], ENT_QUOTES, 'UTF-8');?>" <?php endif;?> required>
+        <input type="email" name="email" id="email" <?php if(!empty($_GET['email'])):?> value="<?php echo filter_var($_GET['email'], FILTER_VALIDATE_EMAIL);?>" <?php endif;?> required>
 
         <label for="apellido">Apellido: </label>
         <input type="text" name="apellido" id="apellido" <?php if(!empty($_GET["apellido"])):?> value="<?php echo htmlspecialchars($_GET['apellido'], ENT_QUOTES, 'UTF-8');?>" <?php endif;?> required>    

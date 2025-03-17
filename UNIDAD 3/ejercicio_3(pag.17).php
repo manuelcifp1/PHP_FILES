@@ -11,7 +11,7 @@
         <button type="submit">ENVIAR</button>
     </form>
     <?php
-    if(isset($_GET['nombres'])) {
+    if(!empty($_GET['nombres'])) {
         $nombres = $_GET['nombres'];
         $nombres = explode(' ', $nombres);
         $aleatorio = rand(0, (count($nombres) - 1));

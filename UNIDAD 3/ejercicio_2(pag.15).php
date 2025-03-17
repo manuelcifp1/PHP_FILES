@@ -24,7 +24,7 @@
 
     <?php
 
-        if(isset($_REQUEST['nombre']) && isset($_REQUEST['telefono']) && isset($_REQUEST['email']) && isset($_REQUEST['mensaje'])) {
+        if(!empty($_REQUEST['nombre']) && !empty($_REQUEST['telefono']) && !empty($_REQUEST['email']) && !empty($_REQUEST['mensaje'])) {
             $nombre = htmlspecialchars($_REQUEST['nombre']);
             $telefono = htmlspecialchars($_REQUEST['telefono']);
             $email = htmlspecialchars($_REQUEST['email']);

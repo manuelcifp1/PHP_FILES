@@ -83,3 +83,8 @@ strtotime($fecha . " +$numeroDias days");//Mucho más sencilla para añadir día
 
 date("Y-m-d H:i:s<br>");//Le das unos parámetros y te da la fecha y hora actuales.
 
+//TEMA 3
+
+"/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü'´]+$/";//RegEx nombre.
+
+preg_match("/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü'´]+$/", $string);//Compara. 1 sí, 0 no, false error.
