@@ -19,7 +19,7 @@ de error correspondiente.-->
 <body>
     <form action="#" method="post" enctype="multipart/form-data">
         <label for="archivo">Subir archivo:</label>
-        <input type="file" name="archivo">
+        <input type="file" name="archivo" id="archivo">
         <button type="submit">Subir</button>
     </form>
     <?php
