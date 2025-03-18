@@ -23,6 +23,10 @@ de error correspondiente.-->
         <button type="submit">Subir</button>
     </form>
     <?php
+    //Inicializamos estas variables para evitar errores.
+    $archivo = null;
+    $destino = null;
+
 
     //Enviamos el archivo.
     if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['archivo'])) {
@@ -58,7 +62,7 @@ de error correspondiente.-->
 
             /*Definir carpeta de destino (usamos basename aunque $archivo['name'] sea sólo el nombre del archivo sin ruta
             por seguridad, para evitar la inyección de una ruta maliciosa.)*/
-            $destino = 'C:\xampp\htdocs\MIS ARCHIVOS\PHP_FILES\PHP_FILES\UNIDAD 3\uploads' . basename($archivo['name']);
+            $destino = 'C:\xampp\htdocs\MIS ARCHIVOS\PHP_FILES\PHP_FILES\UNIDAD 3\uploads\\' . basename($archivo['name']);
 
             //Comprobar si el archivo existe en la carpeta de destino.
             if (file_exists($destino)) {
@@ -66,11 +70,16 @@ de error correspondiente.-->
             }
             }
 
-            //Mover el archivo a carpeta de destino
-            if (move_uploaded_file($archivo['tmp_name'], $destino)) {
-                echo "Archivo subido correctamente a: " . $destino;
+            //Mover el archivo a carpeta de destino, verificando antes que existe ese archivo.
+            if ($archivo && isset($archivo['tmp_name']) && is_uploaded_file($archivo['tmp_name'])) {
+                if (move_uploaded_file($archivo['tmp_name'], $destino)) {
+                    echo "Archivo subido correctamente a: " . $destino;
+                } else {
+                    echo "Error al mover el archivo.";
+                }
             } else {
-                echo "Error al mover el archivo";
+                echo "No se ha subido ningún archivo.";
+            
         }    
 
     ?>
