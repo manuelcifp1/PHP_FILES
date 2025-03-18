@@ -22,52 +22,58 @@ de error correspondiente.-->
         <input type="file" name="archivo">
         <button type="submit">Subir</button>
     </form>
-<?php
+    <?php
 
-//Enviamos el archivo.
-if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['archivo'])) {
-    $archivo = $_FILES['archivo'];
+    //Enviamos el archivo.
+    if($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_FILES['archivo'])) {
 
-    //Validamos error en la subida
-    if($archivo['error'] !== UPLOAD_ERR_OK) {
-        die("Error al subir el archivo.<br>");
-    }
-    
-    //Definimos las variables de las extensiones permitidas, el tamaño máximo y ponemos en minúsculas la extensión del archivo.
-    $extensiones_permitidas = ['jpg', 'jpeg', 'png', 'gif'];
-    $tamaño_maximo = 2 * 1024 * 1024;//2MB
-    $ext = strtolower(pathinfo($archivo['name'], PATHINFO_EXTENSION));
+            /*Asignamos todos los datos del archivo a la variable $archivo:
+            🔹 $_FILES['archivo'] contiene:
+                    name → Nombre original
+                    type → Tipo MIME (image/png, text/plain, etc.)
+                    tmp_name → Ubicación temporal
+                    error → Código de error
+                    size → Tamaño en bytes*/
+            $archivo = $_FILES['archivo'];
 
-    //Validar extensiones permitidas.
-    if(!in_array($ext, $extensiones_permitidas)) {
-        die("Extensión no permitida<br>");
-    }
+            //Validamos error en la subida
+            if($archivo['error'] !== UPLOAD_ERR_OK) {
+                die("Error al subir el archivo.<br>");
+            }
+            
+            //Definimos las variables de las extensiones permitidas, el tamaño máximo y ponemos en minúsculas la extensión del archivo.
+            $extensiones_permitidas = ['jpg', 'jpeg', 'png', 'gif'];
+            $tamaño_maximo = 2 * 1024 * 1024;//2MB
+            $ext = strtolower(pathinfo($archivo['name'], PATHINFO_EXTENSION));
 
-    //Validar tamaño máximo permitido
-    if($archivo['size'] > $tamaño_maximo) {
-        die("Tamaño demasiado grande, límite: " . ($tamaño_maximo / 1024 / 1024) . "MB<br>");
-    }
+            //Validar extensiones permitidas.
+            if(!in_array($ext, $extensiones_permitidas)) {
+                die("Extensión no permitida<br>");
+            }
 
-    /*Definir carpeta de destino (usamos basename aunque $archivo['name'] sea sólo el nombre del archivo sin ruta
-    por seguridad, para evitar la inyección de una ruta maliciosa.)*/
-    $destino = 'C:\xampp\htdocs\MIS ARCHIVOS\PHP_FILES\PHP_FILES\UNIDAD 3\uploads' . basename($archivo['name']);
+            //Validar tamaño máximo permitido
+            if($archivo['size'] > $tamaño_maximo) {
+                die("Tamaño demasiado grande, límite: " . ($tamaño_maximo / 1024 / 1024) . "MB<br>");
+            }
 
-    //Comprobar si el archivo existe en la carpeta de destino.
-    if (file_exists($destino)) {
-        die("Error: el archivo ya existe en la carpeta de destino.<br>");
-    }
-}
+            /*Definir carpeta de destino (usamos basename aunque $archivo['name'] sea sólo el nombre del archivo sin ruta
+            por seguridad, para evitar la inyección de una ruta maliciosa.)*/
+            $destino = 'C:\xampp\htdocs\MIS ARCHIVOS\PHP_FILES\PHP_FILES\UNIDAD 3\uploads' . basename($archivo['name']);
 
-    //Mover el archivo a carpeta de destino
-    if (move_uploaded_file($archivo['tmp_name'], $destino)) {
-        echo "Archivo subido correctamente a: " . $destino;
-    } else {
-        echo "Error al mover el archivo";
-    }
+            //Comprobar si el archivo existe en la carpeta de destino.
+            if (file_exists($destino)) {
+                die("Error: el archivo ya existe en la carpeta de destino.<br>");
+            }
+            }
 
-    
+            //Mover el archivo a carpeta de destino
+            if (move_uploaded_file($archivo['tmp_name'], $destino)) {
+                echo "Archivo subido correctamente a: " . $destino;
+            } else {
+                echo "Error al mover el archivo";
+        }    
 
-?>
+    ?>
     
 </body>
 </html>
