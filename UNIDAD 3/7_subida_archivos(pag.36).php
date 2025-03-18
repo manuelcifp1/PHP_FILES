@@ -78,8 +78,7 @@ de error correspondiente.-->
                     echo "Error al mover el archivo.";
                 }
             } else {
-                echo "No se ha subido ningún archivo.";
-            
+                echo "No se ha subido ningún archivo.";            
         }    
 
     ?>
