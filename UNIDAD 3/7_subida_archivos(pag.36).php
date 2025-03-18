@@ -79,8 +79,7 @@ de error correspondiente.-->
                 }
             } else {
                 echo "No se ha subido ningún archivo.";            
-        }    
-
+        } 
     ?>
     
 </body>
