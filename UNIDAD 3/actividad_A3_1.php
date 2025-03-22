@@ -132,21 +132,29 @@ echo "<br><br>";
  de menor a mayor según la longitud de sus nombres.*/
   $ciudades = ["Roma", "Santiago", "Buenos Aires", "Lima", "La Paz", "Montevideo"];
 
-  usort($ciudades, fn ($cityA, $cityB) => ($cityA.length)<=>$cityB.length);
+  usort($ciudades, fn ($cityA, $cityB) => (strlen($cityA))<=>strlen($cityB));
 
-  print_r($precios);
+  print_r($ciudades);
  
   echo "<br><br>";
 /*Tienes un array que contiene números negativos y positivos. Usa usort con una función flecha
  y el operador de nave espacial para ordenarlos de menor a mayor.*/
  $numeros = [3, -1, -4, 2, 0, -2, 5];
 
+ usort($numeros, fn ($numA, $numB) =>  $numA<=>$numB);
+
+ print_r($numeros);
+
+ echo "<br><br>";
+
+
+
 
 /*Tienes un array de productos, cada uno con un precio y un nombre. Usa usort y una función flecha
  para ordenar los productos de menor a mayor por precio. Si dos productos tienen el mismo precio,
   ordénalos alfabéticamente por nombre.*/
 
-$productos = [
+$productitos = [
 
     ["nombre" => "Producto A", "precio" => 200],
 
@@ -157,3 +165,11 @@ $productos = [
     ["nombre" => "Producto D", "precio" => 100],
 
 ];
+
+usort($productitos, fn($a, $b) =>
+    ($a['precio'] <=> $b['precio']) !== 0
+        ? $a['precio'] <=> $b['precio']
+        : $a['nombre'] <=> $b['nombre']
+);
+
+print_r($productitos);
