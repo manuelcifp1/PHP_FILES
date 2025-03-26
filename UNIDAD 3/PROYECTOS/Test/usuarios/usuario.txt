@@ -1,0 +1,11 @@
+{"nombre":"manolo","apellidos":"alba","direccion_tipo":"calle","direccion_valor":"Independencia"}
+{"nombre":"manolo","apellidos":"alba","direccion_tipo":"calle","direccion_valor":"Independencia"}
+{"nombre":"Manuel","apellidos":"perez","direccion_tipo":"avenida","direccion_valor":"Sanidad Pública"}
+{"nombre":"pedro","apellidos":"garcia","direccion_tipo":"avenida","direccion_valor":""}
+{"nombre":"pedro","apellidos":"garcia","direccion_tipo":"calle","direccion_valor":"Independencia"}
+{"nombre":"Manuel","apellidos":"alba","direccion_tipo":"calle","direccion_valor":"Independencia"}
+{"nombre":"antonio","apellidos":"diaz","direccion_tipo":"calle","direccion_valor":"Independencia"}
+{"nombre":"maria","apellidos":"gonz","direccion_tipo":"avenida","direccion_valor":"De La República"}
+{"nombre":"luis","apellidos":"dominguez","direccion_tipo":"calle","direccion_valor":"Real"}
+{"nombre":"pedro","apellidos":"lopez","direccion_tipo":"calle","direccion_valor":"Independencia"}
+{"nombre":"ana","apellidos":"diaz","direccion_tipo":"calle","direccion_valor":"Independencia"}
