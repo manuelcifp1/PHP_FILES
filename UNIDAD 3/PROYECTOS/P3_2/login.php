@@ -6,7 +6,8 @@
     <title>Login</title>
 </head>
 <body>
-    <form action="login.php" method="post">
+<!--En action incluimos el nombre del archivo de subida de idems. Si todo está correcto aquí, te redirecciona directamente a él.-->
+    <form action="subida_archivo.php" method="post">
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" id="usuario" required>
 
@@ -24,19 +25,16 @@
         $usuario = htmlspecialchars($_POST['usuario']);
         $password = htmlspecialchars($_POST['password']);
         
+        //Uso las funciones de validación.
         include 'funciones.php';
         validarUsuario($usuario);
         validarPassword($password);
 
-        $userData = buscarUsuario($usuario);
-        if ($userData && $userData['password'] === $password) {
-            session_start();
-            $_SESSION['usuario'] = $usuario;
-            header('Location: subida_archivo.php');
-            exit;
-        } else {
+        //Uso la función para buscar al usuario por si ya existe o no, y compruebo su contraseña.
+        $datosUsuario = buscarUsuario($usuario);
+        if (!$datosUsuario || $datosUsuario['password'] !== $password) {
             echo "<p>Usuario o contraseña incorrectos.</p>";
-        }
+        }        
     }
     ?>
 </body>

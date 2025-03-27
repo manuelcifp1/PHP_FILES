@@ -27,21 +27,26 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        //Creo variables con sus validaciones.
         $usuario = htmlspecialchars($_POST['usuario']);
         $password = htmlspecialchars($_POST['password']);
         $repite_password = htmlspecialchars($_POST['repite_password']);
         $pregunta = htmlspecialchars($_POST['pregunta']);
         $respuesta = htmlspecialchars($_POST['respuesta']);
 
+        //Y vuelvo a usar mis funciones.
         include 'funciones.php';
         validarUsuario($usuario);
         validarPassword($password);
 
+        //Validación para ver si las dos contraseñas coinciden.
         if ($password !== $repite_password) {
             echo "<p>Las contraseñas no coinciden.</p>";
         } elseif (buscarUsuario($usuario)) {
             echo "<p>El usuario ya existe.</p>";
         } else {
+            //Creo el array que terminará en el archivo JSON.
             $nuevo = [
                 'usuario' => $usuario,
                 'password' => $password,

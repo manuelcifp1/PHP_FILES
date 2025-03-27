@@ -10,18 +10,21 @@
     include 'funciones.php';
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        //Nos ahorramos el isset usando el operador fusión null.
         $usuario = htmlspecialchars($_POST['usuario'] ?? '');
         $respuesta = htmlspecialchars($_POST['respuesta'] ?? '');
 
+        //Validaciones con las funciones del archivo del mismo nombre.
         if (!empty($usuario)) {
             validarUsuario($usuario);
-            $userData = buscarUsuario($usuario);
+            //Y búsqueda del usuario para ver si existe.
+            $datosUsuario = buscarUsuario($usuario);
 
-            if (!$userData) {
+            if (!$datosUsuario) {
                 echo "<p>Usuario no encontrado.</p>";
             } elseif (empty($respuesta)) {
-                // Primera fase: mostramos la pregunta secreta
-                $pregunta = $userData['pregunta'];
+                //Primera fase: mostramos la pregunta secreta creando código html dinámicamente.
+                $pregunta = $datosUsuario['pregunta'];
                 echo "
                 <form action='olvido_password.php' method='post'>
                     <input type='hidden' name='usuario' value='$usuario'>
@@ -30,9 +33,9 @@
                     <button type='submit'>Ver contraseña</button>
                 </form>";
             } else {
-                // Segunda fase: comprobamos la respuesta
-                if ($userData['respuesta'] === $respuesta) {
-                    $password = $userData['password'];
+                //Segunda fase: compruebo la respuesta y muestro la contraseña extrayéndola de $datosUsuario.
+                if ($datosUsuario['respuesta'] === $respuesta) {
+                    $password = $datosUsuario['password'];
                     echo "<p>$usuario</p>";
                     echo "<p>Tu contraseña es: <strong>$password</strong></p>";
                 } else {
@@ -43,13 +46,13 @@
     }
     ?>
 
-    <!-- Formulario inicial -->
+    <!--Y aquí está el formulario inicial.-->
     <form action="olvido_password.php" method="post">
         <label for="usuario">Dime tu nombre de usuario:</label>
         <input type="text" name="usuario" id="usuario" required>
         <button type="submit">Enviar</button>
     </form>
-
+<!--Enlace para volver al login.-->
     <a href="./login.php"><button>VOLVER A LOGIN</button></a>
 </body>
 </html>
