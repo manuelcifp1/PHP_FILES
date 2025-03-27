@@ -7,7 +7,7 @@
 </head>
 <body>
 
-<!--En action incluimos el nombre del archivo actual para que se valide aquí mismo. Solo si está correcto, se mostrará otro formulario que lleva a subida_archivo.php-->
+<!--En action incluyo el nombre del archivo actual para que se valide aquí mismo. Solo si está correcto, se mostrará otro formulario que lleva a subida_archivo.php-->
     <form action="login.php" method="post">
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" id="usuario" required>
