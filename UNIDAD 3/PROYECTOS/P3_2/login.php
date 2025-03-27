@@ -6,8 +6,9 @@
     <title>Login</title>
 </head>
 <body>
-<!--En action incluimos el nombre del archivo de subida de idems. Si todo está correcto aquí, te redirecciona directamente a él.-->
-    <form action="subida_archivo.php" method="post">
+
+<!--En action incluimos el nombre del archivo actual para que se valide aquí mismo. Solo si está correcto, se mostrará otro formulario que lleva a subida_archivo.php-->
+    <form action="login.php" method="post">
         <label for="usuario">Usuario:</label>
         <input type="text" name="usuario" id="usuario" required>
 
@@ -34,6 +35,14 @@
         $datosUsuario = buscarUsuario($usuario);
         if (!$datosUsuario || $datosUsuario['password'] !== $password) {
             echo "<p>Usuario o contraseña incorrectos.</p>";
+        } else {
+            //Si todo es correcto, muestro este formulario oculto que incluye un botón para ir a subida_archivo.php.
+            echo "
+            <form action='subida_archivo.php' method='post'>
+                <input type='hidden' name='usuario' value='$usuario'>
+                <button type='submit'>Acceder a subida de archivo</button>
+            </form>
+            ";
         }        
     }
     ?>
