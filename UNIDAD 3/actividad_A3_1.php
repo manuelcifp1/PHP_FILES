@@ -167,9 +167,7 @@ $productitos = [
 ];
 
 usort($productitos, fn($a, $b) =>
-    ($a['precio'] <=> $b['precio']) !== 0
-        ? $a['precio'] <=> $b['precio']
-        : $a['nombre'] <=> $b['nombre']
+    ($a['precio'] <=> $b['precio']) !== 0 ? $a['precio'] <=> $b['precio'] : $a['nombre'] <=> $b['nombre']
 );
 
 print_r($productitos);

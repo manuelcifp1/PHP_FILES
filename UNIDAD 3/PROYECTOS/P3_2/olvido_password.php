@@ -6,29 +6,33 @@
     <title>Olvido password</title>
 </head>
 <body>
-    <form action="./login.php" method="post">
-
+    <form action="recordatorio.php" method="post">
         <label for="usuario">Dime tu nombre de usuario:</label>
-        <input type="text" name="usuario" id="usuario" value="" required>
+        <input type="text" name="usuario" id="usuario" required>
         <button type="submit">Enviar</button>
-
-        <label for="respuesta">¿De qué color es el caballo blanco de Santiago?</label>
-        <input type="text" name="respuesta" id="respuesta" value="" required>
-        
     </form>
 
     <?php
-        if (!empty($_POST['usuario']) && !empty($_POST['respuesta'])) {
-            $usuario = htmlspecialchars($_POST['usuario']);        
-            $respuesta = htmlspecialchars($_POST['respuesta']);
-            
-            //Validamos datos con funciones.
-            include 'funciones.php';
-            validarUsuario($usuario);
-            
-        }
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && !empty($_POST['usuario'])) {
+        include 'funciones.php';
+        $usuario = htmlspecialchars($_POST['usuario']);
+        validarUsuario($usuario);
+        $userData = buscarUsuario($usuario);
 
+        if ($userData) {
+            //Mostramos la pregunta secreta si se encuentra
+            $pregunta = $userData['pregunta'];
+            echo "
+            <form action='recordatorio.php' method='post'>
+                <input type='hidden' name='usuario' value='$usuario'>
+                <label for='respuesta'>{$pregunta}</label>
+                <input type='text' name='respuesta' id='respuesta' required>
+                <button type='submit'>Ver contraseña</button>
+            </form>";
+        } else {
+            echo "<p>Usuario no encontrado.</p>";
+        }
+    }
     ?>
-    
 </body>
 </html>
