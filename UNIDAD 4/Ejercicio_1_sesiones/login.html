@@ -1,0 +1,31 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+</head>
+<!--Ejercicio: Sistema de Inicio de Sesión Seguro en PHP:
+
+    - Crear un formulario de inicio de sesión simple con autenticación.
+
+    - Implementar técnicas de seguridad como:
+
+        * Regeneración del ID de sesión en cada inicio de sesión.
+
+        * Uso de variables de sesión para verificar la identidad del usuario.
+
+        * Cierre de sesión tras un tiempo de inactividad.
+
+        * Comprobación del agente de usuario para mitigar el secuestro de sesión.-->
+<body>
+    <h2>Inicio de sesión seguro</h2>
+    <form method="POST" action="login.php">
+        <label for="username">Usuario:</label>
+        <input type="text" name="username" required>
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" required>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+</body>
+</html>
