@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+</head>
+<body>
+    <form action="registro.php" method="post">
+        <label for="usuario">Usuario:</label>
+        <input type="text" name="usuario" id="usuario" value="<?= $_POST['usuario'] ?? '' ?>" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="text" name="password" id="password" required>
+
+        <label for="repite_password">Repite contraseña:</label>
+        <input type="text" name="repite_password" id="repite_password" required>
+
+        
+
+        <button type="submit">REGISTRARSE</button>
+    </form>
+
+<?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+
+        //Creo variables con sus validaciones.
+        $usuario = htmlspecialchars($_POST['usuario']);
+        $password = htmlspecialchars($_POST['password']);
+        $repite_password = htmlspecialchars($_POST['repite_password']);
+        
+
+        //Y vuelvo a usar mis funciones.
+        include 'funciones.php';
+        validarUsuario($usuario);
+        validarPassword($password);
+
+        //Validación para ver si las dos contraseñas coinciden.
+        if ($password !== $repite_password) {
+            echo "<p>Las contraseñas no coinciden.</p>";
+        } elseif (buscarUsuario($usuario)) {
+            echo "<p>El usuario ya existe.</p>";
+        } else {
+            //Creo el array que terminará en el archivo JSON.
+            $nuevo = [
+                'usuario' => $usuario,
+                'password' => $password,                
+            ];
+            guardarUsuario($nuevo);
+            echo "<p>Usuario registrado con éxito. <a href='login.php'>Ir al login</a></p>";
+        }
+    }
+?>
+</body>
+</html>

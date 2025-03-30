@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar sesión</title>
+</head>
+<!--● Crear un formulario de inicio de sesión simple con autenticación.
+
+● Validar los campos insertados.
+
+● Comprobar que el usuario está registrado(nombre y contraseña) en un
+archivo JSON dentro de la carpeta Usuarios.
+
+● Permitir que el usuario pueda registrarse, en el caso de no estar
+no registrado ya.
+
+● Al menos se necesita una vista para loguearse, para registrarse,
+zona privada y logout.
+
+● Implementar técnicas de seguridad como:
+    ○ Regeneración del ID de sesión en cada inicio de sesión.
+    ○ Uso de variables de sesión para verificar la identidad del usuario.
+    ○ Cierre de sesión tras un tiempo de inactividad.
+    ○ Comprobación del agente de usuario para mitigar el secuestro de sesión.
+
+● Investiga y utiliza otra técnica de seguridad.-->
+
+<body>
+    <h2>Inicio de sesión seguro</h2>
+    <form method="POST" action="login.php">
+
+        <label for="usuario">Usuario:</label>
+        <input type="text" name="usuario" required>
+
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" required>
+
+        <button type="submit">Iniciar sesión</button>
+        
+    </form>
+
+    <a href="./registro.php">¿Aún no estás registrado?</a>
+</body>
+</html>
