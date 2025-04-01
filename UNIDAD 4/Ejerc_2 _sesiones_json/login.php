@@ -1,36 +1,38 @@
-
 <?php
-// 🧠 Iniciamos la sesión para poder usar $_SESSION y asociar datos a este usuario
+// 🧠 Iniciamos la sesión para poder usar $_SESSION y asociar datos a este username
 session_start();
 
-// 🧪 Comprobamos si el usuario ha enviado el formulario (método POST)
+// 🧪 Comprobamos si el username ha enviado el formulario (método POST)
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     // 📥 Capturamos los datos enviados desde el formulario HTML
-    $usuario = $_POST['usuario'];
+    $username = $_POST['username'];
     $password = $_POST['password'];
 
     //Y vuelvo a usar mis funciones.
     include 'funciones.php';
-    validarUsuario($usuario);
+    validarUsername($username);
     validarPassword($password);
 
-    
-    if(buscarUsuario($usuario) !== $usuario) {
-        echo "<p>Usuario no registrado, regístrese.</p>";
-    } 
-    // 👮‍♂️1.- Aquí se haría la verificación con una base de datos real.
-    // Para este ejercicio, validamos contra valores fijos (modo demo)
-    if ($usuario === "admin" && $password === "1234") {
+    // ✅ Obtenemos el array del usuario si está registrado (o null si no lo está)
+    $usuarioEncontrado = buscarUsername($username);
+
+    if (!$usuarioEncontrado) {
+        echo "<p>Usuario no registrado, regístrese.</p><br>";
+        echo "<a href='./registro.php'>IR A REGISTRO</a>";        
+        exit;
+    }
+
+    // ✅ Verificamos la contraseña cifrada con password_verify
+    if (password_verify($password, $usuarioEncontrado['password'])) {
 
         // 🔄2.- Reforzamos la seguridad regenerando el ID de sesión actual.
-        // Esto ayuda a prevenir ataques de secuestro de sesión (session hijacking)
         session_regenerate_id(true);
 
-        // 💾3.- Guardamos el nombre de usuario en una variable de sesión
-        $_SESSION['usuario'] = $usuario;
+        // 💾3.- Guardamos el nombre de username en una variable de sesión
+        $_SESSION['username'] = $username;
 
-        // 📱4.- Guardamos el agente del usuario (navegador) para detectar cambios sospechosos
+        // 📱4.- Guardamos el agente del username (navegador) para detectar cambios sospechosos
         $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
 
         // ⏳5.- Guardamos la hora actual para controlar el tiempo de inactividad
@@ -41,8 +43,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         exit;
 
     } else {
-        // ❌ Si los datos no coinciden, mostramos mensaje de error (muy simple aquí)
-        echo "Usuario o contraseña incorrectos.";
+        // ❌ Si la contraseña no coincide, mostramos mensaje de error
+        echo "usuario o contraseña incorrectos.";
     }
 
 } else {
@@ -50,4 +52,3 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     echo "Acceso no permitido.";
 }
 ?>
-

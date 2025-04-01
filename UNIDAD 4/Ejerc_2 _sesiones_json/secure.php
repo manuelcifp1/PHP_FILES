@@ -4,7 +4,7 @@ session_start();
 //VERIFICACIONES:
 
 //🕵️‍♂️#1: Comprobamos si el usuario ha iniciado sesión
-if (!isset($_SESSION['usuario'])) {
+if (!isset($_SESSION['username'])) {
     header("Location: login.html");
     exit;
 }
@@ -33,6 +33,6 @@ if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > 
 $_SESSION['last_activity'] = time();
 ?>
 
-<h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['usuario']); ?>!</h2>
+<h2>Bienvenido, <?php echo htmlspecialchars($_SESSION['username']); ?>!</h2>
 <p>Estás dentro de la zona segura 🚀</p>
 <a href="logout.php">Cerrar sesión</a>

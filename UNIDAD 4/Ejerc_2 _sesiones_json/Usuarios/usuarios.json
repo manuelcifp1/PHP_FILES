@@ -1,10 +1,10 @@
 [
     {
-        "usuario": "Manalba",
-        "password": "1234"
+        "username": "Manalba",
+        "password": "$2y$10$Ol1wO\/.gotp4p44rBJkZW.4kvnzGKSh22gSzmUVgYkH7GYgwSNW7e"
     },
     {
-        "usuario": "Pepe",
-        "password": "4567"
+        "username": "Pedro",
+        "password": "$2y$10$RXMuUS5A01ACfb\/OEMOh8.IpkV3onlh061G6Ow7ox.vxrcp16SFR6"
     }
 ]
