@@ -8,7 +8,7 @@ function esUsuarioAutenticado() {
     return isset($_SESSION['usuario']);
 }
 
-//Obtiene todos los productos de la base de datos.
+//Obtiene todos los productos de la base de datos, creando un array con los mismos.
 function obtenerProductos() {
     try {
         $db = conectarDB();
