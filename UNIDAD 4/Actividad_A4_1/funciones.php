@@ -5,6 +5,7 @@ function validarUsername($username) {
     if (!preg_match($regExusername, $username)) {
         echo "<p style= 'color: red;'>Usuario no válido.</p>";
     }
+    
 }
 
 //Función para validar contraseña con expresión regular.
