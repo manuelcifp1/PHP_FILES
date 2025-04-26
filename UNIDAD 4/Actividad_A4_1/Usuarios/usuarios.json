@@ -6,5 +6,13 @@
     {
         "username": "Pedro",
         "password": "$2y$10$RXMuUS5A01ACfb\/OEMOh8.IpkV3onlh061G6Ow7ox.vxrcp16SFR6"
+    },
+    {
+        "username": "luis",
+        "password": "$2y$10$\/qj42e5da\/SCYCyHQ3.8YOLx65TRpGE3ZiSAX5f2RpOA4hS.V\/2xG"
+    },
+    {
+        "username": "pedro",
+        "password": "$2y$10$7vbl9Qw06ytNyuZTaicK2OSrC6TMH6NhLV3yv4TX460B3KNLzpwQe"
     }
 ]

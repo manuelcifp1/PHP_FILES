@@ -20,6 +20,37 @@
     </form>
 
     <?php
+        if($_SERVER['REQUEST_METHOD'] == 'POST') {
+            $username = htmlspecialchars($_POST['username']);
+            $password = htmlspecialchars($_POST['password']);
+            $repite_password = htmlspecialchars($_POST['repite_password']);
+
+
+            include "funciones.php";
+
+            validarUsername($username);
+            validarPassword($password);
+
+
+            if($password !== $repite_password) {
+                echo "<p style='color: red;'>Las contraseñas no coinciden.</p>";                
+            } elseif (buscarUsername($username)) {
+                echo "<p>Usuario ya registrado.</p>";
+            } else {
+                $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);
+
+                $nuevo = [
+                    'username' => $username,
+                    'password' => $passwordHasheada,
+                ];
+
+                guardarUsername($nuevo);
+
+                echo "<p>Se ha registrado correctamente.</p>";
+                header("Location: login.html");
+                exit;
+            }
+        }
 
     ?>
 

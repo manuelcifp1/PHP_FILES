@@ -3,23 +3,23 @@
 session_start();
 
 if($_SERVER['REQUEST_METHOD'] == 'POST') {
-	$username = $_POST['username'];
-	$password = $_POST['password'];
+	$username = htmlspecialchars($_POST['username']);
+	$password = htmlspecialchars($_POST['password']);
 
-	include 'funciones.php';
+	include "funciones.php";
 
-validarUsername($username);
-validarPassword($password);
+	validarUsername($username);
+	validarPassword($password);
 
-$usuarioEncontrado = buscarUsername($username);
+	$usuarioEncontrado = buscarUsername($username);
 
-if(!$usuarioEncontrado) {
-	echo "<p>Usuario no encontrado.</p><br>";
-	echo "<p><a>IR A REGISTRO</a></p>";
-	exit;
-}
+	if(!$usuarioEncontrado) {
+		echo "<p>Usuario no registrado</p>";
+		echo "<p><a href='registro.php'>IR AL REGISTRO</a></p>";
+		exit;
+	}
 
-	if(password_verify($password, $usuarioEncontrado['password'])) {
+	if (password_verify($password, $usuarioEncontrado['password'])) {
 
 		session_regenerate_id(true);
 
@@ -30,12 +30,14 @@ if(!$usuarioEncontrado) {
 		$_SESSION['last_activity'] = time();
 
 		header("Location: secure.php");
+		exit;
 	} else {
-		echo "Usuario o contraseña no existen.";
+		echo "<p>Usuario o contraseña incorrectos.</p>";
 	}
-
-
 } else {
-	echo "Acceso no permitido.";
+	echo "<p>Acceso no permitido</p>";
 }
+ 
+?>
+
 
