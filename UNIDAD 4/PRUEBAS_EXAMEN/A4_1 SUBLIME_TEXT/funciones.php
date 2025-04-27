@@ -16,7 +16,7 @@ function validarPassword($password) {
 
 function validarEmail($email) {
 	if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-		echo "<p>Email no válido.</p>"
+		echo "<p>Email no válido.</p>";
 	}
 }
 
