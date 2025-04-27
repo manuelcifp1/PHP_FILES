@@ -1,4 +1,9 @@
 <?php
+/*Conexión a la Base de Datos en PHP
+Crea un archivo en PHP que establezca una conexión a la base de datos tienda_online.
+Usa la extensión mysqli en PHP y asegúrate de manejar errores de conexión.
+Escribe un bloque try-catch para capturar excepciones en caso de que la conexión falle,
+ y muestra un mensaje de error si ocurre. */
 
 function validarNombre($nombre) {
     $regExpNombre = "/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ´' ]+$/";
