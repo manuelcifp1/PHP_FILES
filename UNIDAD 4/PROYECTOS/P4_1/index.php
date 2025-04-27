@@ -42,8 +42,8 @@ $usuario = $_SESSION['usuario']['nombre'] ?? 'Invitado';
 
             <form method="POST" action="carrito/agregar.php">
                 <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
-                <label for="cantidad_<?php echo $producto['id']; ?>">Cantidad:</label>
-                <input type="number" name="cantidad" id="cantidad_<?php echo $producto['id']; ?>" value="1" min="1" max="<?php echo $producto['stock']; ?>">
+                <label for="cantidad_<?= $producto['id']; ?>">Cantidad:</label>
+                <input type="number" name="cantidad" id="cantidad_<?= $producto['id']; ?>" value="1" min="1" max="<?= $producto['stock']; ?>">
                 <button type="submit">Agregar al carrito</button>
             </form>
         </div>
