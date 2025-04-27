@@ -35,8 +35,10 @@
         //Validación para ver si las dos contraseñas coinciden.
         if ($password !== $repite_password) {
             echo "<p>Las contraseñas no coinciden.</p>";
+            //Si el usuario ya existe.
         } elseif (buscarUsername($username)) {
             echo "<p>El usuario ya existe.</p>";
+            //Encriptamos contraseña.
         } else {
             // ✅ Hasheamos la contraseña antes de guardarla
             $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);
