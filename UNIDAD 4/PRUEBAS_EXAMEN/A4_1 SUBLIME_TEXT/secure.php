@@ -7,9 +7,10 @@ if(!isset($_SESSION['username'])) {
 	exit;
 }
 
-if($_SESSION["user_agent"] !== $_SERVER['HTTP_USER_AGENT']) {
+if($_SESSION['user_agent'] !== $_SERVER['HTTP_USER_AGENT']) {
 	session_unset();
 	session_destroy();
+
 	header("Location: login.html");
 	exit;
 }
@@ -17,16 +18,15 @@ if($_SESSION["user_agent"] !== $_SERVER['HTTP_USER_AGENT']) {
 $timeout = 600;
 
 if(isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
-	session_unset();
-	session_destroy();
+	session_unset;
+	session_destroy;
+
 	header("Location: login.html");
 	exit;
 }
 
-$_SESSION['last_activity'] = time();
+$timeout = time();
 
-?>
-
-<h2>¡BIENVENIDO <?= $_SESSION['username'] ?>!</h2>
-<p>Estás en zona segura.</p>
-<p><a href="logout.php">Cerrar sesión.<a></p>
+<h2>¡Bienvenido <?= $_SESSION['username'] ?>!</h2>
+<p>Estás en un zona segura</p>
+<p><a href="logout.php">Cerrar sesión.</a></p>
