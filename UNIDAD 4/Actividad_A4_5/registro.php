@@ -33,6 +33,17 @@ Crea un archivo que muestre un formulario de registro con los campos
 if($_SERVER('REQUEST_METHOD') == 'POST') {
     $nombre = $_POST['nombre'];
     $email = $_POST['email'];
+    $password = $_POST['password'];
+
+    include "funciones.php";
+
+    validarNombre($nombre);
+    validarEmail($email);
+    validarPassword($password);
+
+    $nombre = htmlspecialchars($nombre);
+    $email = htmlspecialchars($email);
+
     
 }
 

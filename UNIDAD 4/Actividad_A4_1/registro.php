@@ -23,14 +23,16 @@
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         //Creo variables con sus validaciones.
-        $username = htmlspecialchars($_POST['username']);
-        $password = htmlspecialchars($_POST['password']);
-        $repite_password = htmlspecialchars($_POST['repite_password']);
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $repite_password = $_POST['repite_password'];
 
         //Y vuelvo a usar mis funciones.
         include 'funciones.php';
         validarUsername($username);
         validarPassword($password);
+
+        $username = htmlspecialchars($username);
 
         //Validación para ver si las dos contraseñas coinciden.
         if ($password !== $repite_password) {
