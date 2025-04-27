@@ -14,6 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     validarUsername($username);
     validarPassword($password);
 
+    $username = htmlspecialchars($username);    
+
     // ✅ Obtenemos el array del usuario si está registrado (o null si no lo está)
     $usuarioEncontrado = buscarUsername($username);
 
