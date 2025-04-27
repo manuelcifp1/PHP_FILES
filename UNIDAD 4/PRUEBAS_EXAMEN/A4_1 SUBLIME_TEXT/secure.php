@@ -26,6 +26,7 @@ if(isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > 
 }
 
 $timeout = time();
+?>
 
 <h2>¡Bienvenido <?= $_SESSION['username'] ?>!</h2>
 <p>Estás en un zona segura</p>
