@@ -18,35 +18,40 @@
         <a href="registro.php">¿Aun no estás registrado?</a>
         
     </form>
-    <?php
 
+    <?php
+    //SESSION START
     session_start();
 
+    //ENVÍO DATOS Y VALIDACIONES
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
+       $email = $_POST['email'];
+       $password = $_POST['password'];
 
-        include "funciones.php";
+       include "funciones.php";
 
-        validarEmail($email);
-        validarPassword($password);
+       validarEmail($email);
+       validarPassword($password);
 
-        $email = htmlspecialchars($email);
+       $email = htmlspecialchars($email);
 
+        //ASIGNAR RESULTADO VERIFICAR CREDENCIALES A LA VARIABLE USUARIO.
         $usuario = verificarCredenciales($email, $password);
 
+        //SI USUARIO ES TRUE, REALIZAR SECURES DE SESIÓN.
         if($usuario) {
             session_regenerate_id(true);
-            $_SESSION['usuario'] = $usuario;
+            $_SESSION['email'] = $email;
             $_SESSION['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
             $_SESSION['last_activity'] = time();
-            header('Location: productos.php');
+            header("Location: productos.php");
             exit;
         } else {
-            echo "<p style= 'color: red;'>Credenciales incorrectas</p>";
+            echo "<p style='color:red;'>Credenciales incorrectas.</p>";
         }
     }
     
 
     ?>    
 </body>
+</html>

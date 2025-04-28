@@ -1,5 +1,6 @@
 <?php
 
+//VALIDACIONES================================================================
 function validarUsername($username) {
 	$regExUsername = "/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ´' ]+$/";
 	if(!preg_match($regExUsername, $username)) {
@@ -20,6 +21,7 @@ function validarEmail($email) {
 	}
 }
 
+//FUNCIONES PARA EL JSON==========================================================
 function buscarUsername($username) {
 	$usernames = obtenerUsernames();
 

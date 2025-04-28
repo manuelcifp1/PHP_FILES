@@ -1,13 +1,17 @@
 <?php
 
+//ENVÍO DE DATOS CON COMPROBACIÓN EXISTENCIA $_GET['TEMA']
 if($_SERVER['REQUEST_METHOD'] == 'GET' && isset($_GET['tema'])) {
 	$tema = $_GET['tema'];
 
+	//CREAMOS LA COOKIE
 	setcookie('tema', $tema, time() + 60 * 30);
 }
 
+//ASIGNAMOS A $TEMASELECCIONADO $_COOKIE['TEMA'] ?? 'CLARO'
 $temaSeleccionado = $_COOKIE['tema'] ?? 'claro';
 
+//SI $SELECCIONADO === 'OSCURO', ASIGNAMOS A LA CLASE DEL BODY ESTILOS OSCUROS Y SI CLARO LO MISMO
 if($temaSeleccionado === 'oscuro') {
 	$estiloBody = 'background-color: darkBlue; color: lime;';
 } else {

@@ -1,4 +1,6 @@
 <?php
+
+//VALIDACIONES=============================================================================
 function validarNombre($nombre) {
     $regExpNombre = "/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ´' ]+$/";
     if (!preg_match($regExpNombre, $nombre)) {
@@ -19,6 +21,7 @@ function validarEmail($email) {
     }
 }
 
+//CONECTAR DB================================================================================
 function conectarDB() {
 	$host = 'localhost';
 	$usuario = 'root';
@@ -29,54 +32,59 @@ function conectarDB() {
 		$conexion = new mysqli($host, $usuario, $password, $baseDeDatos);
 
 		if($conexion->connect_error) {
-			throw new Exception('Error al conectar a la BD: ' . $conexion->connect_error);
+			throw new Exception('Error al conectar a la base de datos: ' . $conexion->connect_error);
 		}
 		return $conexion;
-	} catch (Exception $e) {
+	} catch(Exception $e) {
 		die('Error de conexión: ' . $e->getMessage());
 	}
 }
 
+//USUARIO EXISTE
 function usuarioExiste($email) {
 	$db = conectarDB();
-	$stmt = db->prepare("SELECT id FROM usuarios WHERE email = ?");
-	$stmt->db2_bind_param("s", $email);
+	$stmt = $db->prepare("SELECT id FROM usuarios WHERE email = ?");
+	$stmt->bind_param("s", $email);
 	$stmt->execute();
-	$stmt->get_result()->num_rows > 0;
+	return $stmt->get_result()->num_rows > 0;
 }
 
+//REGISTRAR USUARIO
 function registrarUsuario($nombre, $email, $password) {
 	if(usuarioExiste($email)) {
 		return false;
-	} 
+	}
 
 	try {
 		$db = conectarDB();
 		$passwordHash = password_hash($password, PASSWORD_DEFAULT);
-		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password)VALUES (?, ?, ?)");
-		$stmt->bind_param("sss", $nombre, $email, $passwordHash);
+		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)";		
+		$stmt->bind_param("sss", $nombre, $email, $passworHash);
 		return $stmt->execute();
+
 	} catch(Exception $e) {
-		die("Error de conexión: " . $e->getMessage());
+		die("Error al registrar usuario: " . $e->getMessage());
 	}
 }
 
+//VERIFICAR CREDENCIALES
 function verificarCredenciales($email, $password) {
 	try {
 		$db = conectarDB();
 		$stmt = $db->prepare("SELECT * FROM usuarios WHERE email = ?");
-		$stmt -> bind_param("s", $email);
-		$stmt -> execute();
-		$usuario = $stmt ->get_result()->fetch_assoc();
+		$stmt->bind_param("s", $email);
+		$stmt->execute();
+		$usuario = $stmt->get_result()->fetch_assoc();
 
-		if($usuario && password_verify($password, $usuario['password']));
-		return $usuario;
+		if($usuario && password_verify($password, $passwordHash)) {
+			return $usuario;
+		}
+
+		return false;
+
 	} catch(Exception $e) {
 		die("Error al verificar credenciales: " . $e->getMessage());
 	}
 }
-
-
-
 
 ?>

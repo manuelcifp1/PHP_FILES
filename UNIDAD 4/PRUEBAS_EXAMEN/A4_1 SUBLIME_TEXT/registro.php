@@ -22,7 +22,7 @@
     </form>
 
     <?php
-
+    //ENVÍO DATOS Y VALIDACIONES
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = htmlspecialchars($_POST['username']);
         $password = htmlspecialchars($_POST['password']);
@@ -33,18 +33,23 @@
         validarUsername($username);
         validarPassword($password);
 
+        //SI LAS 2 CONTRASEÑAS SON DIFERENTES
         if($password !== $repite_password) {
             echo "<p>Las contraseñas no coinciden</p>";
+        //SI BUSCARUSERNAME ES TRUE    
         } elseif (buscarUsername($username)) {
             echo "<p>El usuario ya existe</p>";
+        //Y YA EN EL CASO CORRECTO, ASIGNAMOS A $PASSWORDHASHEADA    
         } else {
             $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);
 
+            //Y CREAMOS $NUEVO
             $nuevo = [
                 'username' => $username,
                 'password' => $passwordHasheada,
             ];
 
+            //GUARDARUSERNAME($NUEVO) + MENSAJE ÉXITO + HEADER LOGIN.PHP + EXIT
             guardarUsername($nuevo);
             echo "<p>Usuario registrado correctamente</p>";
             header("Location: login.php");

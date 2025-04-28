@@ -12,6 +12,18 @@ Mostrar Lista de Productos desde la Base de Datos:
 - Incluye nombre, descripción, precio, stock.
 - Botón "Añadir al carrito" si stock > 0.
 -->
+<style>
+        .tabla {
+            border: 2px solid black;
+            border-collapse: collapse;
+
+        }
+
+        th, td {
+            border: 2px solid black;
+
+        }
+    </style>
 
 <?php
 session_start();
@@ -23,7 +35,7 @@ $db = conectarDB();
 $resultado = $db->query("SELECT nombre, descripcion, precio, stock FROM productos");
 
 if ($resultado->num_rows > 0) {
-    echo "<table border='1'>";
+    echo "<table class='tabla'>";
     echo "<tr><th>Nombre</th><th>Descripción</th><th>Precio</th><th>Stock</th><th>Acción</th></tr>";
 
     while ($producto = $resultado->fetch_assoc()) {

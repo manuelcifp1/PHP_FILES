@@ -23,6 +23,7 @@
     </form>
 
     <?php
+        //ENVÍO DE DATOS Y VALIDACIONES
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
             $nombre = $_POST['nombre'];
             $email = $_POST['email'];
@@ -37,6 +38,7 @@
             $nombre = htmlspecialchars($nombre);
             $email = htmlspecialchars($email);
 
+            //SI REGISTRARUSUARIO(param) ES TRUE, EXITO Y A LOGIN.
             if(registrarUsuario($nombre, $email, $password)) {
                 echo "<p>Registro exitoso.</p>";
                 echo "<p><a href='login.php'>INICIAR SESIÓN</a></p>";
