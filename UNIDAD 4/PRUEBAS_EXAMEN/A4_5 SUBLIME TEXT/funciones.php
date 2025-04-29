@@ -3,8 +3,8 @@
 //VALIDACIONES=============================================================================
 function validarNombre($nombre) {
     $regExpNombre = "/^[a-zA-ZáéíóúÁÉÍÓÚñÑüÜ´' ]+$/";
-    if (!preg_match($regExpNombre, $nombre)) {
-        echo "<p>El nombre no es correcto.</p>";
+    if(!preg_match($regExpNombre, $nombre)) {
+    	echo "<p>El nombre no es válido.</p>";
     }
 }
 
@@ -30,13 +30,12 @@ function conectarDB() {
 
 	try {
 		$conexion = new mysqli($host, $usuario, $password, $baseDeDatos);
-
 		if($conexion->connect_error) {
-			throw new Exception('Error al conectar a la base de datos: ' . $conexion->connect_error);
+			throw new Exception("Error conectando a la base de datos: ". $conexion->connect_error);	
 		}
-		return $conexion;
+		return $conexion,
 	} catch(Exception $e) {
-		die('Error de conexión: ' . $e->getMessage());
+		die("Error de conexion: " . $e->getMessage());
 	}
 }
 
@@ -57,13 +56,13 @@ function registrarUsuario($nombre, $email, $password) {
 
 	try {
 		$db = conectarDB();
-		$passwordHash = password_hash($password, PASSWORD_DEFAULT);
-		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)");		
+		$passwordHash = password_hash($password, PASSWORD_DEFAULT)
+		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)";
 		$stmt->bind_param("sss", $nombre, $email, $passwordHash);
 		return $stmt->execute();
-
+			
 	} catch(Exception $e) {
-		die("Error al registrar usuario: " . $e->getMessage());
+		die("Fallo en el registro: " . $e->getMessage());
 	}
 }
 
@@ -81,10 +80,9 @@ function verificarCredenciales($email, $password) {
 		}
 
 		return false;
-
 	} catch(Exception $e) {
-		die("Error al verificar credenciales: " . $e->getMessage());
+		die("Error al verificar Credenciales: " . $e->getMessage());
 	}
-}
+ }
 
 ?>
