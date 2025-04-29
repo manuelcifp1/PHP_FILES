@@ -24,24 +24,28 @@
     <?php
     //ENVÍO DATOS Y VALIDACIONES
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
-        $username = htmlspecialchars($_POST['username']);
-        $password = htmlspecialchars($_POST['password']);
-        $repite_password = htmlspecialchars($_POST['repite_password']);
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        $repite_password = $_POST['repite_password'];
 
         include "funciones.php";
 
         validarUsername($username);
         validarPassword($password);
 
+        $username = htmlspecialchars($username);
+
         //SI LAS 2 CONTRASEÑAS SON DIFERENTES
-        if($password !== $repite_password) {
-            echo "<p>Las contraseñas no coinciden</p>";
+       if($password !== $repite_password) {
+        echo "<p>Las contraseñas no coinciden</p>";
+
         //SI BUSCARUSERNAME ES TRUE    
         } elseif (buscarUsername($username)) {
-            echo "<p>El usuario ya existe</p>";
+        echo "<p>Usuario ya registrado</p>";
+
         //Y YA EN EL CASO CORRECTO, ASIGNAMOS A $PASSWORDHASHEADA    
         } else {
-            $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);
+        $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);    
 
             //Y CREAMOS $NUEVO
             $nuevo = [
@@ -49,11 +53,11 @@
                 'password' => $passwordHasheada,
             ];
 
-            //GUARDARUSERNAME($NUEVO) + MENSAJE ÉXITO + HEADER LOGIN.PHP + EXIT
+            //GUARDARUSERNAME($NUEVO) + MENSAJE ÉXITO + ENLACE A LOGIN.PHP
             guardarUsername($nuevo);
-            echo "<p>Usuario registrado correctamente</p>";
-            header("Location: login.php");
-            exit;
+            echo "<p>Usuario registrado correctamente.</p>";
+            echo "<a href='login.php'>Ir a login.</a>";
+            
         }
 
 

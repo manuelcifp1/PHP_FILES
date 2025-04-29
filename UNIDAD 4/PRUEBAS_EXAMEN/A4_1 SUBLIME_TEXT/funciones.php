@@ -35,17 +35,17 @@ function buscarUsername($username) {
 
 function obtenerUsernames() {
 	$ruta = __DIR__ . "/Usuarios/usuarios.json";
-
 	if(!file_exists($ruta)) {
 		return [];
 	}
 	$json = file_get_contents($ruta);
-	return json_decode($json, true);  
+	return json_decode($json, true);
 }
 
 function guardarUsername($nuevoUsername) {
 	$usernames = obtenerUsernames();
 	$usernames[] = $nuevoUsername;
+
 	file_put_contents(__DIR__ . "/Usuarios/usuarios.json", json_encode($usernames, JSON_PRETTY_PRINT));
 }
 
