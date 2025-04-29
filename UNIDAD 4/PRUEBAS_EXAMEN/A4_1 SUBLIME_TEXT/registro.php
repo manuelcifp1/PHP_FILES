@@ -6,19 +6,17 @@
     <title>Registro</title>
 </head>
 <body>
-    <form method="post" action="login.html">
-
+    <form action="registro.php" method="post">
         <label for="username">Usuario:</label>
-        <input type="text" name="username" required>
+        <input type="text" name="username" id="username" value="<?= $_POST['username'] ?? '' ?>" required>
 
         <label for="password">Contraseña:</label>
-        <input type="password" name="password" required>
+        <input type="password" name="password" id="password" required>
 
-        <label for="repite_password">Repetir contraseña:</label>
-        <input type="password" name="repite_password" required>
+        <label for="repite_password">Repite contraseña:</label>
+        <input type="password" name="repite_password" id="repite_password" required>
 
-        <button type="submit">ENVIAR</button>
-        
+        <button type="submit">REGISTRARSE</button>
     </form>
 
     <?php
