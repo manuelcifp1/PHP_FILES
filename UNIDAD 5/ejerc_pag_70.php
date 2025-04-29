@@ -7,19 +7,25 @@ interface Vehiculos {
 class Patinete implements Vehiculos {    
 
     public function moverse() {
-        echo "Está en movimiento";
+        return "Está en movimiento";
     }
 
     public function detenerse() {
-        echo "Está detenido";
+        return "Está detenido";
 
     }
 
 }
 
 abstract class ConClaxon implements Vehiculos {
-    protected function tocarClaxon():string {
-        echo "Piiiiii!!";
+    public function tocarClaxon():string {
+       
+    }
+}
+
+class coche extends ConClaxon {
+    public function tocarClaxon() {
+        return "Honk!!";
     }
 }
 
