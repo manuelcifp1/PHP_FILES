@@ -58,8 +58,8 @@ function registrarUsuario($nombre, $email, $password) {
 	try {
 		$db = conectarDB();
 		$passwordHash = password_hash($password, PASSWORD_DEFAULT);
-		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)";		
-		$stmt->bind_param("sss", $nombre, $email, $passworHash);
+		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)");		
+		$stmt->bind_param("sss", $nombre, $email, $passwordHash);
 		return $stmt->execute();
 
 	} catch(Exception $e) {
@@ -76,7 +76,7 @@ function verificarCredenciales($email, $password) {
 		$stmt->execute();
 		$usuario = $stmt->get_result()->fetch_assoc();
 
-		if($usuario && password_verify($password, $passwordHash)) {
+		if($usuario && password_verify($password, $usuario['password'])) {
 			return $usuario;
 		}
 
