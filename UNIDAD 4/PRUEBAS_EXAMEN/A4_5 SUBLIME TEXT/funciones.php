@@ -33,7 +33,7 @@ function conectarDB() {
 		if($conexion->connect_error) {
 			throw new Exception("Error conectando a la base de datos: ". $conexion->connect_error);	
 		}
-		return $conexion,
+		return $conexion;
 	} catch(Exception $e) {
 		die("Error de conexion: " . $e->getMessage());
 	}
@@ -56,8 +56,8 @@ function registrarUsuario($nombre, $email, $password) {
 
 	try {
 		$db = conectarDB();
-		$passwordHash = password_hash($password, PASSWORD_DEFAULT)
-		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)";
+		$passwordHash = password_hash($password, PASSWORD_DEFAULT);
+		$stmt = $db->prepare("INSERT INTO usuarios (nombre, email, password) VALUES (?,?,?)");
 		$stmt->bind_param("sss", $nombre, $email, $passwordHash);
 		return $stmt->execute();
 			
