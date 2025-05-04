@@ -12,6 +12,71 @@
 
 
 class CuentaBancaria {
-    
+    private string $titular;
+    private float $saldo;
+
+    public function __construct($titular, $saldo) {
+        $this->titular = $titular;
+        $this->saldo = $saldo;
+    }
+
+    public function getSaldo() {
+        return $this-> saldo;
+    }
+
+    public function setSaldo($nuevoSaldo) {
+        $this->saldo = $nuevoSaldo;        
+    }
+
+    public function getTitular() {
+        return $this->titular;
+    }
+
+    public function setTitular($nuevoTitular) {
+        $this->titular = $nuevoTitular;        
+    }
+
+    public function ingresar($cantidad) {        
+        echo "<p>Su saldo actual es de " . $this->saldo . "€</p>";
+        return $this->saldo += $cantidad;
+
+    }
+
+    public function retirar($cantidad) {
+        if($cantidad > $this->saldo) {
+            return "<p>No dispone de suficiente saldo.</p>"; 
+        } else {
+            echo "<p>Su saldo actual es de " . $this->saldo . "€</p>";
+            return $this->saldo -= $cantidad;             
+        }
+
+    }
+
+    public function mostrarSaldo($titular) {
+        return "<p>Su saldo actual es de " . $titular->__getSaldo() . "€</p>";
+    }
 } 
+
+class CuentaAhorro extends CuentaBancaria {
+    protected float $tasaInteres;
+
+    public function __construct($titular, $saldo, $tasaInteres) {
+        parent::__construct($titular, $saldo);
+        $this->tasaInteres = $tasaInteres;
+    }
+
+    public function setTasaInteres($nuevaTasa) {
+        $this->tasaInteres = $nuevaTasa;
+    }
+
+    public function getTasaInteres() {
+        return $this->tasaInteres;
+    }
+
+    public function calcularIntereses() {
+        $intereses = ($this->getSaldo() * $this->getTasaInteres()) / 100;
+        return $intereses;
+    }
+
+}
 ?>

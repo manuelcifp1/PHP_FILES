@@ -1,0 +1,66 @@
+Proyecto P5-1
+1. Clase: Carta
+Descripción: Representa una carta en el juego. Cada carta tiene un valor (por ejemplo, 2,
+3, 4, etc.) y un palo (corazones, tréboles, diamantes, picas).
+Atributos:
+● valor: El valor de la carta (por ejemplo, "Rey", "10", "As").
+● palo: El palo de la carta (por ejemplo, "Corazones", "Tréboles").
+Métodos:
+● mostrar(): Muestra la carta en formato legible (por ejemplo, "As de Corazones").
+● es_igual(carta): Compara si dos cartas son iguales (mismo valor y palo).
+2. Clase: Mazo
+Descripción: Representa el conjunto de cartas. El mazo puede ser barajado y las cartas
+pueden ser repartidas a los jugadores.
+Atributos:
+● cartas: Lista de cartas en el mazo.
+Métodos:
+● barajar(): Mezcla las cartas del mazo de manera aleatoria.
+● repartir(): Reparte una carta a un jugador.
+● quitar_carta(carta): Quita una carta del mazo cuando se reparte.
+Relación con Carta: El mazo está compuesto por varias instancias de la clase Carta. El
+mazo es una colección de cartas.
+3. Clase: Jugador
+Descripción: Representa a un jugador en el juego. Cada jugador tiene un nombre y una
+colección de cartas que ha recibido. El jugador puede jugar cartas en su turno.
+Atributos:
+● nombre: El nombre del jugador (por ejemplo, "Juan").
+● mano: Lista de cartas que el jugador tiene en su mano.
+Métodos:
+● recibir_carta(carta): El jugador recibe una carta del mazo.
+● jugar_carta(carta): El jugador juega una carta, eliminándola de su mano.
+● mostrar_mano(): Muestra las cartas que el jugador tiene en la mano.
+Relación con Carta: El jugador tiene una mano compuesta de objetos de la clase Carta.
+4. Clase: Juego
+Descripción: Representa el flujo principal del juego. Coordina las acciones entre los
+jugadores, el mazo de cartas y el turno de los jugadores.
+Atributos:
+● jugadores: Lista de jugadores que participan en el juego.
+● mazo: El mazo de cartas que se va a usar en el juego.
+● turno: El jugador cuyo turno es en ese momento.
+Métodos:
+● iniciar_juego(): Comienza el juego, repartiendo las cartas a los jugadores.
+● cambiar_turno(): Cambia al siguiente jugador para su turno.
+● finalizar_juego(): Termina el juego, anunciando el ganador o el empate.
+Relación entre las Clases:
+1. Carta: Las cartas son la unidad básica del juego. Cada carta tiene un valor y un
+palo.
+2. Mazo: El mazo contiene un conjunto de cartas. Los métodos de la clase Mazo
+permiten manipular las cartas, como barajarlas y repartirlas.
+3. Jugador: Los jugadores tienen cartas en la mano, las cuales pueden recibir del
+mazo y jugar durante el juego. Cada jugador tiene un turno para realizar su acción.
+4. Juego: La clase Juego es la que organiza la dinámica entre los jugadores, el mazo,
+y las rondas del juego. Coordina el inicio, los turnos y el final del juego.
+Interacciones entre las Clases:
+● El Juego inicia el juego y reparte cartas de la Mazo a los Jugadores.
+● Los Jugadores pueden tener varias Cartas en su mano y en su turno eligen jugar
+una carta.
+● El Mazo se actualiza cuando se reparte una carta a un Jugador o cuando las cartas
+son jugadas.
+Ejemplo de Flujo:
+1. Iniciar juego: La clase Juego comienza el juego.
+2. Repartir cartas: El Juego usa el método repartir() de la clase Mazo para dar
+cartas a los jugadores.
+3. Turno de los jugadores: Los jugadores toman turnos, usando el método
+jugar_carta() de la clase Jugador para jugar cartas.
+4. Final del juego: Cuando se cumplen las condiciones de fin de juego, la clase Juego
+determina el ganador y termina el juego con finalizar_juego().
