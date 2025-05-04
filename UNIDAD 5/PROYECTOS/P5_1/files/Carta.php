@@ -4,7 +4,7 @@ class Carta {
     private string $valor;
     private string $palo;
 
-    //Constructor: inicializa valor y palo
+    //Constructor: con sus 2 atributos: valor y palo.
     public function __construct(string $valor, string $palo) {
         $this->valor = $valor;
         $this->palo = $palo;
@@ -20,13 +20,4 @@ class Carta {
         return $this->valor === $otraCarta->valor && $this->palo === $otraCarta->palo;
     }
 
-    //Getter de valor
-    public function getValor(): string {
-        return $this->valor;
-    }
-
-    //Getter de palo
-    public function getPalo(): string {
-        return $this->palo;
-    }
 }

@@ -8,7 +8,7 @@ $juego = new Juego(["Ana", "Luis"]);
 //2. Repartir cartas a los jugadores (por defecto 3 a cada uno)
 $juego->iniciar_juego();
 
-// 3. Mostrar la mano de cada jugador
+//3. Mostrar la mano de cada jugador
 foreach ($juego->getJugadores() as $jugador) {
     echo "<h3>Cartas de " . $jugador->getNombre() . ":</h3>";
 
@@ -31,10 +31,10 @@ if (!empty($mano)) {
     echo "<p>" . $jugadorActual->getNombre() . " juega: " . $cartaAJugar->mostrar() . "</p>";
 }
 
-// 6. Cambiar al siguiente jugador (solo para mostrarlo, ya que no hay interfaz interactiva)
+//6. Cambiar al siguiente jugador (solo para mostrarlo, ya que no hay interfaz interactiva)
 $juego->cambiar_turno();
 echo "<p>Ahora es el turno de: " . $juego->getTurnoActual()->getNombre() . "</p>";
 
-// 7. Finalizar el juego (como marca el flujo del enunciado)
+//7. Finalizar el juego (como marca el flujo del enunciado)
 $juego->finalizar_juego();
 ?>

@@ -1,4 +1,5 @@
 <?php
+//Requerimos todos los archivos aquí.
 require_once "Carta.php";
 require_once "Mazo.php";
 require_once "Jugador.php";
@@ -46,13 +47,9 @@ class Juego {
         return $this->jugadores;
     }
 
-    // Devuelve el jugador del turno actual
+    //Devuelve el jugador del turno actual
     public function getTurnoActual(): Jugador {
         return $this->jugadores[$this->turno];
     }
-
-    // Devuelve el mazo (por si necesitas inspeccionarlo)
-    public function getMazo(): Mazo {
-        return $this->mazo;
-    }
+    
 }
