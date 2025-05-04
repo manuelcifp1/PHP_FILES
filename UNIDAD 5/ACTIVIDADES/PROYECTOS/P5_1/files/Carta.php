@@ -1,29 +1,31 @@
 <?php
-
+//Clase Carta: representa una carta con valor y palo (baraja española del 1 al 7)
 class Carta {
-    private string $valor; // "1" al "7"
-    private string $palo;  // "Espadas", "Copas", "Oros", "Bastos"
+    private string $valor;
+    private string $palo;
 
+    //Constructor: inicializa valor y palo
     public function __construct(string $valor, string $palo) {
         $this->valor = $valor;
         $this->palo = $palo;
     }
 
-    // Muestra: "3 de Copas", "7 de Bastos", etc.
+    //Devuelve un string como "3 de Oros"
     public function mostrar(): string {
-        return $this->valor . " de " . $this->palo;
+        return "$this->valor de $this->palo";
     }
 
-    // Compara si dos cartas son iguales (valor y palo)
+    //Compara si dos cartas son exactamente iguales
     public function es_igual(Carta $otraCarta): bool {
         return $this->valor === $otraCarta->valor && $this->palo === $otraCarta->palo;
     }
 
-    // Getters opcionales (útiles para debug o visualización)
+    //Getter de valor
     public function getValor(): string {
         return $this->valor;
     }
 
+    //Getter de palo
     public function getPalo(): string {
         return $this->palo;
     }
