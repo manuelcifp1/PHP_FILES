@@ -42,24 +42,31 @@ class Juego {
     - Al jugar las 3 cartas, gana el que tenga más puntos. Pueden terminar en empate.*/
     public function jugar_rondas(): void {
         for ($i = 0; $i < 3; $i++) {
+            //Asignamos un índice del array jugadores a cada jugador.
             $jugador1 = $this->jugadores[0];
             $jugador2 = $this->jugadores[1];
 
+            //Mostramos la mano de cada jugador.
             $mano1 = $jugador1->mostrar_mano();
             $mano2 = $jugador2->mostrar_mano();
 
+            //Seleccionamos las cartas que se van a jugar en la ronda (la primera de cada mano).
             $carta1 = $mano1[0];
             $carta2 = $mano2[0];
 
+            //Jugamos las cartas.
             $jugador1->jugar_carta($carta1);
             $jugador2->jugar_carta($carta2);
 
+            //Mostramos la carta que juega cada uno.
             echo "<p>" . $jugador1->getNombre() . " juega " . $carta1->mostrar() . "</p>";
             echo "<p>" . $jugador2->getNombre() . " juega " . $carta2->mostrar() . "</p>";
 
+            //Obtenemos el valor de las cartas jugadas.
             $valor1 = (int)$carta1->getValor();
             $valor2 = (int)$carta2->getValor();
 
+            //Comparamos las cartas y repartimos puntos según cada posible situación.
             if ($valor1 > $valor2) {
                 $this->puntos[$jugador1->getNombre()] += 2;
                 $this->puntos[$jugador2->getNombre()] -= 1;
@@ -93,11 +100,17 @@ class Juego {
     //Finaliza el juego mostrando la puntuación de cada jugador y quién ha ganado (o si hay empate).
     public function finalizar_juego(): void {
         echo "<h2>Resultado final:</h2>";
+        //foreach para mostrar los puntos de cada uno.
         foreach ($this->puntos as $nombre => $puntos) {
             echo "<p>$nombre: $puntos puntos</p>";
         }
 
+        /*Aquí convertimos el array asociativo $this->puntos en un array con índices numéricos
+        cuyo orden coincide con el array $this->jugadores.
+        Así podemos reutilizar el código con otros jugadores. */
         $valores = array_values($this->puntos);
+
+        //Ahora hacemos la comparación de puntos y mostramos el resultado de la partida.
         if ($valores[0] > $valores[1]) {
             echo "<p><strong>Gana " . $this->jugadores[0]->getNombre() . "!</strong></p>";
         } elseif ($valores[1] > $valores[0]) {
@@ -106,15 +119,16 @@ class Juego {
             echo "<p><strong>Empate</strong></p>";
         }
 
+        //Mensaje de finalización del juego.
         echo "<p>El juego ha terminado.</p>";
     }
 
-    //Devuelve todos los jugadores
+    //Getter que devuelve todos los jugadores.
     public function getJugadores(): array {
         return $this->jugadores;
     }
 
-    //Devuelve el jugador del turno actual
+    //Getter que devuelve el jugador del turno actual.
     public function getTurnoActual(): Jugador {
         return $this->jugadores[$this->turno];
     }

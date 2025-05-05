@@ -19,6 +19,6 @@ foreach ($juego->getJugadores() as $jugador) {
     echo "<hr>";
 }
 
-//4. Iniciar las rondas: se juegan automáticamente las 3 cartas, se comparan y se actualizan los puntos
+//4. Iniciar las rondas: se juegan automáticamente las 3 cartas, se comparan y se actualizan los puntos.
 $juego->jugar_rondas();
 ?>
