@@ -2,7 +2,7 @@
     /**********************************/
     /************* Traits ************/
     /********************************/
-    trait Juego {
+    trait Juego2 {
         function play(){
             echo "Jugando a un juego";
         }
@@ -16,8 +16,8 @@
     /************** Clases ***********/
     /********************************/
     class Reproductor {
-        use Juego, Musica {
-            Juego::play as playDeJuego;
+        use Juego2, Musica {
+            Juego2::play as playDeJuego;
             Musica::play insteadof Juego;
         }
     }
