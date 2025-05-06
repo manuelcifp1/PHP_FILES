@@ -1,0 +1,60 @@
+PILARES DE POO
+Los cuatro pilares de la programación orientada a objetos son:
+● Herencia: las clases secundarias heredan datos y comportamientos de la clase
+principal.
+● Encapsulación: contener información en un objeto, exponiendo solo la información
+seleccionada.
+● Abstracción: exponer solo métodos públicos de alto nivel para acceder a un objeto.
+● Polimorfismo: muchos métodos pueden realizar la misma tarea. Permite diseñar
+objetos para compartir comportamientos.
+
+========================================================================================
+
+COMPONENTES FUNDAMENTALES EN POO
+Los componentes fundamentales de un programa codificado con programación orientada a objetos son:
+● Clases: son esencialmente tipos de datos definidos por el usuario. Las clases son donde creamos un
+modelo para la estructura de métodos y atributos. Los objetos individuales se crean como instancias
+a partir de las clases. Las clases contienen campos para atributos y métodos para comportamientos.
+● Objetos: son instancias de una clase creada con datos específicos.
+● Métodos: representan comportamientos. Los métodos realizan acciones y pueden devolver
+información sobre un objeto o actualizar los datos de un objeto. El código del método se define en la
+definición de clase.
+● Atributos: son la información que se almacena. Los atributos se definen en la plantilla Clase. Cuando
+se crean instancias de objetos, los objetos individuales contienen datos almacenados en el campo
+Atributos. El estado de un objeto está definido por los datos en los campos de atributos del objeto.
+
+================================================================================================
+
+ABSTRACCIÓN
+En términos simples, la abstracción consiste en representar una entidad compleja
+mediante sus características más relevantes y ocultando los detalles innecesarios.
+Es como si crearamos una versión simplificada de algo, manteniendo sólo lo que
+necesitamos para interactuar con él. De esta forma, podemos tratar con objetos de
+manera más intuitiva y eficiente.
+
+=================================================================================================
+
+ENCAPSULACIÓN
+La encapsulación se encarga de mantener ocultos los procesos internos, dándole al
+programador acceso sólo a lo necesario, sólo tienes acceso a unos métodos ya definidos.
+La encapsulación brinda dos ventajas:
+● Las acciones del usuario pueden ser controladas internamente.
+● Poder realizar cambios/mejoras sin que esto afecte el modo en que los usuarios
+interactúan con la aplicación. Solo hay que mantener igual la forma de acceder al método.
+
+======================================================================================================
+
+GETTERS Y SETTERS
+● Getter: Su función es permitir el obtener el valor de una propiedad de la clase y así
+poder utilizar dicho valor en diferentes métodos.
+● Setter: Su función permite brindar acceso a propiedades específicas para poder
+asignar un valor fuera de la clase.
+
+===========================================================================================================
+
+ATRIBUTOS Y MÉTODOS ESTÁTICOS
+Por definición, los atributos y métodos estáticos no actúan en nombre de un
+objeto sino directamente en nombre de una clase.
+
+=============================================================================================================
+
