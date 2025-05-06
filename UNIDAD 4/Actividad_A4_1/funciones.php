@@ -3,36 +3,26 @@
 function validarUsername($username) {
     $regExusername = "/^[A-Za-zÁÉÍÓÚáéíóúÑñÜü'´ ]+$/";
     if (!preg_match($regExusername, $username)) {
-        echo "<p>Usuario no válido.</p>";
+        echo "<p style= 'color: red;'>Usuario no válido.</p>";
     }
+    
 }
 
 //Función para validar contraseña con expresión regular.
 function validarPassword($password) {
     $regExPassword = "/[0-9]{4}/";
     if (!preg_match($regExPassword, $password)) {
-        echo "<p>Contraseña no válida.</p>";
+        echo "<p style= 'color: red;'>Contraseña no válida.</p>";
     }
 }
 
-//Función para obtener todos los usernames del JSON.
-function obtenerUsernames() {
-    $ruta = __DIR__ . "/Usuarios/usuarios.json";
-    if (!file_exists($ruta)) {
-        return [];
+function validarEmail($email) {
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+        echo "<p style= 'color: red;'>Email no válido</p>";
     }
-    $json = file_get_contents($ruta);
-    return json_decode($json, true);
-}
+} 
 
-//Función para guardar un nuevo username en el JSON.
-function guardarUsername($nuevoUsername) {
-    $usernames = obtenerUsernames();
-    $usernames[] = $nuevoUsername;
-    file_put_contents(__DIR__ . "/Usuarios/usuarios.json", json_encode($usernames, JSON_PRETTY_PRINT));
-}
-
-//Función para buscar username por nombre.
+//Función para buscar username por nombre. Recorre el array de obtenerUsernames y busca al nuevo usuario.
 function buscarUsername($username) {
     $usernames = obtenerUsernames();
     foreach ($usernames as $user) {
@@ -43,6 +33,21 @@ function buscarUsername($username) {
     return null;
 }
 
+//Función para obtener todos los usernames del JSON. Crea un array asociativo con el contenido del json.
+function obtenerUsernames() {
+    $ruta = __DIR__ . "/Usuarios/usuarios.json";
+    if (!file_exists($ruta)) {
+        return [];//Si el archivo json no existe, devuelve un array vacío para llenarlo de datos y convertirlo a json.
+    }
+    $json = file_get_contents($ruta);
+    return json_decode($json, true);
+}
 
+//Función para guardar un nuevo username en el JSON. Guarda al nuevo usuario en el array anterior y luego pasa el array a json.
+function guardarUsername($nuevoUsername) {
+    $usernames = obtenerUsernames();
+    $usernames[] = $nuevoUsername;
+    file_put_contents(__DIR__ . "/Usuarios/usuarios.json", json_encode($usernames, JSON_PRETTY_PRINT));
+}
 
 ?>

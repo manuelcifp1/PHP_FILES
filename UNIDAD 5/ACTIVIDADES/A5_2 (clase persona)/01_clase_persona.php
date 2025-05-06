@@ -44,7 +44,8 @@ class Persona {
     }
 
     public function setEdad($fechaNacimiento) {
-        //Creamos un objeto de la clase DateTime(), asignándole como parámetro la fecha de nacimiento.
+        /*Creamos un objeto de la clase DateTime(), asignándole como parámetro la fecha de nacimiento.
+        DateTime() convierte una string con una fecha en un objeto DateTime con el que podemos operar a nivel fecha.*/
         $fechaNacimiento = new DateTime($fechaNacimiento);
         /*Creamos otro objeto de la clase DateTime() con la fecha de hoy.
          El constructor de esta clase tiene como parámetro por defecto la fecha actual,

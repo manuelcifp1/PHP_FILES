@@ -35,15 +35,15 @@ $usuario = $_SESSION['usuario']['nombre'] ?? 'Invitado';
         para poder agregarlos al carrito.-->        
     <?php foreach ($productos as $producto): ?>
         <div style="border:1px solid #ccc; padding:10px; margin-bottom:10px;">
-            <h3><?php echo htmlspecialchars($producto['nombre']); ?></h3>
-            <p><?php echo htmlspecialchars($producto['descripcion']); ?></p>
-            <p>Precio: <?php echo number_format($producto['precio'], 2); ?>€</p>
-            <p>Stock: <?php echo $producto['stock']; ?></p>
+            <h3><?= htmlspecialchars($producto['nombre']); ?></h3>
+            <p><?= htmlspecialchars($producto['descripcion']); ?></p>
+            <p>Precio: <?= number_format($producto['precio'], 2); ?>€</p>
+            <p>Stock: <?= $producto['stock']; ?></p>
 
             <form method="POST" action="carrito/agregar.php">
                 <input type="hidden" name="id" value="<?php echo $producto['id']; ?>">
-                <label for="cantidad_<?php echo $producto['id']; ?>">Cantidad:</label>
-                <input type="number" name="cantidad" id="cantidad_<?php echo $producto['id']; ?>" value="1" min="1" max="<?php echo $producto['stock']; ?>">
+                <label for="cantidad_<?= $producto['id']; ?>">Cantidad:</label>
+                <input type="number" name="cantidad" id="cantidad_<?= $producto['id']; ?>" value="1" min="1" max="<?= $producto['stock']; ?>">
                 <button type="submit">Agregar al carrito</button>
             </form>
         </div>

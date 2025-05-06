@@ -19,41 +19,48 @@
         <button type="submit">REGISTRARSE</button>
     </form>
 
-<?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-
-        //Creo variables con sus validaciones.
+    <?php
+    //ENVÍO DATOS Y VALIDACIONES
+    if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
         $repite_password = $_POST['repite_password'];
 
-        //Y vuelvo a usar mis funciones.
-        include 'funciones.php';
+        include "funciones.php";
+
         validarUsername($username);
         validarPassword($password);
 
         $username = htmlspecialchars($username);
 
-        //Validación para ver si las dos contraseñas coinciden.
-        if ($password !== $repite_password) {
-            echo "<p>Las contraseñas no coinciden.</p>";
-            //Si el usuario ya existe.
-        } elseif (buscarUsername($username)) {
-            echo "<p>El usuario ya existe.</p>";
-            //Encriptamos contraseña.
-        } else {
-            // ✅ Hasheamos la contraseña antes de guardarla
-            $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);
+        //SI LAS 2 CONTRASEÑAS SON DIFERENTES
+       if($password !== $repite_password) {
+        echo "<p>Las contraseñas no coinciden</p>";
 
-            //Creo el array que terminará en el archivo JSON.
+        //SI BUSCARUSERNAME ES TRUE    
+        } elseif (buscarUsername($username)) {
+        echo "<p>Usuario ya registrado</p>";
+
+        //Y YA EN EL CASO CORRECTO, ASIGNAMOS A $PASSWORDHASHEADA    
+        } else {
+        $passwordHasheada = password_hash($password, PASSWORD_DEFAULT);    
+
+            //Y CREAMOS $NUEVO
             $nuevo = [
                 'username' => $username,
-                'password' => $passwordHasheada,                
+                'password' => $passwordHasheada,
             ];
+
+            //GUARDARUSERNAME($NUEVO) + MENSAJE ÉXITO + ENLACE A LOGIN.PHP
             guardarUsername($nuevo);
-            echo "<p>Usuario registrado con éxito. <a href='login.html'>Ir al login</a></p>";
+            echo "<p>Usuario registrado correctamente.</p>";
+            echo "<a href='login.php'>Ir a login.</a>";
+            
         }
+
+
     }
-?>
-</body>
+    ?>
+
+    </body>
 </html>
