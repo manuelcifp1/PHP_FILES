@@ -58,3 +58,81 @@ objeto sino directamente en nombre de una clase.
 
 =============================================================================================================
 
+SINGLETON
+Es un patrón de diseño creacional que garantiza que tan solo exista un objeto de su tipo y proporciona
+ un único punto de acceso a él para cualquier otro código.
+
+================================================================================================================
+
+MÉTODOS MÁGICOS
+Los métodos mágicos son métodos especiales que sobreescriben acciones por defecto cuando se realizan ciertas
+ acciones sobre un objeto.
+Todos los métodos mágicos, a excepción de __construct(), __destruct(), y __clone(), deben ser declarados como públicos.
+
+===================================================================================================================
+
+HERENCIA
+Las clases, propiedades y métodos se definen mediante los modificadores public, protected, private, final o abstract
+ seguido de una declaración de variable normal:
+● Public: la propiedad o método podrá usarse en cualquier parte del script 
+● Private: la propiedad o método sólo podrá usarse en la clase a la que pertenece
+● Protected: la propiedad o método se podrá usar por la clase a la que pertenece y por sus descendientes.
+● Final: la clase o método no puede ser sobreescrito en clases descendientes.
+● Abstract: la clase o método no puede ser usado directamente, ha de ser heredado primero para usarse.
+
+======================================================================================================================
+
+INTERFACES
+Establece un contrato o un conjunto de métodos que una clase concreta debe implementar.
+Requieren que cualquier clase que las utilice implemente los métodos definidos en ellas (y los mismos tipos de argumentos
+ de los métodos), de lo contrario dará un error fatal.
+Brindan un mecanismo para la abstracción, lo que permite definir funcionalidades que varias clases pueden implementar de
+ diferentes maneras.
+Pueden emplearse más de una interface en cada clase, y pueden extenderse entre ellas mediante extends.
+Una interface puede extender una o más interfaces.
+Todos los métodos declarados en una interface deben ser públicos.
+Para definir una interface se utiliza la palabra interface, y para extenderla se utiliza implements.
+
+=======================================================================================================================
+
+CLASES ABSTRACTAS
+● Las clases abstractas son clases que no se instancian y sólo pueden ser heredadas,
+trasladando así un funcionamiento obligatorio a clases hijas. Mejoran la calidad del
+código y ayudan a reducir la cantidad de código duplicado.
+● Es una clase que no se puede instanciar directamente. Se utiliza como una base
+para otras clases, proporcionando una estructura común y definiendo métodos
+que pueden ser implementados (o deben ser implementados) por las clases hijas.
+Una clase abstracta se define usando la palabra clave abstract.
+● Pueden contener métodos abstractos y concretos:
+○ Los métodos abstractos no tienen cuerpo; solo se declaran y deben ser implementados por las clases
+hijas.
+○ Los métodos concretos tienen implementación y pueden ser heredados.
+● Pueden tener propiedades y métodos comunes a las clases hijas.
+● Pueden incluir un constructor.
+● Se pueden utilizar con otros mecanismos como herencia y polimorfismo.
+● Los métodos abstractos de una clase abstracta deben ser implementados
+obligatoriamente en sus clases hijas, salvo que la clase hija también sea declarada
+como abstracta. Esto se debe a que los métodos abstractos no tienen
+implementación en la clase padre, por lo que es responsabilidad de las clases hijas
+definir su comportamiento.
+
+===============================================================================================================================
+
+TRAITS
+● Los traits son un mecanismo de reutilización de código en lenguajes que tienen herencia
+simple, como PHP.
+● El objetivo de los traits es reducir las limitaciones de la herencia simple permitiendo
+reutilizar métodos en varias clases independientes y de distintas jerarquías.
+● Un trait es similar a una clase, pero su objetivo es agrupar funcionalidades específicas.
+● Un trait, al igual que las clases abstractas, no se puede instanciar, simplemente facilita
+comportamientos a las clases sin necesidad de usar la herencia.
+● La sintaxis para crear un Trait es diferente a la sintaxis que utilizamos para crear las clases, el
+motivo es que debemos hacer uso de la palabra reservada Trait en lugar de class.
+● Utilizar traits dentro de otros traits es frecuente cuando la aplicación crece y
+hay numerosos traits que pueden agruparse para tener que incluir menos en
+una clase.
+● Eso hace que pueda haber métodos con el mismo nombre en diferentes traits o en la misma clase,
+ por lo que tiene que haber un orden. Existe un orden de precedencia de los métodos disponibles
+  en una clase respecto a los de los traits:
+● Métodos de un trait sobreescriben métodos heredados de una clase padre
+● Métodos definidos en la clase actual sobreescriben a los métodos de un trait
