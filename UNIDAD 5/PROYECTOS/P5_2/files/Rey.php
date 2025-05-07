@@ -1,4 +1,5 @@
 <?php
+//En todas las clases hijas de Pieza debemos requerir el script donde está su padre.
 require_once "Pieza.php";
 
 class Rey extends Pieza {

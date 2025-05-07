@@ -24,7 +24,7 @@ class Tablero {
     public function mostrarTablero(): void {
         //Se recorre el array de casillas. Cada clave ($pos) es una posición (ej. 'b2') y cada valor una pieza.
         foreach ($this->casillas as $pos => $pieza) {
-            // Muestra la posición, el nombre de la clase de la pieza y su color
+            //Muestra la posición, el nombre de la clase de la pieza y su color.
             echo "$pos: " . get_class($pieza) . " (" . $pieza->getColor() . ")<br>";
         }
     }

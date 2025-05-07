@@ -1,4 +1,5 @@
 <?php
+/*COMENTADO EN LA CLASE REY */
 require_once "Pieza.php";
 
 class Reina extends Pieza { 

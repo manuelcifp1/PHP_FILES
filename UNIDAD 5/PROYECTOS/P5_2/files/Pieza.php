@@ -1,4 +1,5 @@
 <?php
+//Requerimos a interfaces.php, de donde Pieza obtiene las directrices de los 2 métodos que debe incluir en su clase.
 require_once "interfaces.php";
 /*Aquí, como sugiere el enunciado, creamos la clase abstracta Pieza que implementa las interfaces
 Tiene las propiedades color y posición, que es todo lo que necesitamos para identificar a cada pieza.

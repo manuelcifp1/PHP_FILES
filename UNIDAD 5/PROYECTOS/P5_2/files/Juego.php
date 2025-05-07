@@ -1,5 +1,5 @@
 <?php
-/*En la clase juego, preparamos el mismo. Sus propiedades son las piezas y el tablero,
+/*En la clase juego, preparamos el mismo. Sus propiedades son los arrays de piezas (agrupadas por el tipo de pieza) y el tablero,
 que instanciamos a través de su construct.  */
 class Juego {
     private Tablero $tablero;
@@ -89,11 +89,11 @@ class Juego {
             return;
         }
 
-        //Movemos la pieza internamente y actualizamos su posición en el tablero.
+        //Movemos la pieza y actualizamos su posición en el tablero.
         $pieza->mover($destino);
         $this->tablero->colocarPieza($pieza, $destino);
 
-        //Eliminamos la pieza de su posición original y creamos una instancia de CasillaVacia.
+        //Eliminamos la pieza de su posición original y creamos una instancia de CasillaVacia usando el constructor del padre Pieza.
         $this->tablero->colocarPieza(new CasillaVacia("vacio", $origen), $origen);
 
         echo "<p>El jugador " . $this->jugadorEnTurno->getColor() . " ha movido una pieza de $origen a $destino.</p>";

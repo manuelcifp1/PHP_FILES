@@ -13,7 +13,6 @@ require_once "Tablero.php";
 require_once "Torre.php";
 require_once "CasillaVacia.php";
 
-
 //1. Creamos una nueva instancia del juego (esto también crea y coloca las piezas).
 $juego = new Juego();
 
