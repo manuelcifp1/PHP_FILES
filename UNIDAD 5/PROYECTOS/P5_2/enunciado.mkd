@@ -1,15 +1,15 @@
-Para desarrollar un juego de ajedrez en PHP utilizando clases, herencia, interfaces y clases abstractas, es esencial organizar y estructurar bien el código para que sea modular, reutilizable y extensible. 
+Para desarrollar un juego de ajedrez en PHP utilizando clases, herencia, interfaces y clases abstractas, es esencial organizar y estructurar bien el código para que sea modular, reutilizable y extensible.
+
 1. Clases:
+En un juego de ajedrez, las clases principales representan los componentes del juego y las acciones que se pueden realizar.
 
-En un juego de ajedrez, las clases principales representan los componentes del juego y las acciones que se pueden realizar. 
 2. Herencia:
-
 La herencia es importante para compartir comportamientos comunes entre las piezas de ajedrez. Por ejemplo, la clase Pieza puede ser una clase base de la cual las demás piezas heredarán.
+
 3. Interfaces:
-
 Las interfaces en PHP permiten definir contratos que las clases deben cumplir. En este caso, puedes definir interfaces para las reglas del juego o comportamientos específicos.
-4. Clases Abstractas:
 
+4. Clases Abstractas:
 Las clases abstractas son útiles para definir un comportamiento común que puede ser compartido entre varias clases, pero no queremos que se instancien directamente. En este caso, podríamos tener una clase abstracta Pieza que tenga métodos abstractos, y luego las clases derivadas implementen los métodos específicos para cada tipo de pieza.
 Clases y sus relaciones:
 
