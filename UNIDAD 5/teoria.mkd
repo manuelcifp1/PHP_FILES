@@ -1,11 +1,11 @@
 PILARES DE POO
 Los cuatro pilares de la programación orientada a objetos son:
-● Herencia: las clases secundarias heredan datos y comportamientos de la clase
+● HERENCIA: las clases secundarias heredan datos y comportamientos de la clase
 principal.
-● Encapsulación: contener información en un objeto, exponiendo solo la información
+● ENCAPSULACIÓN: contener información en un objeto, exponiendo solo la información
 seleccionada.
-● Abstracción: exponer solo métodos públicos de alto nivel para acceder a un objeto.
-● Polimorfismo: muchos métodos pueden realizar la misma tarea. Permite diseñar
+● ABSTRACCIÓN: exponer solo métodos públicos de alto nivel para acceder a un objeto.
+● POLIFORMISMO: muchos métodos pueden realizar la misma tarea. Permite diseñar
 objetos para compartir comportamientos.
 
 ========================================================================================
