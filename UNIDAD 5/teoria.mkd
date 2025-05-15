@@ -3,9 +3,9 @@ Los cuatro pilares de la programación orientada a objetos son:
 ● HERENCIA: las clases secundarias heredan datos y comportamientos de la clase
 principal.
 ● ENCAPSULACIÓN: contener información en un objeto, exponiendo solo la información
-seleccionada principalmente por protección de datos.
+seleccionada principalmente por seguridad.
 ● ABSTRACCIÓN: exponer solo métodos públicos de alto nivel para acceder a un objeto, en pro de la simplicidad.
-● POLIFORMISMO: Un mismo método (mismo nombre) puede tener comportamientos distintos según el objeto que lo implemente.
+● POLIMORFISMO: Un mismo método (mismo nombre) puede tener comportamientos distintos según el objeto que lo implemente.
 
 ========================================================================================
 
