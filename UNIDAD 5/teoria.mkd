@@ -3,10 +3,9 @@ Los cuatro pilares de la programación orientada a objetos son:
 ● HERENCIA: las clases secundarias heredan datos y comportamientos de la clase
 principal.
 ● ENCAPSULACIÓN: contener información en un objeto, exponiendo solo la información
-seleccionada.
-● ABSTRACCIÓN: exponer solo métodos públicos de alto nivel para acceder a un objeto.
-● POLIFORMISMO: muchos métodos pueden realizar la misma tarea. Permite diseñar
-objetos para compartir comportamientos.
+seleccionada principalmente por protección de datos.
+● ABSTRACCIÓN: exponer solo métodos públicos de alto nivel para acceder a un objeto, en pro de la simplicidad.
+● POLIFORMISMO: Un mismo método (mismo nombre) puede tener comportamientos distintos según el objeto que lo implemente.
 
 ========================================================================================
 
@@ -104,9 +103,9 @@ para otras clases, proporcionando una estructura común y definiendo métodos
 que pueden ser implementados (o deben ser implementados) por las clases hijas.
 Una clase abstracta se define usando la palabra clave abstract.
 ● Pueden contener métodos abstractos y concretos:
-○ Los métodos abstractos no tienen cuerpo; solo se declaran y deben ser implementados por las clases
-hijas.
-○ Los métodos concretos tienen implementación y pueden ser heredados.
+  ○ Los métodos abstractos no tienen cuerpo; solo se declaran y deben ser implementados por las clases
+  hijas.
+  ○ Los métodos concretos tienen implementación y pueden ser heredados.
 ● Pueden tener propiedades y métodos comunes a las clases hijas.
 ● Pueden incluir un constructor.
 ● Se pueden utilizar con otros mecanismos como herencia y polimorfismo.
