@@ -1,23 +1,31 @@
 <?php
 
-class Conexion
-{
-    private $host = 'localhost';
-    private $dbname = 'tiendat62';
-    private $username = 'root';
-    private $password = '';
-    private $conn;
+class Conexion {
+    private static $host = 'localhost';
+    private static $dbname = 'tiendat62';
+    private static $username = 'root';
+    private static $password = '';
+    private static $instance = null;
 
-    public function connect()
-    {
-        $this->conn = null;
-        try {
-            $this->conn = new PDO("mysql:host={$this->host};dbname={$this->dbname}", $this->username, $this->password);
-            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            echo "Error de conexión: " . $e->getMessage();
+    private function __construct() {
+        //constructor privado para evitar que alguien cree una instancia directamente.
+    }
+
+    //El método getInstance() devuelve siempre la misma conexión.
+    public static function getInstance() {
+        if (self::$instance === null) {
+            try {
+                self::$instance = new PDO(
+                    "mysql:host=" . self::$host . ";dbname=" . self::$dbname,
+                    self::$username,
+                    self::$password
+                );
+                self::$instance->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            } catch (PDOException $e) {
+                echo "Error de conexión: " . $e->getMessage();
+            }
         }
-        return $this->conn;
+        return self::$instance;
     }
 }
 ?>

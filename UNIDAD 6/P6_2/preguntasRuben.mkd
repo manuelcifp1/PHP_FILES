@@ -1,5 +1,0 @@
-1.- ¿Puedo guardar los productos del carrito en $_SESSION y que se borren al cerrar la sesión o deben los clientes registrados tener una tabla en la BD que se llame carrito en la que almacenen los productos elegidos y que permanezcan ahí hasta que decidan comprarlos aunque se cierre la sesión?
-
-2.- Entiendo que se puede crear una Datatable con CRUD sin tener una tabla de BD asociada a ella ¿es correcto? 
-
-3.- Y siguiendo lo anterior ¿se puede crear un modelo CRUD sin tener una entidad (tabla de BD) asociada a el mismo? 
