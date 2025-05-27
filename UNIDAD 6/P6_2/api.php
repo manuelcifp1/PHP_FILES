@@ -1,33 +1,36 @@
 <?php
 
-//Importamos los modelos necesarios
+// Incluir seguridad de sesión para proteger el backend
+require_once 'auth/seguridad.php';
+Seguridad::verificarSesion();
+
+// Importar los modelos necesarios
 require_once 'model/conexion.php';
 require_once 'model/usuario.php';
 require_once 'model/producto.php';
 require_once 'model/carrito.php';
 
-//Creamos instancias de cada modelo usando el singleton de Conexion
+// Crear instancias de los modelos usando singleton
 $usuario = new Usuario();
 $producto = new Producto();
 $carrito = new Carrito();
 
-//Obtenemos la acción solicitada del CRUD.
+// Obtener la acción y entidad desde los parámetros GET
 $action = $_GET['action'] ?? '';
-//Obtenemos la entidad objetivo (usuario, producto, carrito)
 $entity = $_GET['entity'] ?? '';
 
-//Indicamos que siempre vamos a devolver JSON
+// Devolver siempre JSON
 header('Content-Type: application/json');
 
-//Usamos switch para organizar según entidad
+// Control según entidad
 switch ($entity) {
 
     case 'usuario':
         if ($action === 'create') {
-            //Recibimos datos del POST
+            // Registrar usuario nuevo
             $nombre = $_POST['nombre'];
             $password = $_POST['password'];
-            $rol = $_POST['rol'] ?? 'cliente'; //por defecto cliente
+            $rol = $_POST['rol'] ?? 'cliente'; // por defecto 'cliente'
             $result = $usuario->create($nombre, $password, $rol);
             echo json_encode(['success' => $result]);
         }
@@ -36,7 +39,7 @@ switch ($entity) {
     case 'producto':
         if ($action === 'read') {
             $data = $producto->read();
-            echo json_encode(['data' => $data]); //formato compatible con DataTables
+            echo json_encode(['data' => $data]); // Formato compatible con DataTables
         } elseif ($action === 'create') {
             $nombre = $_POST['nombre'];
             $descripcion = $_POST['descripcion'];
@@ -58,12 +61,12 @@ switch ($entity) {
         break;
 
     case 'carrito':
-        session_start(); //iniciamos sesión para obtener el usuario actual
+        Seguridad::iniciarSesion();
         $idusuario = $_SESSION['idusuario'];
 
         if ($action === 'read') {
             $data = $carrito->read($idusuario);
-            echo json_encode(['data' => $data]); //formato para DataTables
+            echo json_encode(['data' => $data]); // Formato para DataTables
         } elseif ($action === 'add') {
             $idinventario = $_POST['idinventario'];
             $unidades = $_POST['unidades'];
@@ -82,7 +85,6 @@ switch ($entity) {
         break;
 
     default:
-        //Si no se reconoce la entidad, devolvemos error
         echo json_encode(['error' => 'Entidad o acción no válida']);
         break;
 }

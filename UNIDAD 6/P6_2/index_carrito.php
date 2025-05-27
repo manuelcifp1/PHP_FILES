@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <title>Carrito de Compras</title>
+    <!-- DataTables CSS y jQuery -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
+    <?php
+    require_once 'auth/seguridad.php';
+    Seguridad::verificarSesion();
+    ?>
+
     <div class="container">
         <h1>Tu Carrito de Compras</h1>
 
+        <!-- Tabla del carrito -->
         <table id="cartTable" class="display">
             <thead>
                 <tr>
                     <th>ID Carrito</th>
                     <th>ID Producto</th>
+                    <th>Nombre Producto</th>
                     <th>Unidades</th>
                     <th>Acciones</th>
                 </tr>
@@ -30,7 +38,7 @@
                 columns: [
                     { data: 'idcarrito' },
                     { data: 'idinventario' },
-                    { data: 'nombre_producto' }, // ← nueva columna
+                    { data: 'nombre_producto' }, // Nombre del producto traído por el JOIN
                     { data: 'unidades' },
                     {
                         data: null,
@@ -44,6 +52,7 @@
                 ]
             });
 
+            // Actualizar unidades en el carrito
             window.updateCart = function (idcarrito, unidades) {
                 const newUnits = prompt('Nueva cantidad:', unidades);
                 $.post('api.php?entity=carrito&action=update', { idcarrito, unidades: newUnits }, function () {
@@ -51,6 +60,7 @@
                 });
             };
 
+            // Eliminar producto del carrito
             window.deleteCart = function (idcarrito) {
                 if (confirm('¿Seguro que deseas eliminar este producto del carrito?')) {
                     $.post('api.php?entity=carrito&action=delete', { idcarrito }, function () {

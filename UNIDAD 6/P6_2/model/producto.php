@@ -1,13 +1,20 @@
 <?php
 
+/**
+ * Clase Producto - maneja operaciones CRUD sobre la tabla 'productos'.
+ */
 class Producto {
     private $conn;
     private $table = 'productos';
 
     public function __construct() {
+        // Usa la conexión singleton
         $this->conn = Conexion::getInstance();
     }
 
+    /**
+     * Obtiene todos los productos.
+     */
     public function read() {
         try {
             $query = "SELECT * FROM {$this->table}";
@@ -20,6 +27,9 @@ class Producto {
         }
     }
 
+    /**
+     * Crea un nuevo producto.
+     */
     public function create($nombre, $descripcion, $stock) {
         try {
             $query = "INSERT INTO {$this->table} (nombre, descripcion, stock) VALUES (:nombre, :descripcion, :stock)";
@@ -34,6 +44,9 @@ class Producto {
         }
     }
 
+    /**
+     * Actualiza un producto existente.
+     */
     public function update($idinventario, $nombre, $descripcion, $stock) {
         try {
             $query = "UPDATE {$this->table} SET nombre = :nombre, descripcion = :descripcion, stock = :stock WHERE idinventario = :idinventario";
@@ -49,6 +62,9 @@ class Producto {
         }
     }
 
+    /**
+     * Elimina un producto.
+     */
     public function delete($idinventario) {
         try {
             $query = "DELETE FROM {$this->table} WHERE idinventario = :idinventario";
@@ -61,3 +77,4 @@ class Producto {
         }
     }
 }
+?>
