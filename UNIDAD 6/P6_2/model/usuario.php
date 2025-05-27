@@ -11,7 +11,7 @@ class Usuario {
 
     public function create($nombre, $password, $rol = 'cliente') {
         try {
-            // hashear el password antes de guardar
+            //hashear el password antes de guardar
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
             $query = "INSERT INTO {$this->table} (nombre, password, rol) VALUES (:nombre, :password, :rol)";
