@@ -7,17 +7,24 @@ class Carrito {
         $this->conn = Conexion::getInstance();
     }
 
-    public function read() {
-        try {
-            $query = "SELECT * FROM {$this->table}";
-            $stmt = $this->conn->prepare($query);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
-        } catch (PDOException $e) {
-            echo "Error al leer productos: " . $e->getMessage();
-            return [];
-        }
+    public function read($idusuario) {
+    try {
+        $query = "
+            SELECT c.idcarrito, c.idinventario, p.nombre AS nombre_producto, c.unidades
+            FROM {$this->table} c
+            JOIN productos p ON c.idinventario = p.idinventario
+            WHERE c.idusuario = :idusuario
+        ";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':idusuario', $idusuario);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error al leer carrito: " . $e->getMessage();
+        return [];
     }
+}
+
 
     public function create($nombre, $descripcion, $stock) {
         try {
