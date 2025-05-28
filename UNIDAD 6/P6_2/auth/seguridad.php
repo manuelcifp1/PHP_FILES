@@ -39,7 +39,7 @@ class Seguridad {
             // Actualizar tiempo de actividad
             $_SESSION['last_activity'] = time();
         } else {
-            header("Location: auth/login.php");
+            header("Location: ../auth/login.php");
             exit;
         }
     }
@@ -50,7 +50,7 @@ class Seguridad {
     public static function cerrarSesion() {
         session_unset();
         session_destroy();
-        header("Location: auth/login.php");
+        header("Location: ../auth/login.php");
         exit;
     }
 }

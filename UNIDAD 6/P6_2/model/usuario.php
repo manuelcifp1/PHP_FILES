@@ -3,6 +3,7 @@
 /**
  * Clase Usuario - maneja las operaciones sobre la tabla 'usuarios'.
  */
+require_once "conexion.php";
 class Usuario {
     private $conn;
     private $table = 'usuarios';

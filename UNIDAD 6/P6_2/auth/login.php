@@ -5,14 +5,14 @@ require_once '../model/conexion.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
-    $password = $_POST['password'];
+    $password = trim($_POST['password']);
 
     $db = Conexion::getInstance();
     $query = "SELECT * FROM usuarios WHERE nombre = :nombre";
     $stmt = $db->prepare($query);
     $stmt->bindParam(':nombre', $nombre);
     $stmt->execute();
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);    
 
     if ($user && password_verify($password, $user['password'])) {
         // Guardamos información importante en la sesión
@@ -34,4 +34,5 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     Nombre: <input type="text" name="nombre" required><br>
     Contraseña: <input type="password" name="password" required><br>
     <button type="submit">Iniciar Sesión</button>
+    <a href="registro.php">Registrarse</a>
 </form>

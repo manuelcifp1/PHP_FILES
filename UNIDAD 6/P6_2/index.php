@@ -18,6 +18,8 @@
 
     <div class="container">
         <h1>Gestión de Productos</h1>
+        <a href="index_carrito.php">Ver mi carrito</a>
+
 
         <!-- Botón solo visible para el administrador -->
         <?php if ($rol === 'admin'): ?>

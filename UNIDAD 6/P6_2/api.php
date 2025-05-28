@@ -1,6 +1,6 @@
 <?php
 
-// Incluir seguridad de sesión para proteger el backend
+//Incluir seguridad de sesión para proteger el backend
 require_once 'auth/seguridad.php';
 Seguridad::verificarSesion();
 

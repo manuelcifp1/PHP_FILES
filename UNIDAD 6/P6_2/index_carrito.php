@@ -15,7 +15,8 @@
     ?>
 
     <div class="container">
-        <h1>Tu Carrito de Compras</h1>
+        <a href="auth/logout.php">Cerrar sesión</a>
+        <h1>Tu Carrito de Compras</h1>        
 
         <!-- Tabla del carrito -->
         <table id="cartTable" class="display">
