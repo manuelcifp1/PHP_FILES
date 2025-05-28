@@ -1,16 +1,16 @@
 <?php
 
-//Incluir seguridad de sesión para proteger el backend
+//Requerir seguridad de sesión.
 require_once 'auth/seguridad.php';
 Seguridad::verificarSesion();
 
-// Importar los modelos necesarios
+//Requerimos a los modelos necesarios
 require_once 'model/conexion.php';
 require_once 'model/usuario.php';
 require_once 'model/producto.php';
 require_once 'model/carrito.php';
 
-// Crear instancias de los modelos usando singleton
+//Crear instancias de los modelos usando singleton
 $usuario = new Usuario();
 $producto = new Producto();
 $carrito = new Carrito();
