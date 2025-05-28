@@ -7,10 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nombre = $_POST['nombre'];
     $password = $_POST['password'];
 
+    //Creamos una instancia de la clase Usuario
     $usuario = new Usuario();
-    $result = $usuario->create($nombre, $password); // rol por defecto: 'cliente'
+    $result = $usuario->create($nombre, $password); //rol por defecto: 'cliente'
 
     if ($result) {
+        /*Se añade ?registro=ok para que se haga una comprobación al llegar
+         a login.php y aparezca un mensaje de éxito.*/
         header("Location: login.php?registro=ok");
         exit;
     } else {
@@ -19,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 
-<!-- Formulario de registro -->
+<!--Formulario de registro-->
 <form method="POST">
     Nombre: <input type="text" name="nombre" required><br>
     Contraseña: <input type="password" name="password" required><br>

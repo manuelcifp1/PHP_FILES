@@ -1,21 +1,17 @@
 <?php
 
-/**
- * Clase Carrito - maneja operaciones CRUD sobre la tabla 'carrito'.
- */
+//Clase Carrito - maneja CRUD sobre la tabla 'carrito'. Sólo será utilizada por el cliente. 
 class Carrito {
     private $conn;
     private $table = 'carrito';
 
     public function __construct() {
-        // Usa la conexión singleton
+        //Usa la conexión singleton
         $this->conn = Conexion::getInstance();
     }
 
-    /**
-     * Obtiene todos los productos del carrito del usuario.
-     * Incluye el nombre del producto usando JOIN.
-     */
+    /*Obtiene todos los productos del carrito del usuario.
+      Añade el nombre del producto usando JOIN con el idinventario.*/
     public function read($idusuario) {
         try {
             $query = "
@@ -34,12 +30,10 @@ class Carrito {
         }
     }
 
-    /**
-     * Añade o suma unidades a un producto del carrito.
-     */
+    //Añade o suma unidades a un producto del carrito.     
     public function addOrUpdate($idusuario, $idinventario, $unidades) {
         try {
-            // Verificar si ya existe el producto en el carrito
+            //Verifica si ya existe el producto en el carrito
             $query = "SELECT idcarrito, unidades FROM {$this->table} WHERE idusuario = :idusuario AND idinventario = :idinventario";
             $stmt = $this->conn->prepare($query);
             $stmt->bindParam(':idusuario', $idusuario);
@@ -48,7 +42,7 @@ class Carrito {
             $item = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if ($item) {
-                // Ya existe: actualizar sumando unidades
+                //Ya existe: actualizar sumando unidades
                 $nuevasUnidades = $item['unidades'] + $unidades;
                 $updateQuery = "UPDATE {$this->table} SET unidades = :unidades WHERE idcarrito = :idcarrito";
                 $updateStmt = $this->conn->prepare($updateQuery);
@@ -56,7 +50,7 @@ class Carrito {
                 $updateStmt->bindParam(':idcarrito', $item['idcarrito']);
                 return $updateStmt->execute();
             } else {
-                // No existe: insertar nuevo
+                //No existe: insertar nuevo
                 $insertQuery = "INSERT INTO {$this->table} (idusuario, idinventario, unidades) VALUES (:idusuario, :idinventario, :unidades)";
                 $insertStmt = $this->conn->prepare($insertQuery);
                 $insertStmt->bindParam(':idusuario', $idusuario);
@@ -70,9 +64,7 @@ class Carrito {
         }
     }
 
-    /**
-     * Actualiza las unidades de un producto del carrito.
-     */
+    //Actualiza las unidades de un producto del carrito.     
     public function update($idcarrito, $unidades) {
         try {
             $query = "UPDATE {$this->table} SET unidades = :unidades WHERE idcarrito = :idcarrito";
@@ -86,9 +78,7 @@ class Carrito {
         }
     }
 
-    /**
-     * Elimina un producto del carrito.
-     */
+    //Elimina un producto del carrito.
     public function delete($idcarrito) {
         try {
             $query = "DELETE FROM {$this->table} WHERE idcarrito = :idcarrito";

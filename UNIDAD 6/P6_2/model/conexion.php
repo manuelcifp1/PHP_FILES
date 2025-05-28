@@ -1,9 +1,7 @@
 <?php
 
-/**
- * Clase Conexion - implementa patrón Singleton para mantener
- * una única conexión PDO a la base de datos.
- */
+/*Clase Conexion - implementa patrón Singleton para mantener
+ una única conexión PDO a la base de datos.*/
 class Conexion {
     private static $host = 'localhost';
     private static $dbname = 'tiendat62';
@@ -11,13 +9,12 @@ class Conexion {
     private static $password = '';
     private static $instance = null;
 
-    // Constructor privado para evitar instanciación directa
+    //Constructor privado para evitar instanciación directa
     private function __construct() {}
 
-    /**
-     * Método estático que devuelve siempre la misma instancia PDO.
-     */
+    //Método estático que devuelve siempre la misma instancia PDO (singleton).     
     public static function getInstance() {
+        //Si no hay conexión (null) la instancia.
         if (self::$instance === null) {
             try {
                 self::$instance = new PDO(
@@ -30,6 +27,7 @@ class Conexion {
                 echo "Error de conexión: " . $e->getMessage();
             }
         }
+        //Si la hay, devuelve la que existe.
         return self::$instance;
     }
 }
