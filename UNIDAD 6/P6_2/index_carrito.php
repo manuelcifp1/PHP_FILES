@@ -12,11 +12,16 @@
     <?php
     require_once 'auth/seguridad.php';
     Seguridad::verificarSesion();
+
+    //Esto para poder imprimir el nombre del usuario en pantalla y se vea de quién es el carrito.
+    $nombreUsuario = $_SESSION['usuario'];
     ?>
 
     <div class="container">
         <a href="auth/logout.php">Cerrar sesión</a>
-        <h1>Tu Carrito de Compras</h1>        
+        <!--Y aquí imprimimos el nombre del usuario al que pertenece el carrito,
+         usando htmlspecialchars por seguridad-->
+        <h1>Tu carrito de compras <?= htmlspecialchars($nombreUsuario) ?></h1>        
 
         <!-- Tabla del carrito -->
         <table id="cartTable" class="display">
