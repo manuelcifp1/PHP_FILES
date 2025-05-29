@@ -75,7 +75,7 @@
                 ]
             });
 
-            //Acción agregar producto (admin)==================================================================================
+            //Acciones crear, editar y borrar producto (admin)==================================================================================
             <?php if ($rol === 'admin'): ?>
             $('#addProduct').on('click', function () {
                 const nombre = prompt('Nombre del producto:');
