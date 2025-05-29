@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Productos - Tienda</title>
-    <!-- DataTables CSS y jQuery -->
+    <!--DataTables CSS y jQuery-->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
@@ -13,7 +13,7 @@
     require_once 'auth/seguridad.php';
     Seguridad::verificarSesion();
 
-    $rol = $_SESSION['rol']; // 'admin' o 'cliente'
+    $rol = $_SESSION['rol']; // 'admin' o 'cliente'.
     ?>
 
     <div class="container">
@@ -25,12 +25,12 @@
             <a href="index_carrito.php">Ver mi carrito</a><br>
         <?php endif; ?>
 
-        <!-- Botón solo visible para el administrador -->
+        <!--Botón solo visible para el administrador-->
         <?php if ($rol === 'admin'): ?>            
             <button id="addProduct">Agregar Producto</button>
         <?php endif; ?>
 
-        <!-- Tabla de productos -->
+        <!--Tabla de productos-->
         <table id="productTable" class="display">
             <thead>
                 <tr>
@@ -59,13 +59,13 @@
                         data: null,
                         render: function (data, type, row) {
                             if (rol === 'admin') {
-                                // Botones CRUD para administrador
+                                //Botones CRUD para administrador.
                                 return `
                                     <button onclick="editProduct(${row.idinventario}, '${row.nombre}', '${row.descripcion}', ${row.stock})">Editar</button>
                                     <button onclick="deleteProduct(${row.idinventario})">Eliminar</button>
                                 `;
                             } else {
-                                // Botón solo para añadir al carrito para cliente
+                                //Botón solo para añadir al carrito para cliente.
                                 return `
                                     <button onclick="addToCart(${row.idinventario})">Añadir al carrito</button>
                                 `;
@@ -75,7 +75,7 @@
                 ]
             });
 
-            //Acción agregar producto (admin)
+            //Acción agregar producto (admin)==================================================================================
             <?php if ($rol === 'admin'): ?>
             $('#addProduct').on('click', function () {
                 const nombre = prompt('Nombre del producto:');
@@ -103,8 +103,9 @@
                 }
             };
             <?php endif; ?>
+            //===========================================================================================================
 
-            // Acción añadir al carrito (cliente)
+            //Acción añadir al carrito (cliente)===========================================================================
             window.addToCart = function (idinventario) {
                 const unidades = prompt('¿Cuántas unidades quieres añadir?');
                 $.post('api.php?entity=carrito&action=add', { idinventario, unidades }, function (response) {

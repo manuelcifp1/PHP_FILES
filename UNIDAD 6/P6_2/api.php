@@ -27,10 +27,10 @@ switch ($entity) {
 
     case 'usuario':
         if ($action === 'create') {
-            // Registrar usuario nuevo
+            //Registrar usuario nuevo
             $nombre = $_POST['nombre'];
             $password = $_POST['password'];
-            $rol = $_POST['rol'] ?? 'cliente'; // por defecto 'cliente'
+            $rol = $_POST['rol'] ?? 'cliente'; //por defecto 'cliente'
             $result = $usuario->create($nombre, $password, $rol);
             echo json_encode(['success' => $result]);
         }
@@ -39,7 +39,7 @@ switch ($entity) {
     case 'producto':
         if ($action === 'read') {
             $data = $producto->read();
-            echo json_encode(['data' => $data]); // Formato compatible con DataTables
+            echo json_encode(['data' => $data]); //Formato compatible con DataTables
         } elseif ($action === 'create') {
             $nombre = $_POST['nombre'];
             $descripcion = $_POST['descripcion'];
