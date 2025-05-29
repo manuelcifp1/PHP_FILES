@@ -13,11 +13,13 @@
     require_once 'auth/seguridad.php';
     Seguridad::verificarSesion();
 
-    $rol = $_SESSION['rol']; // 'admin' o 'cliente'.
+    $rol = $_SESSION['rol']; //Tiene el valor 'admin' o 'cliente'.
     ?>
 
     <div class="container">
         <h1>Gestión de Productos</h1>
+        
+        <!--Enlace para cerrar sesión-->
         <a href="./auth/logout.php">Cerrar sesión</a><br> 
 
         <!--Sólo tiene acceso al carrito el cliente-->
