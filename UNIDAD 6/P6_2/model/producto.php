@@ -6,7 +6,7 @@ class Producto {
     private $table = 'productos';
 
     public function __construct() {
-        // Usa la conexión singleton
+        //Usa la conexión singleton
         $this->conn = Conexion::getInstance();
     }
 

@@ -34,7 +34,9 @@ class Seguridad {
             //Actualizar tiempo de actividad
             $_SESSION['last_activity'] = time();
         } else {
-            header("Location: ../auth/login.php");
+            //Si no existe sesión, te envía a login.php
+            header("Location: /PHP_FILES/UNIDAD%206/P6_2/auth/login.php");
+
             exit;
         }
     }
@@ -43,7 +45,8 @@ class Seguridad {
     public static function cerrarSesion() {
         session_unset();
         session_destroy();
-        header("Location: ../auth/login.php");
+        header("Location: /PHP_FILES/UNIDAD%206/P6_2/auth/login.php");
+
         exit;
     }
 }
