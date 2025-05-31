@@ -1,0 +1,17 @@
+➢ Crear un formulario con datos procedentes del sitio web https://dummyjson.com/posts
+Funcionamiento:
+➢ Si entras a la web verás una información organizada del siguiente modo:
+➢ Realiza una aplicación con las etiquetas y campos UserId, ID, Título y Cuerpo.
+➢ Debajo colocarás dos botones Anterior y Siguiente.
+➢ Al cargar la página los campos se rellenarán con los datos del primer registro.
+➢ Con los botones podremos navegar por los diferentes registros mostrándolos en el contenido de los campos.
+Indicaciones:
+➢ No es necesario el formulario se cree dinámicamente, pero se pedirá un estilismo profesional en su diseño usando técnicas adquiridas en otros módulos.
+➢ Cuando lleguemos al final o al principio de los registros tienes dos opciones:
+▪ Que volvamos al primer registro y al contrario.
+▪ Que aparezca un mensaje avisando que nos encontramos al principio o al final.
+Comentar la opción escogida.
+➢ Los ficheros estarán en la misma carpeta.
+➢ CSS y JS en ficheros externos.
+Salida:
+➢ Volcado del fichero JSON en los campos input y movimiento por sus registros.
