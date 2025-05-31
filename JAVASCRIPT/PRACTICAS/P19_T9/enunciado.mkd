@@ -1,0 +1,16 @@
+➢ Crear dinámicamente y rellenar un formulario con datos procedentes de un fichero JSON.
+Funcionamiento:
+➢ Crea un fichero JSON de un solo elemento con los datos siguientes:
+o DNI
+o Nombre y apellidos
+o Dirección
+o Ciudad
+o Email
+➢ La aplicación web deberá detectar cada elemento e ir construyendo su label e input correspondiente (DOM). Dejará de añadir elementos cuando no detecte ningún campo más.
+➢ Por último, completará los input con los datos del registro.
+Indicaciones:
+➢ La práctica consiste en construir y completar; los elementos serán creados y añadidos de forma dinámica.
+➢ Los dos ficheros estarán en la misma carpeta.
+➢ CSS y JS en ficheros externos.
+Salida:
+➢ Volcado del fichero JSON en los campos input.
