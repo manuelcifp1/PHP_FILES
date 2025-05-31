@@ -18,10 +18,11 @@
     ?>
 
     <div class="container">
-        <a href="auth/logout.php">Cerrar sesión</a>
+        <a href="./auth/logout.php">Cerrar sesión</a><br>
+        <a href="index.php">Volver a la tienda</a>
         <!--Y aquí imprimimos el nombre del usuario al que pertenece el carrito,
          usando htmlspecialchars por seguridad-->
-        <h1>Tu carrito de compras <?= htmlspecialchars($nombreUsuario) ?></h1>        
+        <h1>Tu carrito de Compras <?= htmlspecialchars($nombreUsuario) ?></h1>        
 
         <!-- Tabla del carrito -->
         <table id="cartTable" class="display">
