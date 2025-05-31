@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <h1>Presentando datos en formato Texto</h1>
+    </header>
+    <main>
+        <pre> </pre>
+    </main>
+    <div id="error"></div>
+    <script> //Salida de datos en nuestro documento
+    let pre = document.querySelector("pre");
+    let miError = document.getElementById("error");
+    //Capturamos datos desde la dirección dada
+    fetch("fakePost.json").then(respuesta => respuesta.text())//Devuelve el texto capturado 
+    .then(texto => {
+        pre.innerHTML = texto;
+        console.log(texto); //Aquí vemos que lo obtenido es un texto 
+        }).catch(error => {
+            miError.innerText = error;
+             });
+    </script>    
+</body>
+</html>
