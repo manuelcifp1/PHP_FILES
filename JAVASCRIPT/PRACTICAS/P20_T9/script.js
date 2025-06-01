@@ -7,22 +7,24 @@ fetch("https://dummyjson.com/users").then(respuesta => {
                      }) .then(miJSON => { //Recoge nuestra respuesta JSON
                         let contador = 0;
 
+                        let parrafo = document.getElementById("parrafo");
+
                         let identificacion = document.getElementById("id");
-                        identificacion.value = miJSON.contador.id;
+                        identificacion.value = miJSON.users[contador].id;
 
                         let nombrePila = document.getElementById("nombre");
-                        nombrePila.value = miJSON.contador.firstName;
+                        nombrePila.value = miJSON.users[contador].firstName;
 
                         let primerApe = document.getElementById("apellido");
-                        primerApe.value = miJSON.contador.lastName;
+                        primerApe.value = miJSON.users[contador].lastName;
 
                         let anios = document.getElementById("edad");
-                        anios.value = miJSON.contador.age;
+                        anios.value = miJSON.users[contador].age;
                         
-                        let parrafo = document.getElementById("parrafo");
+                        
                         if(contador == 0) {
                             parrafo.innerHTML = "Este es el primer registro";
-                        } else if(contador == miJSON.users.length) {
+                        } else if(contador == miJSON.users.length - 1) {
                            parrafo.innerHTML = "Este es el último registro"; 
                         } else {
                             parrafo.innerHTML = "";
@@ -34,38 +36,23 @@ fetch("https://dummyjson.com/users").then(respuesta => {
                         botonSiguiente.addEventListener("click", () => {
 
                             contador++;
+
                             let identificacion = document.getElementById("id");
-                            identificacion.value = miJSON.contador.id;
+                            identificacion.value = miJSON.users[contador].id;
 
                             let nombrePila = document.getElementById("nombre");
-                            nombrePila.value = miJSON.contador.firstName;
+                            nombrePila.value = miJSON.users[contador].firstName;
 
                             let primerApe = document.getElementById("apellido");
-                            primerApe.value = miJSON.contador.lastName;
+                            primerApe.value = miJSON.users[contador].lastName;
 
                             let anios = document.getElementById("edad");
-                            anios.value = miJSON.contador.age;
+                            anios.value = miJSON.users[contador].age;
 
-                            let botonSiguiente = document.getElementById("siguiente");
-                        
-                            botonSiguiente.addEventListener("click", () => {
-                                contador++;
-                                let identificacion = document.getElementById("id");
-                                identificacion.value = miJSON.contador.id;
-
-                                let nombrePila = document.getElementById("nombre");
-                                nombrePila.value = miJSON.contador.firstName;
-
-                                let primerApe = document.getElementById("apellido");
-                                primerApe.value = miJSON.contador.lastName;
-
-                                let anios = document.getElementById("edad");
-                                anios.value = miJSON.contador.age;
-                            });
-                            let parrafo = document.getElementById("parrafo");
+                            
                             if(contador == 0) {
                                 parrafo.innerHTML = "Este es el primer registro";
-                            } else if(contador == miJSON.users.length) {
+                            } else if(contador == miJSON.users.length - 1) {
                             parrafo.innerHTML = "Este es el último registro"; 
                             } else {
                                 parrafo.innerHTML = "";
@@ -77,21 +64,20 @@ fetch("https://dummyjson.com/users").then(respuesta => {
                         botonAnterior.addEventListener("click", () => {
                             contador--;
                             let identificacion = document.getElementById("id");
-                            identificacion.value = miJSON.contador.id;
+                            identificacion.value = miJSON.users[contador].id;
 
                             let nombrePila = document.getElementById("nombre");
-                            nombrePila.value = miJSON.contador.firstName;
+                            nombrePila.value = miJSON.users[contador].firstName;
 
                             let primerApe = document.getElementById("apellido");
-                            primerApe.value = miJSON.contador.lastName;
+                            primerApe.value = miJSON.users[contador].lastName;
 
                             let anios = document.getElementById("edad");
-                            anios.value = miJSON.contador.age;
-
-                            let parrafo = document.getElementById("parrafo");
+                            anios.value = miJSON.users[contador].age;
+                            
                             if(contador == 0) {
                                 parrafo.innerHTML = "Este es el primer registro";
-                            } else if(contador == miJSON.users.length) {
+                            } else if(contador == miJSON.users.length - 1) {
                             parrafo.innerHTML = "Este es el último registro"; 
                             } else {
                                 parrafo.innerHTML = "";
