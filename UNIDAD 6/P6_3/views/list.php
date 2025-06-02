@@ -34,6 +34,7 @@
                     <td><?= htmlspecialchars($contacto['email']) ?></td>
                     <td><?= htmlspecialchars($contacto['direccion']) ?></td>
                     <td>
+            <!--Los enlaces de la tabla de contactos envían el caso pertinente (edit, delete, list) al controlador contacto.php-->
                         <a href="contacto.php?action=edit&id=<?= $contacto['id'] ?>">Editar</a>
                         <a href="contacto.php?action=delete&id=<?= $contacto['id'] ?>" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
                     </td>
