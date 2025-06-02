@@ -34,8 +34,12 @@ class Seguridad {
             //Actualizar tiempo de actividad
             $_SESSION['last_activity'] = time();
         } else {
-            //Si no existe sesión, te envía a login.php
-            header("Location: login.php");
+            /*Si no existe sesión, te envía a login, con este truco que ha
+            arreglado los problemas de portabilidad que tenía el proyecto
+            por culpa de las rutas. Esto crea la ruta dinámicamente basándose
+            en dónde está el script ejecutándose.*/
+            $base = dirname($_SERVER['PHP_SELF']);
+        header("Location: $base/auth/login.php");
 
             exit;
         }
@@ -45,7 +49,9 @@ class Seguridad {
     public static function cerrarSesion() {
         session_unset();
         session_destroy();
-        header("Location: login.php");
+        //De nuevo creación dinámica de las rutas.
+        $base = dirname($_SERVER['PHP_SELF']);
+    header("Location: $base/auth/login.php");
         exit;
     }
 }
