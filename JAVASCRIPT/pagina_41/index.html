@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <main>
+        <ul></ul>
+    </main>
+
+    <script>
+        let lista = document.querySelector("ul");
+
+fetch("http://jsonplaceholder.typicode.com/albums?userId=2", {
+    method: "get",
+    mode: "cors"
+})
+.then(resultado => resultado.json())
+.then(datos => {
+    datos.forEach(dato => {
+        let li = document.createElement("li");
+        li.innerHTML = `<strong>${dato.userId}</strong>,
+        <strong>${dato.id}</strong>,
+        <i>${dato.title}</i>`;
+        lista.appendChild(li);
+    });
+})
+.catch(error => {
+    document.querySelector("main").textContent = "Error: " + error;
+});
+
+    </script> 
+
+</body>
+</html>
