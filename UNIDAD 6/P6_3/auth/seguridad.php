@@ -3,15 +3,15 @@
 //Clase Seguridad - maneja las verificaciones y controles de sesión.
 class Seguridad {
 
-    //Método que nicia sesión solo si aún no está iniciada.     
+    //Método que inicia sesión solo si aún no está iniciada.
     public static function iniciarSesion() {
         if (session_status() === PHP_SESSION_NONE) {
             session_start();
         }
     }
 
-    /*Verifica si la sesión es válida:
-     - Inicia sesión.   
+    /* Verifica si la sesión es válida:
+     - Inicia sesión.
      - Comprueba que el usuario esté logueado.
      - Valida el agente del navegador.
      - Controla tiempo de inactividad.
@@ -34,18 +34,27 @@ class Seguridad {
             //Actualizar tiempo de actividad
             $_SESSION['last_activity'] = time();
         } else {
-            //Si no existe sesión, te envía a login.php
-            header("Location: login.php");
-
+            /* Si no existe sesión, redirige a login.
+               Usamos dirname() para construir la ruta de forma dinámica,
+               calculando siempre el directorio actual y evitando rutas fijas.
+               Aquí solo bajamos un nivel porque normalmente se llama desde index.php.*/
+            $base = dirname($_SERVER['PHP_SELF']);
+            header("Location: $base/auth/login.php");
             exit;
         }
     }
 
-    //Destruye completamente la sesión y redirige al login.    
+    // Destruye completamente la sesión y redirige al login.
     public static function cerrarSesion() {
         session_unset();
         session_destroy();
-        header("Location: login.php");
+
+        /*Como este método se llama desde auth/logout.php,
+        necesitamos subir un nivel usando dirname(dirname()),
+        para volver a la raíz del proyecto y entrar correctamente
+        en auth/login.php.*/
+        $base = dirname(dirname($_SERVER['PHP_SELF']));
+        header("Location: $base/auth/login.php");
         exit;
     }
 }

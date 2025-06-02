@@ -19,8 +19,16 @@
     <div class="container">
         <h1>Gestión de Productos</h1>
         
-        <!--Enlace para cerrar sesión-->
-        <a href="./auth/logout.php">Cerrar sesión</a><br> 
+        <!--Enlace para cerrar sesión que crea el enlace dinámicamente.-->        
+        <?php
+        require_once 'auth/seguridad.php';
+        Seguridad::verificarSesion();
+
+        $base = dirname($_SERVER['PHP_SELF']);
+        echo "<p>Base calculada: $base</p>";
+        ?>
+        <a href="<?= $base ?>/auth/logout.php">Cerrar sesión</a><br>
+        
 
         <!--Sólo tiene acceso al carrito el cliente-->
         <?php if ($rol === 'cliente'): ?>
