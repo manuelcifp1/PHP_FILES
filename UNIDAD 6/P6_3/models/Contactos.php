@@ -6,7 +6,7 @@ class Contactos extends EmptyModel {
         parent::__construct('contactos', 'id');
     }
 
-    // Leer contactos solo del usuario específico
+    //Leer contactos solo del usuario específico
     public function leerPaginadoPorUsuario($user_id, $limite, $offset) {
         $sql = "SELECT * FROM {$this->tabla} WHERE user_id = :user_id LIMIT :limite OFFSET :offset";
         $stmt = $this->conexion->prepare($sql);
