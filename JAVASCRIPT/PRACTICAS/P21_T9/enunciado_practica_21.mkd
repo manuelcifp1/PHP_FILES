@@ -1,0 +1,56 @@
+➢ Enviar y recibir información de un servidor gestionado por un fichero PHP.
+Modificaremos nuestra página dependiendo de la respuesta recibida.
+Funcionamiento:
+
+1. Empezarás con un formulario compuesto por email y contraseña (esta última con 8
+caracteres mínimo, al menos una mayúscula, al menos una minúscula, al menos un
+numérico y al menos un carácter no alfanumérico). Los dos elementos estarán
+validados por javascript. Le acompañarán sus botones Enviar y Reset.
+
+2. Al pulsar Enviar, un programa php en el servidor (p.e. index.php) recogerá la infor-
+mación del formulario y, dependiendo de los valores recibidos (ej.-
+admin@mail.es/admin, aragorn@mail.es/12345, invitado@mail.es/daIgual),
+devolverá un valor que identifique al usuario como Administrador, Usuario
+estándar o Usuario no reconocido
+
+(A) En el caso de ser Administrador, nuestra aplicación generará los botones Altas,
+Bajas, Consultas y Modificaciones. El uso de cualquiera de ellos solo producirá un
+mensaje en consola del estilo “Ha pulsado el botón … ”.
+
+(B) En el caso de ser Usuario estándar, aparecerán los siguientes campos: nombre,
+apellidos, DNI con sus contenidos correspondientes (os los inventáis).
+Además, habrá un label y su input con el texto “Introduzca petición”. Debajo
+aparecerá un botón Consultar. Su uso producirá un mensaje en consola con el
+contenido del input (podremos escribir cualquier cosa).
+
+(C) En el caso de Usuario no reconocido/Invitado volverá a generar el formulario
+inicial con el mensaje añadido en pantalla “Usuario no reconocido”.
+
+Indicaciones:
+
+➢ La idea es que los formularios se generen dinámicamente dependiendo de la
+respuesta obtenida por el servidor.
+
+➢ Las condiciones para que un usuario sea reconocido como administrador, estándar o
+No reconocido serán escogidas libremente y programadas en el documento PHP del
+servidor. No hay que hacer consultas a bases de datos, será suficiente compararlos
+con alguna variable ya iniciada. El método de elección será descrito en la
+documentación.
+
+➢ Procuraremos un cierto estilismo profesional en su diseño usando técnicas
+adquiridas en otros módulos.
+
+➢ Los datos del usuario estándar se tomarán (podrían estar guardados en sus
+variables) desde el PHP en formato JSON y se recogerán en nuestra aplicación.
+
+➢ CSS y JS en ficheros externos.
+
+Salida:
+
+➢ Mostrará los elementos dependiendo del tipo de usuario.
+
+➢ IMPORTANTE: AL PRINCIPIO DEL FICHERO HTML DEBERÁS EXPLICAR QUÉ
+EMAIL Y CONTRASEÑA HAY QUE ESCRIBIR PARA ENTRAR COMO
+ADMINISTRADOR, O ESTÁNDAR. CUALQUIER OTRO VALOR SE TOMARÁ
+COMO “USUARIO DESCONOCIDO”.
+

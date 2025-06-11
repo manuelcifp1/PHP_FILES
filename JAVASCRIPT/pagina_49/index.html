@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Obtener datos externos</title>
+</head>
+<body>
+
+  <script>
+    // Declaramos un objeto dejando que el servicio gestione su id,
+    // que es la primary key.
+    let data = {
+      postId: 75,
+      name: "Nathan",
+      email: "dethklok.nathan@dethmail.com",
+      body: "Brutal!!!"
+    };
+
+    fetch("https://jsonplaceholder.typicode.com/comments", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+    // Gracias a esta última línea, "entenderá" JSON
+    .then(resp => resp.json())
+    .then(miJSON => {
+      console.log(miJSON);
+    })
+    .catch(err => {
+      console.log(err);
+    });
+  </script>
+
+</body>
+</html>

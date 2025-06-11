@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        let p = document.querySelector("p");
+        fetch("http://jsonplaceholder.typicode.com/albums", {
+            method: "post",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "userId=1&title=Vayas donde vayas, allí estarás"
+        })
+        .then(resultado => {
+            return (resultado.json());
+        })
+        .then(datos => {
+            console.log(datos); 
+        })
+        .catch((error) => {
+            p.textContent ="Error: " + error; 
+        });
+    </script>
+    
+</body>
+</html>
