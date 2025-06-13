@@ -17,7 +17,7 @@ estándar o Usuario no reconocido
 Bajas, Consultas y Modificaciones. El uso de cualquiera de ellos solo producirá un
 mensaje en consola del estilo “Ha pulsado el botón … ”.
 
-(B) En el caso de ser Usuario estándar, aparecerán los siguientes campos: nombre,
+(B) En el caso de ser Usuario estándar, aparecerán los siguientes párrafos: nombre,
 apellidos, DNI con sus contenidos correspondientes (os los inventáis).
 Además, habrá un label y su input con el texto “Introduzca petición”. Debajo
 aparecerá un botón Consultar. Su uso producirá un mensaje en consola con el

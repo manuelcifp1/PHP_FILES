@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<!--Datos login administrador: admin@correo.com  Aa1?Bb2!
+    Datos login cliente: cliente@correo.com Aa1?Bb2!-->
+<body>
+    <form action="servidor.php" method="post">
+
+        <p><label for="email">Email: </label>
+        <input type="email" name="email" id="email"></p><br>
+
+        <p><label for="password">Contraseña: </label>
+        <input type="password" name="password" id="password" min="8"></p>
+
+        <button id="novale" type="submit">ENVIAR</button>
+
+        <button type="reset">RESET</button>
+        <p id="invalidacion"></p>
+        <p id="noreconocido"></p>   
+                
+    </form>  
+<script src="script.js"></script>    
+</body>
+</html>
