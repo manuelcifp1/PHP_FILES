@@ -3,7 +3,7 @@ fetch("datos.json")
     if(respuesta.ok) {
         return respuesta.json();
     } else {
-        throw new Error("Los datos no han llegado bien");
+        throw new Error("Los datos llegaron fatal");
     }
 })
 .then(miJSON => {
@@ -12,29 +12,25 @@ fetch("datos.json")
     for(let clave in miJSON) {
         let valor = miJSON[clave];
 
-        //Etiqueta
         let etiqueta = document.createElement("label");
-        etiqueta.textContent = clave + ":";
         etiqueta.for = clave;
-        //Input
-        let entrada = document.createElement("input");
-        entrada.name = clave;        
-        entrada.value = valor;
-        entrada.type = "text";
-        //Añadir input y label al form.
+        etiqueta.textContent = clave;
         formulario.appendChild(etiqueta);
+
+        let entrada = document.createElement("input");
+        entrada.name = clave;
+        entrada.value = valor;
         formulario.appendChild(entrada);
-        //br para espacios
-        let saltoLinea = document.createElement("br");
-        formulario.appendChild(saltoLinea);
 
-        document.body.appendChild(formulario);
-
+        let salto = document.createElement("br");
+        formulario.appendChild(salto);
     }
+    document.body.appendChild(formulario);
+    
 })
 .catch(error => {
-    let mensaje = document.getElementById("parrafo");
-    mensaje.textContent = "Error: " + error;
-});
+    console.error("Error: " + Error);
+})
+
 
 //LOS DOCUMENT DE CREATE ELEMENT!!!! LOS NOMBRE DE LAS VARIABLES!!!

@@ -1,4 +1,4 @@
-➢ Crear un formulario con datos procedentes del sitio web https://dummyjson.com/users o http://jsonplaceholder.typicode.com/posts
+➢ Crear un formulario con datos procedentes del sitio web http://jsonplaceholder.typicode.com/posts
 Funcionamiento:
 ➢ Si entras a la web verás una información organizada del siguiente modo:
 ➢ Realiza una aplicación con las etiquetas y campos UserId, ID, Título y Cuerpo.
