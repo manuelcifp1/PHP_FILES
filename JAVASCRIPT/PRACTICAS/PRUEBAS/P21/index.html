@@ -10,18 +10,20 @@
 <body>
     <form action="servidor.php" method="post">
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" id="email">
+        <label for="email">Email: </label>
+        <input type="text" name="email" id="email">
 
-        <label for="password">Contraseña:</label>
+        <label for="password">Contraseña: </label>
         <input type="password" name="password" id="password" min="8">
 
         <button type="submit">ENVIAR</button>
         <button type="reset">RESET</button>
-        <p id="invalidacion"></p>
-        <p id="noreconocido"></p>
 
     </form>
-<script src="script.js"></script>    
+
+    <p id="invalido"></p>
+    <p id="noreconocido"></p>
+
+    <script src="script.js"></script>    
 </body>
 </html>

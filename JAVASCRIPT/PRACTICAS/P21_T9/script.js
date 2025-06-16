@@ -29,40 +29,26 @@ formulario.addEventListener("submit", function(ev) {
             }
           })
           .then(miJSON => {
+            console.log("Respuesta del servidor:", miJSON);
+
                 if(miJSON.email === "admin@correo.com") {
-                formulario.toggleAttribute("hidden");
+                formulario.toggleAttribute("hidden");                
 
-                let botonAltas = document.createElement("button");
-                let botonBajas = document.createElement("button");
-                let botonConsultas = document.createElement("button");
-                let botonModificaciones = document.createElement("button");                
+                function crearBotones(innerTexto, mensaje) {
+                    let boton = document.createElement("button");
+                    boton.innerText = innerTexto;
+                    document.body.appendChild(boton);
 
-                botonAltas.innerText = "ALTAS";
-                botonBajas.innerText = "BAJAS";
-                botonConsultas.innerText = "CONSULTAR";
-                botonModificaciones.innerText = "MODIFICAR";                
+                    boton.addEventListener("click", () => {
+                        console.log(mensaje);
+                    })
+                }                                
 
-                document.body.appendChild(botonAltas);
-                document.body.appendChild(botonBajas);
-                document.body.appendChild(botonConsultas);
-                document.body.appendChild(botonModificaciones);                
+                crearBotones("ALTAS", "Ha pulsado el botón de altas.") ;
+                crearBotones("BAJAS", "Ha pulsado el botón de bajas.");
+                crearBotones("CONSULTAS", "Ha pulsado el botón de consultas.");
+                crearBotones("MODIFICACIONES", "Ha pulsado el botón de modificaciones.");  
 
-                botonAltas.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de altas.");
-                });
-
-                botonBajas.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de bajas.");
-                });
-
-                botonConsultas.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de consultas.");
-                });
-
-                botonModificaciones.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de modificaciones.");
-                });
-                
 
             } else if(miJSON.email === "cliente@correo.com") {
                 formulario.toggleAttribute("hidden");                
@@ -98,7 +84,7 @@ formulario.addEventListener("submit", function(ev) {
                 document.body.appendChild(parrafoConsul);
 
                 botonConsul.addEventListener("click", () => {
-                    console.log("menudo coñazo de usuario estándar");
+                    console.log(peticion.value);
                 });
 
             } else { 
