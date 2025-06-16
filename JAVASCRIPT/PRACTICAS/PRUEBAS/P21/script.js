@@ -29,55 +29,45 @@ formulario.addEventListener("submit", function(ev) {
             }
           })
           .then(miJSON => {
+            console.log("Respuesta del servidor:", miJSON);
+
                 if(miJSON.email === "admin@correo.com") {
-                formulario.toggleAttribute("hidden");
-
-                let botonAltas = document.createElement("button");
-                let botonBajas = document.createElement("button");
-                let botonConsultas = document.createElement("button");
-                let botonModificaciones = document.createElement("button");                
-
-                botonAltas.innerText = "ALTAS";
-                botonBajas.innerText = "BAJAS";
-                botonConsultas.innerText = "CONSULTAR";
-                botonModificaciones.innerText = "MODIFICAR";                
-
-                document.body.appendChild(botonAltas);
-                document.body.appendChild(botonBajas);
-                document.body.appendChild(botonConsultas);
-                document.body.appendChild(botonModificaciones);                
-
-                botonAltas.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de altas.");
-                });
-
-                botonBajas.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de bajas.");
-                });
-
-                botonConsultas.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de consultas.");
-                });
-
-                botonModificaciones.addEventListener("click", () => {
-                    console.log("Ha pulsado el botón de modificaciones.");
-                });
-                
-
-            } else if(miJSON.email === "cliente@correo.com") {
                 formulario.toggleAttribute("hidden");                
 
-                let pNombre = document.createElement("p");
-                let pApellidos = document.createElement("p");
-                let pDni = document.createElement("p");
+                function crearBotones(innerTexto, mensaje) {
+                    let boton = document.createElement("button");
+                    boton.innerText = innerTexto;
+                    document.body.appendChild(boton);
+
+                    boton.addEventListener("click", () => {
+                        console.log(mensaje);
+                    })
+                }                                
+
+                crearBotones("ALTAS", "Ha pulsado el botón de altas.") ;
+                crearBotones("BAJAS", "Ha pulsado el botón de bajas.");
+                crearBotones("CONSULTAS", "Ha pulsado el botón de consultas.");
+                crearBotones("MODIFICACIONES", "Ha pulsado el botón de modificaciones.");  
+
+
+            } else if(miJSON.email === "cliente@correo.com") {
+                formulario.toggleAttribute("hidden");
+                
+                let pNombre, pApellidos, pDni, parrafoConsul;
+
+                function crearParrafo() {
+                    return document.createElement("p");
+                }
+
+                pNombre = crearParrafo();
+                pApellidos = crearParrafo();
+                pDni = crearParrafo();
                 
                 pNombre.innerHTML = "Nombre -> " + miJSON.nombre;
                 pApellidos.innerHTML = "Apellidos -> " + miJSON.apellidos;
                 pDni.innerHTML = "DNI -> " + miJSON.dni;
 
-                document.body.appendChild(pNombre);
-                document.body.appendChild(pApellidos);
-                document.body.appendChild(pDni);
+                document.body.append(pNombre, pApellidos, pDni);                
 
                 let etiqueta = document.createElement("label");
                 etiqueta.setAttribute("for", "peticion");
@@ -90,7 +80,7 @@ formulario.addEventListener("submit", function(ev) {
                 document.body.appendChild(etiqueta);
                 
 
-                let parrafoConsul = document.createElement("p");
+                parrafoConsul = crearParrafo();
                 let botonConsul = document.createElement("button");
 
                 botonConsul.innerText = "CONSULTAR";
@@ -98,7 +88,7 @@ formulario.addEventListener("submit", function(ev) {
                 document.body.appendChild(parrafoConsul);
 
                 botonConsul.addEventListener("click", () => {
-                    console.log("menudo coñazo de usuario estándar");
+                    console.log(peticion.value);
                 });
 
             } else { 

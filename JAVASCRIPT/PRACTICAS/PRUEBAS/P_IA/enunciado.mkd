@@ -1,0 +1,40 @@
+🎯 Objetivo:
+Mostrar datos de publicaciones desde una API usando async/await, con navegación "anterior/siguiente" entre registros.
+
+📂 Archivos necesarios:
+index.html
+
+script.js
+
+📄 index.html:
+Contendrá un formulario con 4 inputs para mostrar estos campos:
+
+userId
+
+id
+
+title
+
+body
+
+Y dos botones:
+
+ANTERIOR
+
+SIGUIENTE
+
+Un párrafo con id mensaje para mostrar información del tipo: "Este es el primer registro".
+
+📜 script.js:
+Usa async/await para:
+
+Hacer fetch a https://jsonplaceholder.typicode.com/posts
+
+Esperar la conversión a objeto JS con await respuesta.json()
+
+Muestra el primer post en los inputs.
+
+Con los botones, permite navegar entre posts (como hacías antes).
+
+Si estás en el primer o último registro, muestra el mensaje adecuado en el párrafo.
+

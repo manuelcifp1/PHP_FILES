@@ -51,19 +51,23 @@ formulario.addEventListener("submit", function(ev) {
 
 
             } else if(miJSON.email === "cliente@correo.com") {
-                formulario.toggleAttribute("hidden");                
+                formulario.toggleAttribute("hidden");
+                
+                let pNombre, pApellidos, pDni, parrafoConsul;
 
-                let pNombre = document.createElement("p");
-                let pApellidos = document.createElement("p");
-                let pDni = document.createElement("p");
+                function crearParrafo() {
+                    return document.createElement("p");
+                }
+
+                pNombre = crearParrafo();
+                pApellidos = crearParrafo();
+                pDni = crearParrafo();
                 
                 pNombre.innerHTML = "Nombre -> " + miJSON.nombre;
                 pApellidos.innerHTML = "Apellidos -> " + miJSON.apellidos;
                 pDni.innerHTML = "DNI -> " + miJSON.dni;
 
-                document.body.appendChild(pNombre);
-                document.body.appendChild(pApellidos);
-                document.body.appendChild(pDni);
+                document.body.append(pNombre, pApellidos, pDni);                
 
                 let etiqueta = document.createElement("label");
                 etiqueta.setAttribute("for", "peticion");
@@ -76,7 +80,7 @@ formulario.addEventListener("submit", function(ev) {
                 document.body.appendChild(etiqueta);
                 
 
-                let parrafoConsul = document.createElement("p");
+                parrafoConsul = crearParrafo();
                 let botonConsul = document.createElement("button");
 
                 botonConsul.innerText = "CONSULTAR";
