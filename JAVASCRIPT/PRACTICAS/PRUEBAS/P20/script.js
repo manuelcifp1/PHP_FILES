@@ -3,15 +3,15 @@ fetch("http://jsonplaceholder.typicode.com/posts")
   if(respuesta.ok) {
     return respuesta.json();
   } else {
-    throw new Error("La cagamos");
+    throw new Error("No se han recibido los datos correctamente");
   }
 })
 .then(miJSON => {
-  let contador = 0;
-  const total = miJSON.length;
+  let contador = 0;  
+  let total = miJSON.length;
+  let botonAnterior = document.getElementById("anterior");
+  let botonSiguiente = document.getElementById("siguiente");
   let mensaje = document.getElementById("mensaje");
-  const botonAnterior = document.getElementById("anterior");
-  const botonSiguiente = document.getElementById("siguiente");
 
   function actualizarFormulario() {
     const usuario = miJSON[contador];
@@ -22,30 +22,34 @@ fetch("http://jsonplaceholder.typicode.com/posts")
     document.getElementById("body").value = usuario.body;
 
     if(contador === 0) {
-      mensaje.textContent = "Este es el primer registro";
-    } else if(contador === total - 1) {
-      mensaje.textContent = "Este es el último registro";
+      mensaje.innerText = "Estás en el primer registro";
+    } else if (contador === total - 1 ) {
+      mensaje.innerText = "Estás en el último registro";
     } else {
-      mensaje.textContent = "";
-    }
+      mensaje.innerText = "";
+    }    
+    
   }
 
   actualizarFormulario();
 
-  botonSiguiente.addEventListener("click", () => {
-    if(contador < total - 1) {
-      contador++;
+  botonAnterior.addEventListener("click", () => {
+    if(contador !== 0) {
       actualizarFormulario();
+      contador--;
     }
   });
 
-  botonAnterior.addEventListener("click", () => {
-    if(contador > 0) {
-      contador--;
+  botonSiguiente.addEventListener("click", () => {
+    if(contador < total - 1) {
       actualizarFormulario();
+      contador++;
     }
   });
+  
 })
 .catch(error => {
-    console.error("Error: ", error);
+  console.error("Error: ", error);  
 })
+
+//CONSTANTE USUARIO DENTRO DE LA FUNCIÓN!!! ES LA ÚNICA VARIABLE QUE SE PONE ALLÍ!!!
