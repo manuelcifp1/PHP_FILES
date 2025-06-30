@@ -1,7 +1,7 @@
 <?php
-header("Content-Type: application/json");
+header(("Content-Type: application/json"));
 
-if(isset($_POST['email']) && isset($_POST['password']) && (!empty($_POST['email'])) && (!empty($_POST['password']))) {
+if(!empty($_POST['email']) && !empty($_POST['password'])) {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
@@ -11,25 +11,25 @@ if(isset($_POST['email']) && isset($_POST['password']) && (!empty($_POST['email'
             "password" => $password
         ];
         echo json_encode($datosUsuario);
-
     } elseif($email == "cliente@correo.com" && $password == "Aa1?Bb2!") {
-         $datosUsuario = [
+        $datosUsuario = [
             "nombre" => "Manolo",
-            "apellidos" => "Alba Ríos",
-            "dni" => "45123456g",
-            "email" => $email,            
+            "apellidos" => "Cabeza Bolo",
+            "DNI" => "46753159t",
+            "email" => $email
         ];
         echo json_encode($datosUsuario);
     } else {
         $datosUsuario = [
-            "nombre" => "quiénsea",
-            "email" => "invitado@correo.com",
-            "password" => "loquesea"            
+            "nombre" => "daigual",
+            "email" => "irrelevante",
+            "password" => "indiferente"
         ];
         echo json_encode($datosUsuario);
     }
+
 } else {
-    echo json_encode(["error" => "Solicitud incorrecta. Envíe los datos correctamente."]);
+    echo json_encode(["error" => "Datos enviados incorrectamente"]);
 }
 
 ?>

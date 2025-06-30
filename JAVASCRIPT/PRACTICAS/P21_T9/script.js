@@ -28,8 +28,7 @@ formulario.addEventListener("submit", function(ev) {
                 throw new Error("Los datos no se pudieron leer");
             }
           })
-          .then(miJSON => {
-            console.log("Respuesta del servidor:", miJSON);
+          .then(miJSON => {            
 
                 if(miJSON.email === "admin@correo.com") {
                 formulario.toggleAttribute("hidden");                
